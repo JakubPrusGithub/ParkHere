@@ -8,14 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var searchbarText = ""
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView{
+            ScrollView{
+                ForEach(1..<10) { parking in
+                    Rectangle()
+                        .foregroundColor(.blue)
+                        .frame(width: 350, height: 200)
+                        .frame(maxWidth: .infinity)
+                        .padding(5)
+                }
+                .searchable(text: $searchbarText)
+            }
+            .navigationTitle("Find your parking lot")
         }
-        .padding()
     }
 }
 
