@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07539A3829BCB0AA00BF02BB /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07539A3729BCB0AA00BF02BB /* AuthManager.swift */; };
+		07539A3A29BCB0B200BF02BB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07539A3929BCB0B200BF02BB /* LoginView.swift */; };
 		D328272F29B6149000B1677A /* ParkHereApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D328272E29B6149000B1677A /* ParkHereApp.swift */; };
 		D328273129B6149000B1677A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D328273029B6149000B1677A /* ContentView.swift */; };
 		D328273329B6149200B1677A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D328273229B6149200B1677A /* Assets.xcassets */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07539A3729BCB0AA00BF02BB /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthManager.swift; path = ../../../../../../../../../Documents/AuthManager.swift; sourceTree = "<group>"; };
+		07539A3929BCB0B200BF02BB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = "../../../../../../.Trash/ParkHere 13.48.01/ParkHere/Views/Launch/LoginView.swift"; sourceTree = "<group>"; };
 		D328272B29B6149000B1677A /* ParkHere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParkHere.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D328272E29B6149000B1677A /* ParkHereApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkHereApp.swift; sourceTree = "<group>"; };
 		D328273029B6149000B1677A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,6 +52,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07539A3329BCB07C00BF02BB /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				07539A3629BCB0A100BF02BB /* Manager */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		07539A3429BCB08F00BF02BB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				07539A3529BCB09700BF02BB /* Launch */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		07539A3529BCB09700BF02BB /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				07539A3929BCB0B200BF02BB /* LoginView.swift */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		07539A3629BCB0A100BF02BB /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				07539A3729BCB0AA00BF02BB /* AuthManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		D328272229B6149000B1677A = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +106,8 @@
 			children = (
 				D328272E29B6149000B1677A /* ParkHereApp.swift */,
 				D328273029B6149000B1677A /* ContentView.swift */,
+				07539A3329BCB07C00BF02BB /* Sources */,
+				07539A3429BCB08F00BF02BB /* Views */,
 				D328273229B6149200B1677A /* Assets.xcassets */,
 				D328274529BB5AB000B1677A /* GoogleService-Info.plist */,
 				D328273429B6149200B1677A /* Preview Content */,
@@ -176,6 +214,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D328273129B6149000B1677A /* ContentView.swift in Sources */,
+				07539A3829BCB0AA00BF02BB /* AuthManager.swift in Sources */,
+				07539A3A29BCB0B200BF02BB /* LoginView.swift in Sources */,
 				D328272F29B6149000B1677A /* ParkHereApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
