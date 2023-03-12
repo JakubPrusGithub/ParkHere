@@ -20,12 +20,20 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 @main
 struct ParkHereApp: App {
-    
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
+    @StateObject private var auth = AuthMaganer()
     var body: some Scene {
         WindowGroup {
-            MapView()
+            
+            if auth.user == nil {
+                LoginView()
+                    .environmentObject(auth)
+            } else {
+                HomeView()
+                    .environmentObject(auth)
+            }
+            
         }
     }
 }
