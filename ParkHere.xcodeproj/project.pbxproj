@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		07539A3829BCB0AA00BF02BB /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07539A3729BCB0AA00BF02BB /* AuthManager.swift */; };
 		07539A3A29BCB0B200BF02BB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07539A3929BCB0B200BF02BB /* LoginView.swift */; };
+		07539A3E29BCD2CD00BF02BB /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07539A3D29BCD2CD00BF02BB /* Color.swift */; };
+		07539A4329BCD83800BF02BB /* View+ViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07539A4229BCD83800BF02BB /* View+ViewModifier.swift */; };
+		07539A4629BCD94400BF02BB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07539A4529BCD94400BF02BB /* HomeView.swift */; };
+		07539A4B29BCDBAA00BF02BB /* Button+ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07539A4A29BCDBAA00BF02BB /* Button+ButtonStyle.swift */; };
+		07539A4F29BCEBF000BF02BB /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07539A4E29BCEBF000BF02BB /* RegisterView.swift */; };
+		07539A5229BCECDC00BF02BB /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07539A5129BCECDC00BF02BB /* LogoView.swift */; };
+		07539A5529BCEE0600BF02BB /* AuthButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07539A5429BCEE0600BF02BB /* AuthButtonView.swift */; };
+		07539A5729BCF45E00BF02BB /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07539A5629BCF45E00BF02BB /* LaunchView.swift */; };
 		D328272F29B6149000B1677A /* ParkHereApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D328272E29B6149000B1677A /* ParkHereApp.swift */; };
 		D328273129B6149000B1677A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D328273029B6149000B1677A /* ContentView.swift */; };
 		D328273329B6149200B1677A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D328273229B6149200B1677A /* Assets.xcassets */; };
@@ -26,6 +34,14 @@
 /* Begin PBXFileReference section */
 		07539A3729BCB0AA00BF02BB /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthManager.swift; path = ../../../../../../../../../Documents/AuthManager.swift; sourceTree = "<group>"; };
 		07539A3929BCB0B200BF02BB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = "../../../../../../.Trash/ParkHere 13.48.01/ParkHere/Views/Launch/LoginView.swift"; sourceTree = "<group>"; };
+		07539A3D29BCD2CD00BF02BB /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		07539A4229BCD83800BF02BB /* View+ViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ViewModifier.swift"; sourceTree = "<group>"; };
+		07539A4529BCD94400BF02BB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		07539A4A29BCDBAA00BF02BB /* Button+ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+ButtonStyle.swift"; sourceTree = "<group>"; };
+		07539A4E29BCEBF000BF02BB /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		07539A5129BCECDC00BF02BB /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
+		07539A5429BCEE0600BF02BB /* AuthButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButtonView.swift; sourceTree = "<group>"; };
+		07539A5629BCF45E00BF02BB /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		D328272B29B6149000B1677A /* ParkHere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParkHere.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D328272E29B6149000B1677A /* ParkHereApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkHereApp.swift; sourceTree = "<group>"; };
 		D328273029B6149000B1677A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,7 +79,9 @@
 		07539A3429BCB08F00BF02BB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				07539A5029BCECC300BF02BB /* Components */,
 				07539A3529BCB09700BF02BB /* Launch */,
+				07539A4429BCD93800BF02BB /* Core */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -71,7 +89,9 @@
 		07539A3529BCB09700BF02BB /* Launch */ = {
 			isa = PBXGroup;
 			children = (
+				07539A5629BCF45E00BF02BB /* LaunchView.swift */,
 				07539A3929BCB0B200BF02BB /* LoginView.swift */,
+				07539A4E29BCEBF000BF02BB /* RegisterView.swift */,
 			);
 			path = Launch;
 			sourceTree = "<group>";
@@ -82,6 +102,49 @@
 				07539A3729BCB0AA00BF02BB /* AuthManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		07539A3B29BCD2BA00BF02BB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				07539A3C29BCD2C600BF02BB /* Extensions */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		07539A3C29BCD2C600BF02BB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				07539A4A29BCDBAA00BF02BB /* Button+ButtonStyle.swift */,
+				07539A3D29BCD2CD00BF02BB /* Color.swift */,
+				07539A4229BCD83800BF02BB /* View+ViewModifier.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		07539A4429BCD93800BF02BB /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				07539A4529BCD94400BF02BB /* HomeView.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		07539A5029BCECC300BF02BB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				07539A5329BCEDF100BF02BB /* Buttons */,
+				07539A5129BCECDC00BF02BB /* LogoView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		07539A5329BCEDF100BF02BB /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				07539A5429BCEE0600BF02BB /* AuthButtonView.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 		D328272229B6149000B1677A = {
@@ -106,6 +169,7 @@
 			children = (
 				D328272E29B6149000B1677A /* ParkHereApp.swift */,
 				D328273029B6149000B1677A /* ContentView.swift */,
+				07539A3B29BCD2BA00BF02BB /* Resources */,
 				07539A3329BCB07C00BF02BB /* Sources */,
 				07539A3429BCB08F00BF02BB /* Views */,
 				D328273229B6149200B1677A /* Assets.xcassets */,
@@ -213,9 +277,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07539A5529BCEE0600BF02BB /* AuthButtonView.swift in Sources */,
+				07539A5729BCF45E00BF02BB /* LaunchView.swift in Sources */,
 				D328273129B6149000B1677A /* ContentView.swift in Sources */,
+				07539A4F29BCEBF000BF02BB /* RegisterView.swift in Sources */,
+				07539A5229BCECDC00BF02BB /* LogoView.swift in Sources */,
+				07539A4629BCD94400BF02BB /* HomeView.swift in Sources */,
 				07539A3829BCB0AA00BF02BB /* AuthManager.swift in Sources */,
+				07539A4329BCD83800BF02BB /* View+ViewModifier.swift in Sources */,
 				07539A3A29BCB0B200BF02BB /* LoginView.swift in Sources */,
+				07539A4B29BCDBAA00BF02BB /* Button+ButtonStyle.swift in Sources */,
+				07539A3E29BCD2CD00BF02BB /* Color.swift in Sources */,
 				D328272F29B6149000B1677A /* ParkHereApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
