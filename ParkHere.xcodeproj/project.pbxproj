@@ -19,6 +19,7 @@
 		D328275129BB5C1A00B1677A /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D328275029BB5C1A00B1677A /* FirebaseStorage */; };
 		D328275429BB5E5D00B1677A /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D328275329BB5E5D00B1677A /* FirebaseFirestoreSwift */; };
 		D328275629BB5E6400B1677A /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D328275529BB5E6400B1677A /* FirebaseDatabaseSwift */; };
+		D328275829BE0F8100B1677A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D328275729BE0F8100B1677A /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		D328273229B6149200B1677A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D328273529B6149200B1677A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D328274529BB5AB000B1677A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D328275729BE0F8100B1677A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 			children = (
 				D328272E29B6149000B1677A /* ParkHereApp.swift */,
 				D328273029B6149000B1677A /* ContentView.swift */,
+				D328275729BE0F8100B1677A /* MapView.swift */,
 				D328273229B6149200B1677A /* Assets.xcassets */,
 				D328274529BB5AB000B1677A /* GoogleService-Info.plist */,
 				D328273429B6149200B1677A /* Preview Content */,
@@ -176,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D328273129B6149000B1677A /* ContentView.swift in Sources */,
+				D328275829BE0F8100B1677A /* MapView.swift in Sources */,
 				D328272F29B6149000B1677A /* ParkHereApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
