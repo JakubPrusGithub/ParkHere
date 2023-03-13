@@ -20,6 +20,7 @@ struct ContentView: View {
                         .frame(width: 350, height: 200)
                         .frame(maxWidth: .infinity)
                         .padding(5)
+                    //asd
                 }
                 .searchable(text: $searchbarText)
             }
