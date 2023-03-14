@@ -1,2 +1,4 @@
-*xcworkspace/xcuserdata/*
-xcuserdata/*
+/ParkHere.xcodeproj/project.xcworkspace/xcuserdata/
+.DS_Store
+xcuserdata/
+*.xcuserstate
