@@ -16,7 +16,6 @@
 		07539A5529BCEE0600BF02BB /* AuthButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07539A5429BCEE0600BF02BB /* AuthButtonView.swift */; };
 		07539A5729BCF45E00BF02BB /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07539A5629BCF45E00BF02BB /* LaunchView.swift */; };
 		D328272F29B6149000B1677A /* ParkHereApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D328272E29B6149000B1677A /* ParkHereApp.swift */; };
-		D328273129B6149000B1677A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D328273029B6149000B1677A /* ContentView.swift */; };
 		D328273329B6149200B1677A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D328273229B6149200B1677A /* Assets.xcassets */; };
 		D328273629B6149200B1677A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D328273529B6149200B1677A /* Preview Assets.xcassets */; };
 		D328274629BB5AB100B1677A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D328274529BB5AB000B1677A /* GoogleService-Info.plist */; };
@@ -44,7 +43,6 @@
 		07539A5629BCF45E00BF02BB /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		D328272B29B6149000B1677A /* ParkHere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParkHere.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D328272E29B6149000B1677A /* ParkHereApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkHereApp.swift; sourceTree = "<group>"; };
-		D328273029B6149000B1677A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D328273229B6149200B1677A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D328273529B6149200B1677A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D328274529BB5AB000B1677A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -157,7 +155,6 @@
 			isa = PBXGroup;
 			children = (
 				D328272E29B6149000B1677A /* ParkHereApp.swift */,
-				D328273029B6149000B1677A /* ContentView.swift */,
 				07539A3B29BCD2BA00BF02BB /* Resources */,
 				E82B8C5C29C1D15F00E83911 /* Sources */,
 				07539A3429BCB08F00BF02BB /* Views */,
@@ -289,7 +286,6 @@
 				07539A5529BCEE0600BF02BB /* AuthButtonView.swift in Sources */,
 				E82B8C5F29C1D27B00E83911 /* AuthManager.swift in Sources */,
 				07539A5729BCF45E00BF02BB /* LaunchView.swift in Sources */,
-				D328273129B6149000B1677A /* ContentView.swift in Sources */,
 				07539A4F29BCEBF000BF02BB /* RegisterView.swift in Sources */,
 				07539A5229BCECDC00BF02BB /* LogoView.swift in Sources */,
 				E82B8C6129C1D2FF00E83911 /* LoginView.swift in Sources */,
