@@ -27,7 +27,7 @@ class AuthManager: ObservableObject {
 
 
 
-// MARK: Sign in anonuymously
+// MARK: Sign in anonymously
 extension AuthManager {
     
     @MainActor
