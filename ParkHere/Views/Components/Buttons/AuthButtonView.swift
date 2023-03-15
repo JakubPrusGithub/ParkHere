@@ -8,22 +8,22 @@
 import SwiftUI
 
 struct AuthButtonView: View {
-    @EnvironmentObject var auth: AuthMaganer
+    @EnvironmentObject var auth: AuthManager
     
     enum ButtonType { case facebook, google, apple }
     var type: ButtonType
     
-    private var button: (image: String, func: () -> Void) {
+    private var button: (image: String, action: () -> Void) {
         switch type {
-        case .apple: return ("apple", { } )
+        case .google: return ("google", { Task { await auth.loginWithGoogle () } } )
         case .facebook: return ("facebook", { } )
-        case .google: return ("google", { } )
+        case .apple: return ("apple", { } )
         }
     }
     
     var body: some View {
         Button {
-            
+            button.action()
         } label: {
             Image(button.image)
                 .resizable()

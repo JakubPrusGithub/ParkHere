@@ -22,7 +22,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct ParkHereApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
-    @StateObject private var auth = AuthMaganer()
+    @StateObject private var auth = AuthManager()
     var body: some Scene {
         WindowGroup {
             

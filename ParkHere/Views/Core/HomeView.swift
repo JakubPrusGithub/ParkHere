@@ -8,13 +8,21 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject var auth: AuthManager
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text("Sing out")
+                .fontWeight(.semibold)
+                .onTapGesture {
+                    Task { await auth.singOut() }
+                }
+        }
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+            .environmentObject(AuthManager())
     }
 }
