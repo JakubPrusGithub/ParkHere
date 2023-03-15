@@ -156,13 +156,13 @@
 		D328272D29B6149000B1677A /* ParkHere */ = {
 			isa = PBXGroup;
 			children = (
-				E82B8C6729C1D44A00E83911 /* Info.plist */,
 				D328272E29B6149000B1677A /* ParkHereApp.swift */,
 				D328273029B6149000B1677A /* ContentView.swift */,
 				07539A3B29BCD2BA00BF02BB /* Resources */,
 				E82B8C5C29C1D15F00E83911 /* Sources */,
 				07539A3429BCB08F00BF02BB /* Views */,
 				D328273229B6149200B1677A /* Assets.xcassets */,
+				E82B8C6729C1D44A00E83911 /* Info.plist */,
 				D328274529BB5AB000B1677A /* GoogleService-Info.plist */,
 				D328273429B6149200B1677A /* Preview Content */,
 			);
