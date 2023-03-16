@@ -33,7 +33,8 @@ struct ParkHereApp: App {
 //                HomeView()
 //                    .environmentObject(auth)
 //            }
-            MainMapView()
+//            MainMapView()
+            ConceptMainView()
             
         }
     }
