@@ -11,6 +11,8 @@ import MapKit
 struct MainMapView: View {
     
     @State private var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 52.23, longitude: 21.0), span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
+    @State private var truebool = true
+    @State private var temp = ""
     
     var body: some View {
         ZStack(alignment: .top){
@@ -48,6 +50,15 @@ struct MainMapView: View {
                 }
             }
         }
+        .sheet(isPresented: $truebool) {
+            SheetSearchView()
+                //.presentationBackgroundInteraction(.enabled)
+                .presentationDetents([.height(100),.large])
+                .presentationDragIndicator(.visible)
+                .interactiveDismissDisabled(true)
+                
+        }
+        
     }
 }
 
