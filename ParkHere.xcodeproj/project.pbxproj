@@ -26,9 +26,8 @@
 		D328275129BB5C1A00B1677A /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D328275029BB5C1A00B1677A /* FirebaseStorage */; };
 		D328275429BB5E5D00B1677A /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D328275329BB5E5D00B1677A /* FirebaseFirestoreSwift */; };
 		D328275629BB5E6400B1677A /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D328275529BB5E6400B1677A /* FirebaseDatabaseSwift */; };
-		D371298C29C287860049C9F6 /* SheetSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371298B29C287860049C9F6 /* SheetSearchView.swift */; };
-		D371298F29C28C850049C9F6 /* ParkingPreviewStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371298E29C28C850049C9F6 /* ParkingPreviewStruct.swift */; };
-		D3C6031329C25A9A0071286E /* MainMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6031229C25A9A0071286E /* MainMapView.swift */; };
+		D371298F29C28C850049C9F6 /* ParkingStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371298E29C28C850049C9F6 /* ParkingStruct.swift */; };
+		D371299329C5147F0049C9F6 /* ParkingFirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371299229C5147F0049C9F6 /* ParkingFirestoreManager.swift */; };
 		E82B8C5F29C1D27B00E83911 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B8C5E29C1D27B00E83911 /* AuthManager.swift */; };
 		E82B8C6129C1D2FF00E83911 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B8C6029C1D2FF00E83911 /* LoginView.swift */; };
 		E82B8C6429C1D41300E83911 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = E82B8C6329C1D41300E83911 /* GoogleSignIn */; };
@@ -55,9 +54,8 @@
 		D328273229B6149200B1677A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D328273529B6149200B1677A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D328274529BB5AB000B1677A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		D371298B29C287860049C9F6 /* SheetSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetSearchView.swift; sourceTree = "<group>"; };
-		D371298E29C28C850049C9F6 /* ParkingPreviewStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingPreviewStruct.swift; sourceTree = "<group>"; };
-		D3C6031229C25A9A0071286E /* MainMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapView.swift; sourceTree = "<group>"; };
+		D371298E29C28C850049C9F6 /* ParkingStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingStruct.swift; sourceTree = "<group>"; };
+		D371299229C5147F0049C9F6 /* ParkingFirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingFirestoreManager.swift; sourceTree = "<group>"; };
 		E82B8C5E29C1D27B00E83911 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		E82B8C6029C1D2FF00E83911 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E82B8C6729C1D44A00E83911 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -145,7 +143,6 @@
 				E8D3E13F29C33B4900029D7A /* Parking */,
 				E8D3E14029C33B6000029D7A /* Navigation */,
 				07539A5129BCECDC00BF02BB /* LogoView.swift */,
-				D371298B29C287860049C9F6 /* SheetSearchView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -208,7 +205,7 @@
 		D371298D29C28C570049C9F6 /* Structs */ = {
 			isa = PBXGroup;
 			children = (
-				D371298E29C28C850049C9F6 /* ParkingPreviewStruct.swift */,
+				D371298E29C28C850049C9F6 /* ParkingStruct.swift */,
 			);
 			path = Structs;
 			sourceTree = "<group>";
@@ -216,7 +213,6 @@
 		D3C6031129C25A3E0071286E /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				D3C6031229C25A9A0071286E /* MainMapView.swift */,
 				07539A4529BCD94400BF02BB /* HomeView.swift */,
 				E8D3E13729C3119600029D7A /* ConceptMainView.swift */,
 			);
@@ -236,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				E82B8C5E29C1D27B00E83911 /* AuthManager.swift */,
+				D371299229C5147F0049C9F6 /* ParkingFirestoreManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -362,7 +359,7 @@
 				E82B8C5F29C1D27B00E83911 /* AuthManager.swift in Sources */,
 				07539A5729BCF45E00BF02BB /* LaunchView.swift in Sources */,
 				07539A4F29BCEBF000BF02BB /* RegisterView.swift in Sources */,
-				D371298F29C28C850049C9F6 /* ParkingPreviewStruct.swift in Sources */,
+				D371298F29C28C850049C9F6 /* ParkingStruct.swift in Sources */,
 				07539A5229BCECDC00BF02BB /* LogoView.swift in Sources */,
 				E8A12D5429C45A020090F8D8 /* ProfilView.swift in Sources */,
 				E82B8C6129C1D2FF00E83911 /* LoginView.swift in Sources */,
@@ -373,11 +370,10 @@
 				E8D3E13A29C31BBF00029D7A /* Image.swift in Sources */,
 				E8A12D5229C459FA0090F8D8 /* TicketView.swift in Sources */,
 				07539A4329BCD83800BF02BB /* View+ViewModifier.swift in Sources */,
+				D371299329C5147F0049C9F6 /* ParkingFirestoreManager.swift in Sources */,
 				07539A4B29BCDBAA00BF02BB /* Button+ButtonStyle.swift in Sources */,
 				07539A3E29BCD2CD00BF02BB /* Color.swift in Sources */,
 				D328272F29B6149000B1677A /* ParkHereApp.swift in Sources */,
-				D371298C29C287860049C9F6 /* SheetSearchView.swift in Sources */,
-				D3C6031329C25A9A0071286E /* MainMapView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
