@@ -14,27 +14,31 @@ struct ConceptMainView: View {
     
     @State private var searchTerm: String = ""
     @State private var isSearch: Bool = false
+    @StateObject var allParkings = ParkingFirestoreManager()
     
-    @StateObject private var vm = ParkingSpot()
+    //@StateObject private var vm = ParkingSpot()
     @Binding var selectedTab: Tab
     
     var body: some View {
         NavigationStack {
-            ZStack {
+            ZStack(alignment: .top) {
                 // MARK: MAP
                 Map(coordinateRegion: $mapRegion)
                     .ignoresSafeArea()
                     .onTapGesture { isSearch = false }
                     .opacity(isSearch ? 0.01 : 1 )
-                      
+                GeometryReader { reader in
+                    Color.clear
+                        .background(.ultraThinMaterial)
+                        .frame(height: reader.safeAreaInsets.top, alignment: .top)
+                        .ignoresSafeArea()
+                }
                 
                 VStack {
                     searchBar
                      
-                    if isSearch { searchView }
-                    
-                    
-                    
+                    if isSearch { searchView.animation(.linear, value: isSearch) }
+
                     Spacer()
                     
                    
@@ -55,40 +59,6 @@ struct ConceptMainView_Previews: PreviewProvider {
         ConceptMainView(selectedTab: .constant(.map))
     }
 }
-
-
-struct Parking: Identifiable, Codable {
-    var id = UUID().uuidString
-    let name: String
-    let city: String
-    let street: String
-    let number: String
-    let zipCode: String
-    let phone: Int
-    
-    static let sampleParking = Parking(name: "Parking Warsaw Spire", city: "Warsaw", street: "plac Europejski", number: "1", zipCode: "00-844", phone: 796541234)
-}
-
-class ParkingSpot: ObservableObject {
-    // MARK: Display data
-    @Published var carParks: [Parking] = []
-    
-    init() {
-        getCarParks()
-    }
-    
-    func getCarParks() {
-        let newCarParks = [
-            Parking(name: "Parking Warsaw Spire", city: "Warsaw", street: "plac Europejski", number: "1", zipCode: "00-844", phone: 796541234),
-            Parking(name: "The Warsaw Hub", city: "Warsaw", street: "rondo Daszyńskiego", number: "2a", zipCode: "00-838", phone: 221662110),
-            Parking(name: "Warsaw Financial Center", city: "Warsaw", street: "Emilii Plater", number: "53", zipCode: "00-113", phone: 225407090)
-        ]
-        self.carParks.append(contentsOf: newCarParks)
-    }
-}
-
-
-
 
 extension ConceptMainView {
     // MARK: View components
@@ -121,9 +91,9 @@ extension ConceptMainView {
                 .padding(.top)
         
             
-            ForEach(vm.carParks) { parking in
-               ParkingSearchView(parking: parking)
-            }
+//            ForEach(vm.carParks) { parking in
+//               ParkingSearchView(parking: parking)
+//            }
             
             
             Text("Saved")
@@ -133,11 +103,41 @@ extension ConceptMainView {
                 .padding(.top)
             
             
-            ForEach(vm.carParks) { parking in
-               ParkingSearchView(parking: parking)
-            }
+//            ForEach(vm.carParks) { parking in
+//               ParkingSearchView(parking: parking)
+//            }
             
         }
         .opacity(isSearch ? 1 : 0)
     }
 }
+
+//struct Parking: Identifiable, Codable {
+//    var id = UUID().uuidString
+//    let name: String
+//    let city: String
+//    let street: String
+//    let number: String
+//    let zipCode: String
+//    let phone: Int
+//
+//    static let sampleParking = Parking(name: "Parking Warsaw Spire", city: "Warsaw", street: "plac Europejski", number: "1", zipCode: "00-844", phone: 796541234)
+//}
+//
+//class ParkingSpot: ObservableObject {
+//    // MARK: Display data
+//    @Published var carParks: [Parking] = []
+//
+//    init() {
+//        getCarParks()
+//    }
+//
+//    func getCarParks() {
+//        let newCarParks = [
+//            Parking(name: "Parking Warsaw Spire", city: "Warsaw", street: "plac Europejski", number: "1", zipCode: "00-844", phone: 796541234),
+//            Parking(name: "The Warsaw Hub", city: "Warsaw", street: "rondo Daszyńskiego", number: "2a", zipCode: "00-838", phone: 221662110),
+//            Parking(name: "Warsaw Financial Center", city: "Warsaw", street: "Emilii Plater", number: "53", zipCode: "00-113", phone: 225407090)
+//        ]
+//        self.carParks.append(contentsOf: newCarParks)
+//    }
+//}
