@@ -51,6 +51,6 @@ struct ParkingSearchView: View {
 struct ParkingSearchView_Previews: PreviewProvider {
     static var previews: some View {
 //        ParkingSearchView(parking: Parking.sampleParking)
-        ConceptMainView()
+        ConceptMainView(selectedTab: .constant(.map))
     }
 }

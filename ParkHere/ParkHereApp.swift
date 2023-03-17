@@ -23,19 +23,28 @@ struct ParkHereApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
     @StateObject private var auth = AuthManager()
+    @State private var selectedTab: Tab = .map
+    
     var body: some Scene {
         WindowGroup {
             
-//            if auth.user == nil {
-//                LoginView()
-//                    .environmentObject(auth)
-//            } else {
-//                HomeView()
-//                    .environmentObject(auth)
-//            }
-//            MainMapView()
-            ConceptMainView()
-            
+            if auth.user == nil {
+                LoginView()
+                    .environmentObject(auth)
+            } else {
+                switch selectedTab {
+                case .ticket:
+                    TicketView(selectedTab: $selectedTab)
+                        .environmentObject(auth)
+                case .map:
+                    ConceptMainView(selectedTab: $selectedTab)
+                        .environmentObject(auth)
+                case .profil:
+                    ProfilView(selectedTab: $selectedTab)
+                        .environmentObject(auth)
+                }
+            }
         }
+        
     }
 }
