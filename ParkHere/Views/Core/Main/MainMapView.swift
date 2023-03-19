@@ -13,7 +13,7 @@ struct MainMapView: View {
     @State private var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 52.23,longitude: 21.0),span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
     
     @State private var searchTerm: String = ""
-    @State private var isSearch: Bool = false
+    @State private var isSearching: Bool = false
     @StateObject var allParkings = ParkingFirestoreManager()
     
     @Binding var selectedTab: Tab
@@ -28,9 +28,12 @@ struct MainMapView: View {
                         longitude: parking.location.longitude))
                 }
                 .ignoresSafeArea()
-                .onTapGesture { isSearch = false }
-                .opacity(isSearch ? 0.01 : 1 )
-                .animation(.linear(duration: 0.1), value: isSearch)
+                .opacity(isSearching ? 0.01 : 1 )
+                .animation(.linear(duration: 0.1), value: isSearching)
+                .onTapGesture {
+                    isSearching = false
+                    searchTerm = ""
+                }
                 
                 GeometryReader { reader in
                     Color.clear
@@ -39,12 +42,13 @@ struct MainMapView: View {
                         .ignoresSafeArea()
                 }
                 VStack {
-                    searchBar
+                    SearchBarView(searchTerm: $searchTerm, isSearching: $isSearching)
                     
-                    if isSearch {
+                    if isSearching {
                         searchView
-                            .opacity(isSearch ? 1 : 0.01 )
-                            .animation(.linear(duration: 0.15), value: isSearch)
+                            .opacity(isSearching ? 1 : 0.01 )
+                            .animation(.linear(duration: 0.15), value: isSearching)
+                            .onTapGesture { isSearching = false }
                     }
                     Spacer()
                     
@@ -65,28 +69,8 @@ struct ConceptMainView_Previews: PreviewProvider {
 }
 
 extension MainMapView {
-    // MARK: View components
-    var searchBar: some View {
-        HStack {
-            
-            Image("search")
-                .flatIconImage()
-            
-            TextField("Search location", text: $searchTerm)
-                .onTapGesture { isSearch = true }
-            
-            
-            Image("filter")
-                .flatIconImage()
-        }
-        .padding()
-        .frame(maxWidth: .infinity)
-        .fontWeight(.semibold)
-        .background(.white)
-        .cornerRadius(20)
-        .shadow(radius: 1)
-    }
     
+    // MARK: View components
     var searchView: some View {
         VStack {
             Text("Results")
@@ -104,6 +88,7 @@ extension MainMapView {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
     }
+    
     // MARK: Search results
     var searchResults: [ParkingStruct] {
         if searchTerm.isEmpty{
