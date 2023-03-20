@@ -29,6 +29,8 @@
 		D371298F29C28C850049C9F6 /* ParkingStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371298E29C28C850049C9F6 /* ParkingStruct.swift */; };
 		D371299329C5147F0049C9F6 /* ParkingFirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371299229C5147F0049C9F6 /* ParkingFirestoreManager.swift */; };
 		D371299629C6784E0049C9F6 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371299529C6784E0049C9F6 /* SearchBarView.swift */; };
+		D371299829C77F460049C9F6 /* ParkingDetailsPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371299729C77F460049C9F6 /* ParkingDetailsPreview.swift */; };
+		D371299A29C77F5A0049C9F6 /* ParkingDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371299929C77F5A0049C9F6 /* ParkingDetailsView.swift */; };
 		E82B8C5F29C1D27B00E83911 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B8C5E29C1D27B00E83911 /* AuthManager.swift */; };
 		E82B8C6129C1D2FF00E83911 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B8C6029C1D2FF00E83911 /* LoginView.swift */; };
 		E82B8C6429C1D41300E83911 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = E82B8C6329C1D41300E83911 /* GoogleSignIn */; };
@@ -58,6 +60,8 @@
 		D371298E29C28C850049C9F6 /* ParkingStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingStruct.swift; sourceTree = "<group>"; };
 		D371299229C5147F0049C9F6 /* ParkingFirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingFirestoreManager.swift; sourceTree = "<group>"; };
 		D371299529C6784E0049C9F6 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		D371299729C77F460049C9F6 /* ParkingDetailsPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingDetailsPreview.swift; sourceTree = "<group>"; };
+		D371299929C77F5A0049C9F6 /* ParkingDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingDetailsView.swift; sourceTree = "<group>"; };
 		E82B8C5E29C1D27B00E83911 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		E82B8C6029C1D2FF00E83911 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E82B8C6729C1D44A00E83911 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -268,6 +272,8 @@
 			isa = PBXGroup;
 			children = (
 				E8D3E13D29C333DB00029D7A /* ParkingResultSearchView.swift */,
+				D371299729C77F460049C9F6 /* ParkingDetailsPreview.swift */,
+				D371299929C77F5A0049C9F6 /* ParkingDetailsView.swift */,
 			);
 			path = Parking;
 			sourceTree = "<group>";
@@ -368,6 +374,7 @@
 			files = (
 				D371299629C6784E0049C9F6 /* SearchBarView.swift in Sources */,
 				07539A5529BCEE0600BF02BB /* AuthButtonView.swift in Sources */,
+				D371299A29C77F5A0049C9F6 /* ParkingDetailsView.swift in Sources */,
 				E82B8C5F29C1D27B00E83911 /* AuthManager.swift in Sources */,
 				07539A5729BCF45E00BF02BB /* LaunchView.swift in Sources */,
 				07539A4F29BCEBF000BF02BB /* RegisterView.swift in Sources */,
@@ -384,6 +391,7 @@
 				07539A4329BCD83800BF02BB /* View+ViewModifier.swift in Sources */,
 				D371299329C5147F0049C9F6 /* ParkingFirestoreManager.swift in Sources */,
 				07539A4B29BCDBAA00BF02BB /* Button+ButtonStyle.swift in Sources */,
+				D371299829C77F460049C9F6 /* ParkingDetailsPreview.swift in Sources */,
 				07539A3E29BCD2CD00BF02BB /* Color.swift in Sources */,
 				D328272F29B6149000B1677A /* ParkHereApp.swift in Sources */,
 			);
