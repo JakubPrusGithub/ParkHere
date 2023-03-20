@@ -11,9 +11,13 @@ import MapKit
 struct MainMapView: View {
     @State private var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 52.23,longitude: 21.0),span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
     
+    @StateObject var allParkings = ParkingFirestoreManager()
+    
+    // Search
     @State private var searchTerm: String = ""
     @State private var isSearching: Bool = false
-    @StateObject var allParkings = ParkingFirestoreManager()
+    
+    // Parking
     @State private var showParkingPreview = false
     @State private var currentParking = ParkingStruct.sampleParking
     
@@ -24,28 +28,29 @@ struct MainMapView: View {
             ZStack(alignment: .top) {
                 // MARK: MAP
                 Map(coordinateRegion: $mapRegion, annotationItems: allParkings.firestoreParkings){ parking in
-//                    MapMarker(coordinate: CLLocationCoordinate2D(
-//                        latitude: parking.location.latitude,
-//                        longitude: parking.location.longitude))
-                    
-                    // MapAnnotation causes a bug!!!
-                    // But MapMarker does not
-                    // soruce: https://developer.apple.com/forums/thread/718697
-                    
+                    /*
+                     MapMarker(coordinate: CLLocationCoordinate2D(
+                         latitude: parking.location.latitude,
+                         longitude: parking.location.longitude))
+                     
+                      MapAnnotation causes a bug!!!
+                      But MapMarker does not
+                      soruce: https://developer.apple.com/forums/thread/718697
+                     */
+                
                     MapAnnotation(coordinate: CLLocationCoordinate2D(
                         latitude: parking.location.latitude,
-                        longitude: parking.location.longitude))
-                    {
-                            VStack{
-                                Image(systemName: "parkingsign.circle.fill")
-                                    .font(.title)
-                                    .foregroundColor(.blue)
-                            }
-                            .onTapGesture {
-                                self.currentParking = parking
-                                self.showParkingPreview = true
-                            }
+                        longitude: parking.location.longitude)) {
+                            
+                            Image(systemName: "parkingsign.circle.fill")
+                                .font(.title)
+                                .foregroundColor(.blue)
+                                .onTapGesture {
+                                    self.currentParking = parking
+                                    self.showParkingPreview = true
+                                }
                         }
+                    
                 }
                 .ignoresSafeArea()
                 .opacity(isSearching ? 0.01 : 1 )
@@ -54,6 +59,8 @@ struct MainMapView: View {
                     isSearching = false
                     searchTerm = ""
                 }
+                
+                
                 // MARK: Top Safe Area
                 GeometryReader { reader in
                     Color.clear
@@ -61,6 +68,8 @@ struct MainMapView: View {
                         .frame(height: reader.safeAreaInsets.top, alignment: .top)
                         .ignoresSafeArea()
                 }
+                
+                
                 VStack {
                     
                     // Searchbar view component
@@ -76,7 +85,7 @@ struct MainMapView: View {
                     Spacer()
                     
                     // Bottom sheet with preview info
-                    if showParkingPreview && !isSearching {
+                    if showParkingPreview, !isSearching {
                         ParkingDetailsPreview(parking: currentParking, isShowingPreview: $showParkingPreview)
                             .padding(.bottom, 50)
                             .animation(.linear(duration: 0.5), value: showParkingPreview)
@@ -102,6 +111,7 @@ extension MainMapView {
     // MARK: View components
     var searchView: some View {
         VStack {
+            
             Text("Results")
                 .font(.title2)
                 .fontWeight(.semibold)
