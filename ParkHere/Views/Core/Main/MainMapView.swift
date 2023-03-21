@@ -100,7 +100,7 @@ struct MainMapView: View {
     }
 }
 
-struct ConceptMainView_Previews: PreviewProvider {
+struct MainMapView_Previews: PreviewProvider {
     static var previews: some View {
         MainMapView(selectedTab: .constant(.map))
     }
