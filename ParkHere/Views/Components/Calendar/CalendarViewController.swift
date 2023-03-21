@@ -8,8 +8,8 @@
 import Foundation
 
 class CalendarViewController: ObservableObject {
-    @Published var startDate = Date.now
-    @Published var endDate = Date.now
+    @Published var startDate = Date().addingTimeInterval(900)
+    @Published var endDate = Date().addingTimeInterval(900)
     let upToFiveDays = Date().addingTimeInterval(15*24*60*60)
     let today = Date.now
     var quarters = 0
@@ -44,6 +44,7 @@ class CalendarViewController: ObservableObject {
         let endDateCalendar = Calendar.current.date(from: endComps) ?? Date()
         
         var minutesDiff = Int((endDateCalendar - startDateCalendar)/60)
+        if minutesDiff < 15 { return "None" }
         var hoursDiff = 0
         quarters = minutesDiff/15
         
@@ -66,33 +67,6 @@ class CalendarViewController: ObservableObject {
         else {
             return String("\(minutesDiff) \(pluralMinutes ? "minutes" : "minute")")
         }
-        
-        //return quarters.description
-        //guard startMonth == endMonth else {return "Different months"}
-        
-        //43200 minutes in 30 day month
-        //44640 minutes in 31 day month
-        /*
-        let startDateToMinutes = startMonth*44640 + startDay*1440 + startHour*60 + startMinute
-        let endDateToMinutes = endMonth*44640 + endDay*1440 + endHour*60 + endMinute
-        let minutesOfDifference = endDateToMinutes - startDateToMinutes
-        
-        return "diff: " + String(minutesOfDifference/60/24)
-        */
-        
-        //return "minutes: \(minutes1-minutes2), hours \(hours1-hours2)"
-//        var seconds = Int(dateTo-dateFrom)
-//        let minutes = (seconds - (Int(seconds) % 60))/60+1
-//        let hours = Int(minutes/60)
-//        if hours > 0 {
-//            if (minutes - hours*60) == 0 {
-//                return "\(hours) hours"
-//            }
-//            return "\(hours) hours, \(minutes - hours*60) minutes"
-//        }
-//        else{
-//            return "\(minutes) minutes"
-//        }
     }
     
     func calcCost(perHour: Double) -> String {
