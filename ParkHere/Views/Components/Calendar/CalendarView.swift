@@ -51,12 +51,12 @@ struct CalendarView: View {
                 
                 VStack{
                     NavigationLink("Continue"){
-                        // TODO: parkingSpotsView
+                        // TODO: Parking Spots View
                     }
                     .buttonStyle(.sign)
                     .padding(.vertical)
                     Button("Cancel"){
-                        // back
+                        // TODO: Back button
                     }
                     .foregroundColor(.gray)
                     .padding(.top, -10)
@@ -69,13 +69,6 @@ struct CalendarView: View {
             
         }
     }
-}
-
-extension CalendarView{
-    
-    
-    
-    //asd
 }
 
 struct CallendarView_Previews: PreviewProvider {
