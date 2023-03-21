@@ -31,6 +31,8 @@
 		D371299629C6784E0049C9F6 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371299529C6784E0049C9F6 /* SearchBarView.swift */; };
 		D371299829C77F460049C9F6 /* ParkingDetailsPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371299729C77F460049C9F6 /* ParkingDetailsPreview.swift */; };
 		D371299A29C77F5A0049C9F6 /* ParkingDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371299929C77F5A0049C9F6 /* ParkingDetailsView.swift */; };
+		D371299D29C9EE840049C9F6 /* CallendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371299C29C9EE840049C9F6 /* CallendarView.swift */; };
+		D371299F29C9FA1B0049C9F6 /* SubstractingDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371299E29C9FA1B0049C9F6 /* SubstractingDates.swift */; };
 		E82B8C5F29C1D27B00E83911 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B8C5E29C1D27B00E83911 /* AuthManager.swift */; };
 		E82B8C6129C1D2FF00E83911 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B8C6029C1D2FF00E83911 /* LoginView.swift */; };
 		E82B8C6429C1D41300E83911 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = E82B8C6329C1D41300E83911 /* GoogleSignIn */; };
@@ -62,6 +64,8 @@
 		D371299529C6784E0049C9F6 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		D371299729C77F460049C9F6 /* ParkingDetailsPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingDetailsPreview.swift; sourceTree = "<group>"; };
 		D371299929C77F5A0049C9F6 /* ParkingDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingDetailsView.swift; sourceTree = "<group>"; };
+		D371299C29C9EE840049C9F6 /* CallendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallendarView.swift; sourceTree = "<group>"; };
+		D371299E29C9FA1B0049C9F6 /* SubstractingDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubstractingDates.swift; sourceTree = "<group>"; };
 		E82B8C5E29C1D27B00E83911 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		E82B8C6029C1D2FF00E83911 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E82B8C6729C1D44A00E83911 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -128,6 +132,7 @@
 				07539A3D29BCD2CD00BF02BB /* Color.swift */,
 				E8D3E13929C31BBF00029D7A /* Image.swift */,
 				07539A4229BCD83800BF02BB /* View+ViewModifier.swift */,
+				D371299E29C9FA1B0049C9F6 /* SubstractingDates.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -145,6 +150,7 @@
 		07539A5029BCECC300BF02BB /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				D371299B29C9EE710049C9F6 /* Callendar */,
 				D371299429C6781C0049C9F6 /* SearchBar */,
 				07539A5329BCEDF100BF02BB /* Buttons */,
 				E8D3E13F29C33B4900029D7A /* Parking */,
@@ -223,6 +229,14 @@
 				D371299529C6784E0049C9F6 /* SearchBarView.swift */,
 			);
 			path = SearchBar;
+			sourceTree = "<group>";
+		};
+		D371299B29C9EE710049C9F6 /* Callendar */ = {
+			isa = PBXGroup;
+			children = (
+				D371299C29C9EE840049C9F6 /* CallendarView.swift */,
+			);
+			path = Callendar;
 			sourceTree = "<group>";
 		};
 		D3C6031129C25A3E0071286E /* Main */ = {
@@ -384,10 +398,12 @@
 				E82B8C6129C1D2FF00E83911 /* LoginView.swift in Sources */,
 				E8D3E13829C3119600029D7A /* MainMapView.swift in Sources */,
 				E8D3E13E29C333DB00029D7A /* ParkingResultSearchView.swift in Sources */,
+				D371299F29C9FA1B0049C9F6 /* SubstractingDates.swift in Sources */,
 				07539A4629BCD94400BF02BB /* HomeView.swift in Sources */,
 				E8D3E14229C33B6A00029D7A /* TabBarView.swift in Sources */,
 				E8D3E13A29C31BBF00029D7A /* Image.swift in Sources */,
 				E8A12D5229C459FA0090F8D8 /* TicketView.swift in Sources */,
+				D371299D29C9EE840049C9F6 /* CallendarView.swift in Sources */,
 				07539A4329BCD83800BF02BB /* View+ViewModifier.swift in Sources */,
 				D371299329C5147F0049C9F6 /* ParkingFirestoreManager.swift in Sources */,
 				07539A4B29BCDBAA00BF02BB /* Button+ButtonStyle.swift in Sources */,
