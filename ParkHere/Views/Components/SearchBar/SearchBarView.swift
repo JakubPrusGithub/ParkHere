@@ -30,9 +30,9 @@ struct SearchBarView: View {
                     isSearching = isFocused
                 }
                
-            
-            Image("filter")
-                .flatIconImage()
+            // TODO: city filter
+            //Image("filter")
+              //  .flatIconImage()
         }
         .padding()
         .frame(maxWidth: .infinity)
@@ -50,7 +50,7 @@ struct SearchBarView_Previews: PreviewProvider {
     @State static var searchTerm = ""
     @State static var isSearching = false
     static var previews: some View {
-//        SearchBarView(searchTerm: $searchTerm, isSearching: $isSearching)
+        //SearchBarView(searchTerm: $searchTerm, isSearching: $isSearching)
         MainMapView(selectedTab: .constant(.map))
     }
 }
