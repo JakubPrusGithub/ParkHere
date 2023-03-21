@@ -32,7 +32,6 @@ struct ParkingDetailsPreview: View {
                         Text("Spots per level: \(parking.quantity)")
                         Text("Is guarded: " + (parking.guarded ? "Yes" : "No"))
                         Text("Cost per hour: $\(String(format: "%.2f", parking.cost))")
-                        //Text(parking.description)
                     }
                     .padding(.top, 1)
                 }
@@ -47,8 +46,7 @@ struct ParkingDetailsPreview: View {
                             .font(.title3)
                     }
                     Spacer()
-                    Button{
-                        // TODO: present detail view with parking info
+                    NavigationLink{
                         ParkingDetailsView(parking: parking)
                     } label: {
                         Image(systemName: "greaterthan")
