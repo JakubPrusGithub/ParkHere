@@ -10,7 +10,9 @@ import SwiftUI
 struct CalendarView: View {
     
     let parking: ParkingStruct
+    @Environment(\.dismiss) private var dismiss
     @StateObject var controller = CalendarViewController()
+    @State private var invalidTime = false
     
     var body: some View {
         NavigationStack{
@@ -51,17 +53,18 @@ struct CalendarView: View {
                 
                 VStack{
                     NavigationLink("Continue"){
-                        // TODO: Parking Spots View
+                        Text("xd")
                     }
+                    .disabled(controller.calcTime() == "None")
                     .buttonStyle(.sign)
                     .padding(.vertical)
                     Button("Cancel"){
-                        // TODO: Back button
+                        dismiss()
                     }
                     .foregroundColor(.gray)
                     .padding(.top, -10)
                 }
-
+                
             }
             .navigationTitle("Reservation date")
             .padding()
