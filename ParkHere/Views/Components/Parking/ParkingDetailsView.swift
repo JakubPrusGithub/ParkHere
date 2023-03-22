@@ -13,6 +13,7 @@ struct ParkingDetailsView: View {
     let parking: ParkingStruct
     @State var parkings = [ParkingStruct]()
     @State var mapRegion = MKCoordinateRegion()
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         NavigationStack {
@@ -35,7 +36,6 @@ struct ParkingDetailsView: View {
                                     .font(.callout)
                                 
                             }
-                            //.padding(.vertical)
                             
                             // Non-interactive map
                             Map(coordinateRegion: $mapRegion, annotationItems: parkings){parking in
@@ -103,13 +103,13 @@ struct ParkingDetailsView: View {
                     
                     // MARK: Buttons
                     VStack{
-                        Button("Reserve your parking spot"){
-                            // TODO: Callendar view with reservation
+                        NavigationLink("Reserve your parking spot"){
+                            CalendarView(parking: parking)
                         }
                         .buttonStyle(.sign)
                         .padding()
                         Button("Cancel"){
-                            // back
+                            dismiss()
                         }
                         .foregroundColor(.gray)
                         .padding(.top, -10)
