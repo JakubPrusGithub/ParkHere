@@ -11,7 +11,7 @@ struct CalendarView: View {
     
     let parking: ParkingStruct
     @Environment(\.dismiss) private var dismiss
-    @StateObject var controller = CalendarViewController()
+    @StateObject var controller = CalendarViewModel()
     @State private var invalidTime = false
     
     var body: some View {
