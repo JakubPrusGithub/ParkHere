@@ -26,14 +26,13 @@ struct ParkHereApp: App {
     var body: some Scene {
         WindowGroup {
             
-//            if auth.user == nil {
-//                LoginView()
-//                    .environmentObject(auth)
-//            } else {
-//                HomeView()
-//                    .environmentObject(auth)
-//            }
-            MainMapView()
+            if auth.user == nil {
+                LoginView()
+                    .environmentObject(auth)
+            } else {
+                HomeView()
+                    .environmentObject(auth)
+            }
             
         }
     }
