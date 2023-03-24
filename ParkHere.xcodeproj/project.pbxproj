@@ -236,8 +236,8 @@
 		D371299B29C9EE710049C9F6 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
-				D37129A029CA515C0049C9F6 /* CalendarViewController.swift */,
 				D371299C29C9EE840049C9F6 /* CalendarView.swift */,
+				D37129A029CA515C0049C9F6 /* CalendarViewController.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
