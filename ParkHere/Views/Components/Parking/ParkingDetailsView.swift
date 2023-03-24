@@ -20,100 +20,86 @@ struct ParkingDetailsView: View {
                 VStack(alignment: .leading){
                     
                     // MARK: Location
-                    Group{
-                        Text("Location")
-                            .font(.title2)
-                            .foregroundColor(.gray)
-                        HStack{
-                            VStack(alignment: .leading, spacing: 20){
-                                HStack{
-                                    Image(systemName: "mappin.and.ellipse")
-                                        .font(.title2)
-                                    Text(parking.address)
-                                }
-                                Text(parking.description)
-                                    .font(.callout)
-                                
+                    Text("Location")
+                        .font(.title2)
+                        .foregroundColor(.gray)
+                    HStack{
+                        VStack(alignment: .leading, spacing: 20){
+                            HStack{
+                                Image(systemName: "mappin.and.ellipse")
+                                    .font(.title2)
+                                Text(parking.address)
                             }
-                            //.padding(.vertical)
-                            
-                            // Non-interactive map
-                            Map(coordinateRegion: $mapRegion, annotationItems: parkings){parking in
-                                MapMarker(coordinate: CLLocationCoordinate2D(
-                                    latitude: parking.location.latitude,
-                                    longitude: parking.location.longitude))
-                            }
-                            .disabled(true)
-                            .cornerRadius(15)
-                            .shadow(radius: 3)
+                            Text(parking.description)
+                                .font(.callout)
                             
                         }
-                        .frame(height: 200)
+                        //.padding(.vertical)
+                        
+                        // Non-interactive map
+                        Map(coordinateRegion: $mapRegion, annotationItems: parkings){parking in
+                            MapMarker(coordinate: CLLocationCoordinate2D(
+                                latitude: parking.location.latitude,
+                                longitude: parking.location.longitude))
+                        }
+                        .disabled(true)
+                        .cornerRadius(15)
+                        .shadow(radius: 3)
+                        
                     }
+                    .frame(height: 200)
                     Divider()
                     
                     // MARK: Parkin area
-                    Group{
-                        Text("Parking area")
-                            .font(.title2)
-                            .foregroundColor(.gray)
-                        VStack(alignment: .leading, spacing: 10){
-                            HStack{
-                                Image(systemName: "clock")
-                                    .font(.title2)
-                                Text("Available 24 hours, 7 days a week")
-                            }
-                            HStack{
-                                Image(systemName: "square.stack.3d.up.fill")
-                                    .font(.title2)
-                                Text("General levels: " + allParkingLevels(parking.level))
-                            }
-                            HStack{
-                                Image(systemName: "number")
-                                    .font(.title2)
-                                Text("Spots per level: " + parking.quantity.description)
-                            }
-                            HStack{
-                                Image(systemName: parking.guarded ? "checkmark.shield.fill" : "xmark.shield.fill")
-                                    .font(.title2)
-                                Text(parking.guarded ? "Guarded" : "Not guarded")
-                            }
+                    Text("Parking area")
+                        .font(.title2)
+                        .foregroundColor(.gray)
+                    VStack(alignment: .leading, spacing: 10){
+                        HStack{
+                            Image(systemName: "clock")
+                                .font(.title2)
+                            Text("Available 24 hours, 7 days a week")
                         }
-                        .padding(.vertical, 5)
+                        HStack{
+                            Image(systemName: "square.stack.3d.up.fill")
+                                .font(.title2)
+                            Text("General levels: " + allParkingLevels(parking.level))
+                        }
+                        HStack{
+                            Image(systemName: "number")
+                                .font(.title2)
+                            Text("Spots per level: " + parking.quantity.description)
+                        }
+                        HStack{
+                            Image(systemName: parking.guarded ? "checkmark.shield.fill" : "xmark.shield.fill")
+                                .font(.title2)
+                            Text(parking.guarded ? "Guarded" : "Not guarded")
+                        }
                     }
-                    
+                    .padding(.vertical, 5)
                     Divider()
                     
                     // MARK: Cost
-                    Group{
-                        Text("Cost")
-                            .font(.title2)
-                            .foregroundColor(.gray)
-                        VStack(alignment: .leading, spacing: 10){
-                            HStack{
-                                Image(systemName: "dollarsign.circle.fill")
-                                    .font(.title2)
-                                Text("$\(String(format: "%.2f", parking.cost)) per hour")
-                            }
+                    Text("Cost")
+                        .font(.title2)
+                        .foregroundColor(.gray)
+                    VStack(alignment: .leading, spacing: 10){
+                        HStack{
+                            Image(systemName: "dollarsign.circle.fill")
+                                .font(.title2)
+                            Text("$\(String(format: "%.2f", parking.cost)) per hour")
                         }
-                        .padding(.vertical, 5)
                     }
+                    .padding(.vertical, 5)
                     
                     Spacer()
                     
-                    // MARK: Buttons
-                    VStack{
-                        Button("Reserve your parking spot"){
-                            // TODO: Callendar view with reservation
-                        }
-                        .buttonStyle(.sign)
-                        .padding()
-                        Button("Cancel"){
-                            // back
-                        }
-                        .foregroundColor(.gray)
-                        .padding(.top, -10)
+                    // MARK: Continue
+                    Button("Reserve your parking spot"){
+                        // TODO: Callendar view with reservation
                     }
+                    .buttonStyle(.sign)
+                    .padding()
                     
                 } // VStack
                 .padding()

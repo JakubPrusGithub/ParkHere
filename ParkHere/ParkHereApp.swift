@@ -27,8 +27,7 @@ struct ParkHereApp: App {
     
     var body: some Scene {
         WindowGroup {
-            //MainMapView(selectedTab: $selectedTab)
-            CallendarView(parking: .sampleParking)
+            MainMapView(selectedTab: $selectedTab)
 //            if auth.user == nil {
 //                LoginView()
 //                    .environmentObject(auth)
