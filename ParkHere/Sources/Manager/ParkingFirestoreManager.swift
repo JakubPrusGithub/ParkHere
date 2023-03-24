@@ -22,7 +22,7 @@ class ParkingFirestoreManager: ObservableObject {
             for result in results.documents{
                 do {
                     let parking = try result.data(as: ParkingStruct.self)
-                    self.firestoreParkings.append(parking)
+                    print(parking)
                 }
                 catch{
                     print("Failed to decode: \(error.localizedDescription)")

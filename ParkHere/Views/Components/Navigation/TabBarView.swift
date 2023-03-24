@@ -60,6 +60,6 @@ struct TabBarView: View {
 struct TabBarView_Previews: PreviewProvider {
     static var previews: some View {
 //        TabBarView(selectedTab: .constant(.home))
-        MainMapView(selectedTab: .constant(.map))
+        ConceptMainView(selectedTab: .constant(.map))
     }
 }

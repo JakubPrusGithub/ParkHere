@@ -27,7 +27,7 @@ struct ParkHereApp: App {
     
     var body: some Scene {
         WindowGroup {
-            MainMapView(selectedTab: $selectedTab)
+            ConceptMainView(selectedTab: $selectedTab)
 //            if auth.user == nil {
 //                LoginView()
 //                    .environmentObject(auth)
@@ -37,7 +37,7 @@ struct ParkHereApp: App {
 //                    TicketView(selectedTab: $selectedTab)
 //                        .environmentObject(auth)
 //                case .map:
-//                    MainMapView(selectedTab: $selectedTab)
+//                    ConceptMainView(selectedTab: $selectedTab)
 //                        .environmentObject(auth)
 //                case .profil:
 //                    ProfilView(selectedTab: $selectedTab)
