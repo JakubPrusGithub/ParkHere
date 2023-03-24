@@ -21,7 +21,7 @@ struct ParkingStruct: Codable, Identifiable {
     var cost: Double
     var guarded: Bool
     
-    static let sampleParking = ParkingStruct(id: "ABCD1234", name: "Parking Sample", description: "This is a sample description provided for this parking lot. It is suggested to not take it seriously.", location: GeoPoint(latitude: 52.23, longitude: 21.0), level: "C", quantity: 20, address: "Happy Street, Warsaw", cost: 9.99, guarded: true)
+    static let sampleParking = ParkingStruct(id: "ABCD1234", name: "Sample Parking", description: "This is a sample description provided for this parking lot. It is suggested to not take it seriously.", location: GeoPoint(latitude: 0.0, longitude: 0.0), level: "B", quantity: 20, address: "Happy Street, Warsaw", cost: 9.99, guarded: true)
 }
 
 
