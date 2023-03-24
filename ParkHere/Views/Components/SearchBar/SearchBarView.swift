@@ -15,21 +15,28 @@ struct SearchBarView: View {
     
     var body: some View {
         HStack {
-            Image(isSearching ? "left" : "search")
-                .flatIconImage()
-                .onTapGesture {
-                    isSearching = false
-                    isFocused = false
-                    if !isSearching { searchTerm = "" }
-                }
-            
+            if isSearching{
+                Image(systemName: "arrow.backward")
+                    .onTapGesture {
+                        isFocused = false
+                        isSearching = false
+                        searchTerm = ""
+                    }
+            }
+            else {
+                Image("search")
+                    .flatIconImage()
+                    .onTapGesture {
+                        isSearching = false
+                        isFocused = false
+                    }
+            }
             
             TextField("Search location", text: $searchTerm)
                 .focused($isFocused)
                 .onChange(of: isFocused) { _ in
                     isSearching = isFocused
                 }
-               
             
             Image("filter")
                 .flatIconImage()
@@ -50,7 +57,6 @@ struct SearchBarView_Previews: PreviewProvider {
     @State static var searchTerm = ""
     @State static var isSearching = false
     static var previews: some View {
-//        SearchBarView(searchTerm: $searchTerm, isSearching: $isSearching)
-        MainMapView(selectedTab: .constant(.map))
+        SearchBarView(searchTerm: $searchTerm, isSearching: $isSearching)
     }
 }
