@@ -33,10 +33,6 @@
 		E82B8C6129C1D2FF00E83911 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B8C6029C1D2FF00E83911 /* LoginView.swift */; };
 		E82B8C6429C1D41300E83911 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = E82B8C6329C1D41300E83911 /* GoogleSignIn */; };
 		E82B8C6629C1D41300E83911 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E82B8C6529C1D41300E83911 /* GoogleSignInSwift */; };
-		E8D3E13829C3119600029D7A /* ConceptMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D3E13729C3119600029D7A /* ConceptMainView.swift */; };
-		E8D3E13A29C31BBF00029D7A /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D3E13929C31BBF00029D7A /* Image.swift */; };
-		E8D3E13E29C333DB00029D7A /* ParkingSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D3E13D29C333DB00029D7A /* ParkingSearchView.swift */; };
-		E8D3E14229C33B6A00029D7A /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D3E14129C33B6A00029D7A /* TabBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,10 +55,6 @@
 		E82B8C5E29C1D27B00E83911 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		E82B8C6029C1D2FF00E83911 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E82B8C6729C1D44A00E83911 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		E8D3E13729C3119600029D7A /* ConceptMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConceptMainView.swift; sourceTree = "<group>"; };
-		E8D3E13929C31BBF00029D7A /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
-		E8D3E13D29C333DB00029D7A /* ParkingSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingSearchView.swift; sourceTree = "<group>"; };
-		E8D3E14129C33B6A00029D7A /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +100,7 @@
 		07539A3B29BCD2BA00BF02BB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D371298D29C28C570049C9F6 /* Structs */,
 				07539A3C29BCD2C600BF02BB /* Extensions */,
 			);
 			path = Resources;
@@ -118,7 +111,6 @@
 			children = (
 				07539A4A29BCDBAA00BF02BB /* Button+ButtonStyle.swift */,
 				07539A3D29BCD2CD00BF02BB /* Color.swift */,
-				E8D3E13929C31BBF00029D7A /* Image.swift */,
 				07539A4229BCD83800BF02BB /* View+ViewModifier.swift */,
 			);
 			path = Extensions;
@@ -128,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				D3C6031129C25A3E0071286E /* Main */,
+				07539A4529BCD94400BF02BB /* HomeView.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -136,8 +129,6 @@
 			isa = PBXGroup;
 			children = (
 				07539A5329BCEDF100BF02BB /* Buttons */,
-				E8D3E13F29C33B4900029D7A /* Parking */,
-				E8D3E14029C33B6000029D7A /* Navigation */,
 				07539A5129BCECDC00BF02BB /* LogoView.swift */,
 				D371298B29C287860049C9F6 /* SheetSearchView.swift */,
 			);
@@ -211,8 +202,6 @@
 			isa = PBXGroup;
 			children = (
 				D3C6031229C25A9A0071286E /* MainMapView.swift */,
-				07539A4529BCD94400BF02BB /* HomeView.swift */,
-				E8D3E13729C3119600029D7A /* ConceptMainView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -221,7 +210,6 @@
 			isa = PBXGroup;
 			children = (
 				E82B8C5D29C1D26900E83911 /* Manager */,
-				D371298D29C28C570049C9F6 /* Structs */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -232,22 +220,6 @@
 				E82B8C5E29C1D27B00E83911 /* AuthManager.swift */,
 			);
 			path = Manager;
-			sourceTree = "<group>";
-		};
-		E8D3E13F29C33B4900029D7A /* Parking */ = {
-			isa = PBXGroup;
-			children = (
-				E8D3E13D29C333DB00029D7A /* ParkingSearchView.swift */,
-			);
-			path = Parking;
-			sourceTree = "<group>";
-		};
-		E8D3E14029C33B6000029D7A /* Navigation */ = {
-			isa = PBXGroup;
-			children = (
-				E8D3E14129C33B6A00029D7A /* TabBarView.swift */,
-			);
-			path = Navigation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,11 +315,7 @@
 				D371298F29C28C850049C9F6 /* ParkingPreviewStruct.swift in Sources */,
 				07539A5229BCECDC00BF02BB /* LogoView.swift in Sources */,
 				E82B8C6129C1D2FF00E83911 /* LoginView.swift in Sources */,
-				E8D3E13829C3119600029D7A /* ConceptMainView.swift in Sources */,
-				E8D3E13E29C333DB00029D7A /* ParkingSearchView.swift in Sources */,
 				07539A4629BCD94400BF02BB /* HomeView.swift in Sources */,
-				E8D3E14229C33B6A00029D7A /* TabBarView.swift in Sources */,
-				E8D3E13A29C31BBF00029D7A /* Image.swift in Sources */,
 				07539A4329BCD83800BF02BB /* View+ViewModifier.swift in Sources */,
 				07539A4B29BCDBAA00BF02BB /* Button+ButtonStyle.swift in Sources */,
 				07539A3E29BCD2CD00BF02BB /* Color.swift in Sources */,
