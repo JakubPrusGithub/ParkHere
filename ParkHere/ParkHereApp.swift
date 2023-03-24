@@ -27,23 +27,24 @@ struct ParkHereApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ConceptMainView(selectedTab: $selectedTab)
-//            if auth.user == nil {
-//                LoginView()
-//                    .environmentObject(auth)
-//            } else {
-//                switch selectedTab {
-//                case .ticket:
-//                    TicketView(selectedTab: $selectedTab)
-//                        .environmentObject(auth)
-//                case .map:
-//                    ConceptMainView(selectedTab: $selectedTab)
-//                        .environmentObject(auth)
-//                case .profil:
-//                    ProfilView(selectedTab: $selectedTab)
-//                        .environmentObject(auth)
-//                }
-//            }
+            
+            if auth.user == nil {
+                LoginView()
+                    .environmentObject(auth)
+            } else {
+                switch selectedTab {
+                case .ticket:
+                    TicketView(selectedTab: $selectedTab)
+                        .environmentObject(auth)
+                case .map:
+                    ConceptMainView(selectedTab: $selectedTab)
+                        .environmentObject(auth)
+                case .profil:
+                    ProfilView(selectedTab: $selectedTab)
+                        .environmentObject(auth)
+                }
+            }
         }
+        
     }
 }
