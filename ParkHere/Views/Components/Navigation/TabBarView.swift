@@ -8,9 +8,10 @@
 import SwiftUI
 
 enum Tab: String, CaseIterable {
-    case ticket = "ticket"
-    case map = "map"
-    case profil = "profil"
+    case chat = "chat"
+    case phone = "phone"
+    case group = "users"
+    case settings = "settings"
 }
 
 struct TabBarView: View {
@@ -18,48 +19,31 @@ struct TabBarView: View {
     private var fillImage: String { selectedTab.rawValue }
     
     var body: some View {
-        ZStack(alignment: .bottom) {
-            HStack {
-                ForEach(Tab.allCases, id: \.self) { tab in
-                    
-                    Spacer()
-                    VStack {
-                        Image(selectedTab == tab ? fillImage : tab.rawValue)
-                            .resizable()
-                            .renderingMode(.template)
-                            .frame(maxWidth: 25, maxHeight: 25)
-                            .scaleEffect(selectedTab == tab ? 1.1 : 1.0)
-                            .foregroundColor(selectedTab == tab ? .black : .gray)
-                            .onTapGesture {
-                                withAnimation(.easeInOut) { selectedTab = tab }
-                            }
-                        
-                        Text(tab.rawValue)
-//                            .opacity(selectedTab == tab ? 1 : 0)
-                            .font(.caption)
-                            .fixedSize(horizontal: true, vertical: false)
-                            .scaleEffect(selectedTab == tab ? 1.1 : 1.0)
-                            .foregroundColor(selectedTab == tab ? .black : .gray)
+        HStack {
+            ForEach(Tab.allCases, id: \.self) { tab in
+                Spacer()
+                Image(selectedTab == tab ? fillImage : tab.rawValue)
+                    .resizable()
+                    .renderingMode(.template)
+                    .frame(maxWidth: 20, maxHeight: 20)
+                    .scaleEffect(selectedTab == tab ? 1.1 : 1.0)
+                    .foregroundColor(selectedTab == tab ? .black : .secondary.opacity(0.5))
+                    .onTapGesture {
+                        withAnimation(.easeInOut) {
+                            selectedTab = tab
+                        }
                     }
-                    Spacer()
-                }
+                Spacer()
             }
-            .padding()
-            .frame(maxWidth: .infinity)
-            .fontWeight(.semibold)
-            .background(.white)
-            .cornerRadius(20)
-            .shadow(radius: 1)
-            
-            .frame(maxHeight: .infinity, alignment: .bottom)
-            .edgesIgnoringSafeArea(.bottom)
         }
+        .padding()
+        .background(Color.blue)
+        .cornerRadius(20)
     }
 }
 
 struct TabBarView_Previews: PreviewProvider {
     static var previews: some View {
-//        TabBarView(selectedTab: .constant(.home))
-        ConceptMainView(selectedTab: .constant(.map))
+        TabBarView(selectedTab: .constant(.chat))
     }
 }

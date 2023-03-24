@@ -10,14 +10,13 @@ import MapKit
 
 
 struct ConceptMainView: View {
-    @State private var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 52.23,longitude: 21.0),span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
+    @State private var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 52.23,longitude: 21.0),
+                                                      span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
     
     @State private var searchTerm: String = ""
     @State private var isSearch: Bool = false
     
     @StateObject private var vm = ParkingSpot()
-    @Binding var selectedTab: Tab
-    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -37,12 +36,12 @@ struct ConceptMainView: View {
                     
                     Spacer()
                     
-                   
+                    
                 } // VStack
                 .padding()
                 .padding(.horizontal)
 
-                TabBarView(selectedTab: $selectedTab)
+                
             } // ZStack
             
             
@@ -52,7 +51,7 @@ struct ConceptMainView: View {
 
 struct ConceptMainView_Previews: PreviewProvider {
     static var previews: some View {
-        ConceptMainView(selectedTab: .constant(.map))
+        ConceptMainView()
     }
 }
 
@@ -108,7 +107,7 @@ extension ConceptMainView {
         .frame(maxWidth: .infinity)
         .fontWeight(.semibold)
         .background(.white)
-        .cornerRadius(20)
+        .cornerRadius(10)
         .shadow(radius: 1)
     }
     

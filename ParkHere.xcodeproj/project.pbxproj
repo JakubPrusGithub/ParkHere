@@ -33,8 +33,6 @@
 		E82B8C6129C1D2FF00E83911 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B8C6029C1D2FF00E83911 /* LoginView.swift */; };
 		E82B8C6429C1D41300E83911 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = E82B8C6329C1D41300E83911 /* GoogleSignIn */; };
 		E82B8C6629C1D41300E83911 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E82B8C6529C1D41300E83911 /* GoogleSignInSwift */; };
-		E8A12D5229C459FA0090F8D8 /* TicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A12D5129C459FA0090F8D8 /* TicketView.swift */; };
-		E8A12D5429C45A020090F8D8 /* ProfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A12D5329C45A020090F8D8 /* ProfilView.swift */; };
 		E8D3E13829C3119600029D7A /* ConceptMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D3E13729C3119600029D7A /* ConceptMainView.swift */; };
 		E8D3E13A29C31BBF00029D7A /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D3E13929C31BBF00029D7A /* Image.swift */; };
 		E8D3E13E29C333DB00029D7A /* ParkingSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D3E13D29C333DB00029D7A /* ParkingSearchView.swift */; };
@@ -61,8 +59,6 @@
 		E82B8C5E29C1D27B00E83911 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		E82B8C6029C1D2FF00E83911 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E82B8C6729C1D44A00E83911 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		E8A12D5129C459FA0090F8D8 /* TicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketView.swift; sourceTree = "<group>"; };
-		E8A12D5329C45A020090F8D8 /* ProfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilView.swift; sourceTree = "<group>"; };
 		E8D3E13729C3119600029D7A /* ConceptMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConceptMainView.swift; sourceTree = "<group>"; };
 		E8D3E13929C31BBF00029D7A /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		E8D3E13D29C333DB00029D7A /* ParkingSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingSearchView.swift; sourceTree = "<group>"; };
@@ -131,9 +127,7 @@
 		07539A4429BCD93800BF02BB /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				E8A12D4F29C459740090F8D8 /* Ticket */,
 				D3C6031129C25A3E0071286E /* Main */,
-				E8A12D5029C4597C0090F8D8 /* Profile */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -238,22 +232,6 @@
 				E82B8C5E29C1D27B00E83911 /* AuthManager.swift */,
 			);
 			path = Manager;
-			sourceTree = "<group>";
-		};
-		E8A12D4F29C459740090F8D8 /* Ticket */ = {
-			isa = PBXGroup;
-			children = (
-				E8A12D5129C459FA0090F8D8 /* TicketView.swift */,
-			);
-			path = Ticket;
-			sourceTree = "<group>";
-		};
-		E8A12D5029C4597C0090F8D8 /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				E8A12D5329C45A020090F8D8 /* ProfilView.swift */,
-			);
-			path = Profile;
 			sourceTree = "<group>";
 		};
 		E8D3E13F29C33B4900029D7A /* Parking */ = {
@@ -364,14 +342,12 @@
 				07539A4F29BCEBF000BF02BB /* RegisterView.swift in Sources */,
 				D371298F29C28C850049C9F6 /* ParkingPreviewStruct.swift in Sources */,
 				07539A5229BCECDC00BF02BB /* LogoView.swift in Sources */,
-				E8A12D5429C45A020090F8D8 /* ProfilView.swift in Sources */,
 				E82B8C6129C1D2FF00E83911 /* LoginView.swift in Sources */,
 				E8D3E13829C3119600029D7A /* ConceptMainView.swift in Sources */,
 				E8D3E13E29C333DB00029D7A /* ParkingSearchView.swift in Sources */,
 				07539A4629BCD94400BF02BB /* HomeView.swift in Sources */,
 				E8D3E14229C33B6A00029D7A /* TabBarView.swift in Sources */,
 				E8D3E13A29C31BBF00029D7A /* Image.swift in Sources */,
-				E8A12D5229C459FA0090F8D8 /* TicketView.swift in Sources */,
 				07539A4329BCD83800BF02BB /* View+ViewModifier.swift in Sources */,
 				07539A4B29BCDBAA00BF02BB /* Button+ButtonStyle.swift in Sources */,
 				07539A3E29BCD2CD00BF02BB /* Color.swift in Sources */,
