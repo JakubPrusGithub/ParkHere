@@ -1,5 +1,5 @@
 //
-//  CalendarViewModel.swift
+//  CalendarViewController.swift
 //  ParkHere
 //
 //  Created by Jakub Prus on 21/03/2023.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CalendarViewModel: ObservableObject {
+class CalendarViewController: ObservableObject {
     @Published var startDate = Date().addingTimeInterval(900)
     @Published var endDate = Date().addingTimeInterval(900)
     let upToFiveDays = Date().addingTimeInterval(15*24*60*60)

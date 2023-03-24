@@ -33,7 +33,7 @@
 		D371299A29C77F5A0049C9F6 /* ParkingDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371299929C77F5A0049C9F6 /* ParkingDetailsView.swift */; };
 		D371299D29C9EE840049C9F6 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371299C29C9EE840049C9F6 /* CalendarView.swift */; };
 		D371299F29C9FA1B0049C9F6 /* SubstractingDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371299E29C9FA1B0049C9F6 /* SubstractingDates.swift */; };
-		D37129A129CA515C0049C9F6 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37129A029CA515C0049C9F6 /* CalendarViewModel.swift */; };
+		D37129A129CA515C0049C9F6 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37129A029CA515C0049C9F6 /* CalendarViewController.swift */; };
 		E82B8C5F29C1D27B00E83911 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B8C5E29C1D27B00E83911 /* AuthManager.swift */; };
 		E82B8C6129C1D2FF00E83911 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B8C6029C1D2FF00E83911 /* LoginView.swift */; };
 		E82B8C6429C1D41300E83911 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = E82B8C6329C1D41300E83911 /* GoogleSignIn */; };
@@ -67,7 +67,7 @@
 		D371299929C77F5A0049C9F6 /* ParkingDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingDetailsView.swift; sourceTree = "<group>"; };
 		D371299C29C9EE840049C9F6 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		D371299E29C9FA1B0049C9F6 /* SubstractingDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubstractingDates.swift; sourceTree = "<group>"; };
-		D37129A029CA515C0049C9F6 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		D37129A029CA515C0049C9F6 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		E82B8C5E29C1D27B00E83911 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		E82B8C6029C1D2FF00E83911 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E82B8C6729C1D44A00E83911 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -236,7 +236,7 @@
 		D371299B29C9EE710049C9F6 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
-				D37129A029CA515C0049C9F6 /* CalendarViewModel.swift */,
+				D37129A029CA515C0049C9F6 /* CalendarViewController.swift */,
 				D371299C29C9EE840049C9F6 /* CalendarView.swift */,
 			);
 			path = Calendar;
@@ -394,7 +394,7 @@
 				D371299A29C77F5A0049C9F6 /* ParkingDetailsView.swift in Sources */,
 				E82B8C5F29C1D27B00E83911 /* AuthManager.swift in Sources */,
 				07539A5729BCF45E00BF02BB /* LaunchView.swift in Sources */,
-				D37129A129CA515C0049C9F6 /* CalendarViewModel.swift in Sources */,
+				D37129A129CA515C0049C9F6 /* CalendarViewController.swift in Sources */,
 				07539A4F29BCEBF000BF02BB /* RegisterView.swift in Sources */,
 				D371298F29C28C850049C9F6 /* ParkingStruct.swift in Sources */,
 				07539A5229BCECDC00BF02BB /* LogoView.swift in Sources */,
