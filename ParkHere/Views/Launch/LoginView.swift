@@ -99,7 +99,7 @@ struct LoginView: View {
                 label: {
                     Text("Don't have an account?")
                         .foregroundColor(.secondary)
-                    Text("Sign up")
+                    Text("Sing up")
                         .foregroundColor(.black)
                 }
              

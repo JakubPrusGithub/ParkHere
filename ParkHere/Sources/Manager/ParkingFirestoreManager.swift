@@ -9,11 +9,10 @@ import Foundation
 import FirebaseFirestore
 import FirebaseCore
 
-@MainActor
 class ParkingFirestoreManager: ObservableObject {
     
     let db = Firestore.firestore()
-    @Published var firestoreParkings = [ParkingStruct]()
+    var firestoreParkings = [ParkingStruct]()
     
     init(){
         let collection = db.collection("parking")
