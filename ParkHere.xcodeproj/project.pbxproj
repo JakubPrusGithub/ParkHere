@@ -39,6 +39,7 @@
 		D3EB5CA629CE2D520041A2E0 /* AddTestTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EB5CA529CE2D520041A2E0 /* AddTestTicketView.swift */; };
 		D3EB5CA929D0D9160041A2E0 /* ReservationSpotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EB5CA829D0D9160041A2E0 /* ReservationSpotViewModel.swift */; };
 		D3EB5CAB29D0D9420041A2E0 /* ParkingTicket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EB5CAA29D0D9420041A2E0 /* ParkingTicket.swift */; };
+		D3EB5CAE29D0F6D00041A2E0 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EB5CAD29D0F6D00041A2E0 /* SummaryView.swift */; };
 		E82B8C5F29C1D27B00E83911 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B8C5E29C1D27B00E83911 /* AuthManager.swift */; };
 		E82B8C6129C1D2FF00E83911 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B8C6029C1D2FF00E83911 /* LoginView.swift */; };
 		E82B8C6429C1D41300E83911 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = E82B8C6329C1D41300E83911 /* GoogleSignIn */; };
@@ -78,6 +79,7 @@
 		D3EB5CA529CE2D520041A2E0 /* AddTestTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTestTicketView.swift; sourceTree = "<group>"; };
 		D3EB5CA829D0D9160041A2E0 /* ReservationSpotViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationSpotViewModel.swift; sourceTree = "<group>"; };
 		D3EB5CAA29D0D9420041A2E0 /* ParkingTicket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingTicket.swift; sourceTree = "<group>"; };
+		D3EB5CAD29D0F6D00041A2E0 /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 		E82B8C5E29C1D27B00E83911 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		E82B8C6029C1D2FF00E83911 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E82B8C6729C1D44A00E83911 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -266,9 +268,9 @@
 		D3EB5CA229CDAA8C0041A2E0 /* Reservation */ = {
 			isa = PBXGroup;
 			children = (
-				D3EB5CAC29D0F6400041A2E0 /* Summary */,
 				D371299B29C9EE710049C9F6 /* Calendar */,
 				D3EB5CA729D0D8B20041A2E0 /* Spot */,
+				D3EB5CAC29D0F6400041A2E0 /* Summary */,
 			);
 			path = Reservation;
 			sourceTree = "<group>";
@@ -285,6 +287,7 @@
 		D3EB5CAC29D0F6400041A2E0 /* Summary */ = {
 			isa = PBXGroup;
 			children = (
+				D3EB5CAD29D0F6D00041A2E0 /* SummaryView.swift */,
 			);
 			path = Summary;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 				E82B8C6129C1D2FF00E83911 /* LoginView.swift in Sources */,
 				D3EB5CA929D0D9160041A2E0 /* ReservationSpotViewModel.swift in Sources */,
 				E8D3E13829C3119600029D7A /* MainMapView.swift in Sources */,
+				D3EB5CAE29D0F6D00041A2E0 /* SummaryView.swift in Sources */,
 				D3EB5CA629CE2D520041A2E0 /* AddTestTicketView.swift in Sources */,
 				E8D3E13E29C333DB00029D7A /* ParkingResultSearchView.swift in Sources */,
 				D371299F29C9FA1B0049C9F6 /* SubstractingDates.swift in Sources */,

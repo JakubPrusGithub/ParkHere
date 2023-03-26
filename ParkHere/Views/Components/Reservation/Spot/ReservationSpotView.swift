@@ -13,8 +13,8 @@ struct ReservationSpotView: View {
     @StateObject var controller: ReservationSpotViewModel
     
     var body: some View {
-        NavigationView {
-            VStack(alignment: .leading){
+        NavigationStack {
+            VStack(alignment: .leading, spacing: 25){
                 Text("Please choose your spot")
                     .padding(.vertical, 30)
                     .font(.title2)
@@ -38,10 +38,10 @@ struct ReservationSpotView: View {
                 
                 Spacer()
                 
-                // MARK: Continue & Back
+                // MARK: Continue
                 VStack{
                     NavigationLink("Continue"){
-                        Text("xd")
+                        SummaryView(summaryTicket: controller.createTicket())
                     }
                     .buttonStyle(.sign)
                     .padding(.vertical)
@@ -60,6 +60,6 @@ struct ReservationSpotView: View {
 
 struct ReservationSpotView_Previews: PreviewProvider {
     static var previews: some View {
-        ReservationSpotView(controller: ReservationSpotViewModel(myStartDate: Date(), myEndDate: Date(), parking: .sampleParking))
+        ReservationSpotView(controller: ReservationSpotViewModel(myStartDate: Date(), myEndDate: Date(), parking: .sampleParking, cost: 0))
     }
 }

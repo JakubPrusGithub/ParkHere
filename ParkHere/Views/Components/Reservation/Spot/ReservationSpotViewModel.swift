@@ -13,23 +13,30 @@ import FirebaseFirestoreSwift
 @MainActor
 class ReservationSpotViewModel: ObservableObject{
     
+    // Firebase
     @Published var reservedTickets = [ParkingTicket]()
     var allTickets = [ParkingTicket]()
     let db = Firestore.firestore()
+    
+    // Data from CalendarView
     let myStartDate: Date
     let myEndDate: Date
     let parking: ParkingStruct
+    let cost: Double
+    
+    // Actual view data
     @Published var levels = [String]()
     @Published var quantity = [Int]()
     @Published var selectedLevel = "A"
     @Published var selectedNumber = 0
     
-    init(reservedTickets: [ParkingTicket] = [ParkingTicket](), allTickets: [ParkingTicket] = [ParkingTicket](), myStartDate: Date, myEndDate: Date, parking: ParkingStruct) {
+    init(reservedTickets: [ParkingTicket] = [ParkingTicket](), allTickets: [ParkingTicket] = [ParkingTicket](), myStartDate: Date, myEndDate: Date, parking: ParkingStruct, cost: Double) {
         self.reservedTickets = reservedTickets
         self.allTickets = allTickets
         self.myStartDate = myStartDate
         self.myEndDate = myEndDate
         self.parking = parking
+        self.cost = cost
         fetchTickets()
         
         levels = allParkingLevels(parking.level)
@@ -41,7 +48,7 @@ class ReservationSpotViewModel: ObservableObject{
         allTickets = []
         reservedTickets = []
         let ref = db.collection("ticket")
-        let query = ref.whereField("parkingName", isEqualTo: "Parking") // zmienic isEqualtTo na wybrany parking
+        let query = ref.whereField("parkingName", isEqualTo: parking.name)
         query.getDocuments { querySnapshot, err in
             guard let results = querySnapshot else { return print("Error getting documents: \(err!.localizedDescription)")}
             for result in results.documents{
@@ -56,6 +63,11 @@ class ReservationSpotViewModel: ObservableObject{
                 }
             }
         }
+    }
+    
+    func createTicket() -> ParkingTicket {
+        let spotNumber = "\(selectedLevel)" + "\(selectedNumber)"
+        return ParkingTicket(name: "Imie Nazwisko", licenseNumber: "AB 12345", parkingName: parking.name, address: parking.address, spotNumber: spotNumber, startDate: myStartDate, endDate: myEndDate, price: cost)
     }
     
     // Shows only unoccupied parking numbers based on level

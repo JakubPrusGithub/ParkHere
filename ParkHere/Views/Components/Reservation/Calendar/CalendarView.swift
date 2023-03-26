@@ -53,9 +53,10 @@ struct CalendarView: View {
                 
                 Spacer()
                 
+                // MARK: Continue
                 VStack{
                     NavigationLink("Continue"){
-                        ReservationSpotView(controller: ReservationSpotViewModel(myStartDate: controller.startDate, myEndDate: controller.endDate, parking: parking))
+                        ReservationSpotView(controller: ReservationSpotViewModel(myStartDate: controller.startDate, myEndDate: controller.endDate, parking: parking, cost: Double(controller.calcCost(perHour: parking.cost)) ?? 0))
                     }
                     .disabled(controller.calcTime() == "None")
                     .buttonStyle(.sign)
