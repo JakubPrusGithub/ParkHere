@@ -51,9 +51,11 @@ struct CalendarView: View {
                         .bold()
                 }
                 
+                Spacer()
+                
                 VStack{
                     NavigationLink("Continue"){
-                        Text("xd")
+                        ReservationSpotView(controller: ReservationSpotViewModel(myStartDate: controller.startDate, myEndDate: controller.endDate, parking: parking))
                     }
                     .disabled(controller.calcTime() == "None")
                     .buttonStyle(.sign)
@@ -64,6 +66,7 @@ struct CalendarView: View {
                     .foregroundColor(.gray)
                     .padding(.top, -10)
                 }
+                
                 
             }
             .navigationTitle("Reservation date")

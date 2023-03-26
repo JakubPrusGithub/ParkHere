@@ -5,6 +5,7 @@
 //  Created by Jakub Prus on 24/03/2023.
 //
 
+
 import SwiftUI
 import Firebase
 import FirebaseFirestore
@@ -77,17 +78,17 @@ struct AddTestTicketView_Previews: PreviewProvider {
     }
 }
 
-struct ParkingTicket: Codable, Identifiable, Hashable {
-    @DocumentID var id: String?
-    let name: String
-    let licenseNumber: String
-    let parkingName: String
-    let address: String
-    let spotNumber: String
-    let startDate: Date
-    let endDate: Date
-    let price: Double
-}
+//struct ParkingTicket: Codable, Identifiable, Hashable {
+//    @DocumentID var id: String?
+//    let name: String
+//    let licenseNumber: String
+//    let parkingName: String
+//    let address: String
+//    let spotNumber: String
+//    let startDate: Date
+//    let endDate: Date
+//    let price: Double
+//}
 
 extension AddTestTicketView {
     
@@ -156,3 +157,4 @@ extension AddTestTicketView {
 
     }
 }
+
