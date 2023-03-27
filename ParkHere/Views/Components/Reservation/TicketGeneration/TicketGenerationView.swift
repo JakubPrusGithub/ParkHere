@@ -11,6 +11,7 @@ struct TicketGenerationView: View {
     
     @Environment(\.dismiss) private var dismiss
     @StateObject var qrcode = QRgenerator()
+    var ticket: ParkingTicket
     
     var body: some View {
         NavigationStack{
@@ -18,13 +19,13 @@ struct TicketGenerationView: View {
                 
                 // MARK: QR Code
                 VStack{
-                    Image(uiImage: qrcode.generateQRCode(from: "ASD"))
+                    Image(uiImage: qrcode.generateQRCode(from: ticket))
                         .resizable()
                         .interpolation(.none)
                         .scaledToFit()
                         .frame(width: 250, height: 250)
-                    Text("QRCODE")
-                        .font(.title)
+                    Text(qrcode.hashTicket(ticket: ticket))
+                        .font(.title3)
                         .foregroundColor(.customGrey)
                         .bold()
                 }
@@ -55,6 +56,6 @@ struct TicketGenerationView: View {
 
 struct TicketGenerationView_Previews: PreviewProvider {
     static var previews: some View {
-        TicketGenerationView()
+        TicketGenerationView(ticket: .sampleTicket)
     }
 }
