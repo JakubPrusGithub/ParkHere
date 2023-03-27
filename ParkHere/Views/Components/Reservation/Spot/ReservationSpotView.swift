@@ -10,7 +10,12 @@ import SwiftUI
 struct ReservationSpotView: View {
     
     @Environment(\.dismiss) private var dismiss
-    @StateObject var controller: ReservationSpotViewModel
+    @StateObject var controller = ReservationSpotViewModel()
+    let myStartDate: Date
+    let myEndDate: Date
+    let parking: ParkingStruct
+    let cost: Double
+    
     
     var body: some View {
         NavigationStack {
@@ -54,12 +59,15 @@ struct ReservationSpotView: View {
             }
             .padding()
             .navigationTitle("Parking spot")
+            .onAppear{
+                controller.startFetching(start: myStartDate, end: myEndDate, parking: parking, cost: cost)
+            }
         }
     }
 }
 
 struct ReservationSpotView_Previews: PreviewProvider {
     static var previews: some View {
-        ReservationSpotView(controller: ReservationSpotViewModel(myStartDate: Date(), myEndDate: Date(), parking: .sampleParking, cost: 0))
+        ReservationSpotView(myStartDate: Date(), myEndDate: Date(), parking: .sampleParking, cost: 0.0)
     }
 }

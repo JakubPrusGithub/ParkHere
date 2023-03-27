@@ -27,10 +27,10 @@ struct ParkHereApp: App {
     
     var body: some Scene {
         WindowGroup {
-            //MainMapView(selectedTab: $selectedTab)
+            MainMapView(selectedTab: $selectedTab)
             //AddTestTicketView()
             //CalendarView(parking: .sampleParking)
-            ReservationSpotView(controller: ReservationSpotViewModel(myStartDate: Date(), myEndDate: Date(), parking: .sampleParking, cost: 0))
+            //ReservationSpotView(controller: ReservationSpotViewModel(myStartDate: Date(), myEndDate: Date(), parking: .sampleParking, cost: 10))
 //            if auth.user == nil {
 //                LoginView()
 //                    .environmentObject(auth)

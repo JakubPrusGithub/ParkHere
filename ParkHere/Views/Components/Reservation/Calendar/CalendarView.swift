@@ -12,6 +12,7 @@ struct CalendarView: View {
     let parking: ParkingStruct
     @Environment(\.dismiss) private var dismiss
     @StateObject var controller = CalendarViewModel()
+    
     @State private var invalidTime = false
     
     var body: some View {
@@ -56,7 +57,11 @@ struct CalendarView: View {
                 // MARK: Continue
                 VStack{
                     NavigationLink("Continue"){
-                        ReservationSpotView(controller: ReservationSpotViewModel(myStartDate: controller.startDate, myEndDate: controller.endDate, parking: parking, cost: Double(controller.calcCost(perHour: parking.cost)) ?? 0))
+                        //ReservationSpotView(controller: ReservationSpotViewModel())
+                        ReservationSpotView(myStartDate: controller.startDate, myEndDate: controller.endDate, parking: parking, cost: Double(controller.calcCost(perHour: parking.cost)) ?? 0)
+                        //ReservationSpotView(controller: ReservationSpotViewModel(myStartDate: controller.startDate, myEndDate: controller.endDate, parking: parking, cost: Double(controller.calcCost(perHour: parking.cost)) ?? 0))
+                        //print(ReservationSpotViewModel(myStartDate: controller.startDate, myEndDate: controller.endDate, parking: parking, cost: Double(controller.calcCost(perHour: parking.cost)) ?? 0))
+                        //ReservationSpotView(controller: controller.createReservationVM())
                     }
                     .disabled(controller.calcTime() == "None")
                     .buttonStyle(.sign)

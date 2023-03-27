@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 class CalendarViewModel: ObservableObject {
     @Published var startDate = Date().addingTimeInterval(900)
     @Published var endDate = Date().addingTimeInterval(900)
@@ -67,6 +68,10 @@ class CalendarViewModel: ObservableObject {
         else {
             return String("\(minutesDiff) \(pluralMinutes ? "minutes" : "minute")")
         }
+    }
+    
+    func createReservationVM() -> ReservationSpotViewModel{
+        return ReservationSpotViewModel(myStartDate: startDate, myEndDate: endDate, parking: .sampleParking, cost: Double(calcCost(perHour: 10)) ?? 0)
     }
     
     func calcCost(perHour: Double) -> String {

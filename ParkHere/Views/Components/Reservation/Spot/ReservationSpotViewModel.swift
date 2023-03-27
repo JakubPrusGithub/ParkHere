@@ -19,10 +19,10 @@ class ReservationSpotViewModel: ObservableObject{
     let db = Firestore.firestore()
     
     // Data from CalendarView
-    let myStartDate: Date
-    let myEndDate: Date
-    let parking: ParkingStruct
-    let cost: Double
+    var myStartDate = Date()
+    var myEndDate = Date()
+    var parking = ParkingStruct.sampleParking
+    var cost = Double()
     
     // Actual view data
     @Published var levels = [String]()
@@ -30,17 +30,24 @@ class ReservationSpotViewModel: ObservableObject{
     @Published var selectedLevel = "A"
     @Published var selectedNumber = 0
     
-    init(reservedTickets: [ParkingTicket] = [ParkingTicket](), allTickets: [ParkingTicket] = [ParkingTicket](), myStartDate: Date, myEndDate: Date, parking: ParkingStruct, cost: Double) {
+    init(reservedTickets: [ParkingTicket] = [ParkingTicket](), allTickets: [ParkingTicket] = [ParkingTicket](), myStartDate: Date = Date(), myEndDate: Date = Date(), parking: ParkingStruct = .sampleParking, cost: Double = 0.0) {
         self.reservedTickets = reservedTickets
         self.allTickets = allTickets
         self.myStartDate = myStartDate
         self.myEndDate = myEndDate
         self.parking = parking
         self.cost = cost
-        fetchTickets()
-        
+    }
+    
+    // On appear
+    func startFetching(start: Date, end: Date, parking: ParkingStruct, cost: Double){
+        self.myStartDate = start
+        self.myEndDate = end
+        self.parking = parking
+        self.cost = cost
         levels = allParkingLevels(parking.level)
         quantity = Array(1...parking.quantity)
+        fetchTickets()
     }
     
     // Downloading all tickets from firestore based on selected parking
