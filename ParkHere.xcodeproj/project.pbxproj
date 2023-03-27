@@ -26,6 +26,8 @@
 		D328275129BB5C1A00B1677A /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D328275029BB5C1A00B1677A /* FirebaseStorage */; };
 		D328275429BB5E5D00B1677A /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D328275329BB5E5D00B1677A /* FirebaseFirestoreSwift */; };
 		D328275629BB5E6400B1677A /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D328275529BB5E6400B1677A /* FirebaseDatabaseSwift */; };
+		D339B6B929D22A7D00B69FDD /* TicketGenerationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D339B6B829D22A7D00B69FDD /* TicketGenerationView.swift */; };
+		D339B6BB29D2317E00B69FDD /* QRgenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D339B6BA29D2317E00B69FDD /* QRgenerator.swift */; };
 		D371298F29C28C850049C9F6 /* ParkingStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371298E29C28C850049C9F6 /* ParkingStruct.swift */; };
 		D371299329C5147F0049C9F6 /* ParkingFirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371299229C5147F0049C9F6 /* ParkingFirestoreManager.swift */; };
 		D371299629C6784E0049C9F6 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371299529C6784E0049C9F6 /* SearchBarView.swift */; };
@@ -66,6 +68,8 @@
 		D328273229B6149200B1677A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D328273529B6149200B1677A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D328274529BB5AB000B1677A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D339B6B829D22A7D00B69FDD /* TicketGenerationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketGenerationView.swift; sourceTree = "<group>"; };
+		D339B6BA29D2317E00B69FDD /* QRgenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRgenerator.swift; sourceTree = "<group>"; };
 		D371298E29C28C850049C9F6 /* ParkingStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingStruct.swift; sourceTree = "<group>"; };
 		D371299229C5147F0049C9F6 /* ParkingFirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingFirestoreManager.swift; sourceTree = "<group>"; };
 		D371299529C6784E0049C9F6 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
@@ -230,6 +234,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D339B6B729D227B600B69FDD /* TicketGeneration */ = {
+			isa = PBXGroup;
+			children = (
+				D339B6B829D22A7D00B69FDD /* TicketGenerationView.swift */,
+			);
+			path = TicketGeneration;
+			sourceTree = "<group>";
+		};
 		D371298D29C28C570049C9F6 /* Structs */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,6 +283,7 @@
 				D371299B29C9EE710049C9F6 /* Calendar */,
 				D3EB5CA729D0D8B20041A2E0 /* Spot */,
 				D3EB5CAC29D0F6400041A2E0 /* Summary */,
+				D339B6B729D227B600B69FDD /* TicketGeneration */,
 			);
 			path = Reservation;
 			sourceTree = "<group>";
@@ -307,6 +320,7 @@
 				E82B8C5E29C1D27B00E83911 /* AuthManager.swift */,
 				D371299229C5147F0049C9F6 /* ParkingFirestoreManager.swift */,
 				D3EB5CA029CDAA610041A2E0 /* TicketDownloader.swift */,
+				D339B6BA29D2317E00B69FDD /* QRgenerator.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -431,6 +445,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D339B6B929D22A7D00B69FDD /* TicketGenerationView.swift in Sources */,
 				D371299629C6784E0049C9F6 /* SearchBarView.swift in Sources */,
 				07539A5529BCEE0600BF02BB /* AuthButtonView.swift in Sources */,
 				D371299A29C77F5A0049C9F6 /* ParkingDetailsView.swift in Sources */,
@@ -462,6 +477,7 @@
 				D371299829C77F460049C9F6 /* ParkingDetailsPreview.swift in Sources */,
 				07539A3E29BCD2CD00BF02BB /* Color.swift in Sources */,
 				D328272F29B6149000B1677A /* ParkHereApp.swift in Sources */,
+				D339B6BB29D2317E00B69FDD /* QRgenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
