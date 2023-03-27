@@ -22,11 +22,12 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct ParkHereApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
+    @StateObject private var auth = AuthManager()
+    @State private var selectedTab: Tab = .map
+    
     var body: some Scene {
         WindowGroup {
             MainMapView(selectedTab: $selectedTab)
-<<<<<<< HEAD
-=======
             //AddTestTicketView()
             //CalendarView(parking: .sampleParking)
             //ReservationSpotView(controller: ReservationSpotViewModel(myStartDate: Date(), myEndDate: Date(), parking: .sampleParking, cost: 10))
@@ -46,7 +47,6 @@ struct ParkHereApp: App {
 //                        .environmentObject(auth)
 //                }
 //            }
->>>>>>> reservationSpotView
         }
     }
 }
