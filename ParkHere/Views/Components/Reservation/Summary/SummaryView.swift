@@ -83,7 +83,7 @@ struct SummaryView: View {
                 // MARK: Checkout
                 VStack{
                     NavigationLink("Checkout"){
-                        //checkout view
+                        //generating qr code and ticket
                     }
                     .buttonStyle(.sign)
                     .padding(.vertical)
