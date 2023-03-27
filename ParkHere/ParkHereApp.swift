@@ -25,6 +25,28 @@ struct ParkHereApp: App {
     var body: some Scene {
         WindowGroup {
             MainMapView(selectedTab: $selectedTab)
+<<<<<<< HEAD
+=======
+            //AddTestTicketView()
+            //CalendarView(parking: .sampleParking)
+            //ReservationSpotView(controller: ReservationSpotViewModel(myStartDate: Date(), myEndDate: Date(), parking: .sampleParking, cost: 10))
+//            if auth.user == nil {
+//                LoginView()
+//                    .environmentObject(auth)
+//            } else {
+//                switch selectedTab {
+//                case .ticket:
+//                    TicketView(selectedTab: $selectedTab)
+//                        .environmentObject(auth)
+//                case .map:
+//                    MainMapView(selectedTab: $selectedTab)
+//                        .environmentObject(auth)
+//                case .profil:
+//                    ProfilView(selectedTab: $selectedTab)
+//                        .environmentObject(auth)
+//                }
+//            }
+>>>>>>> reservationSpotView
         }
     }
 }
