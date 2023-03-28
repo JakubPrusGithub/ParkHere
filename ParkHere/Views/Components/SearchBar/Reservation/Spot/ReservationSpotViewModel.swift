@@ -21,7 +21,7 @@ class ReservationSpotViewModel: ObservableObject{
     // Data from CalendarView
     var myStartDate = Date()
     var myEndDate = Date()
-    var parking = ParkingStruct.sampleParking
+    var parking = ParkingModel.sampleParking
     var cost = Double()
     
     // Actual view data
@@ -30,7 +30,7 @@ class ReservationSpotViewModel: ObservableObject{
     @Published var selectedLevel = "A"
     @Published var selectedNumber = 0
     
-    init(reservedTickets: [ParkingTicket] = [ParkingTicket](), allTickets: [ParkingTicket] = [ParkingTicket](), myStartDate: Date = Date(), myEndDate: Date = Date(), parking: ParkingStruct = .sampleParking, cost: Double = 0.0) {
+    init(reservedTickets: [ParkingTicket] = [ParkingTicket](), allTickets: [ParkingTicket] = [ParkingTicket](), myStartDate: Date = Date(), myEndDate: Date = Date(), parking: ParkingModel = .sampleParking, cost: Double = 0.0) {
         self.reservedTickets = reservedTickets
         self.allTickets = allTickets
         self.myStartDate = myStartDate
@@ -40,7 +40,7 @@ class ReservationSpotViewModel: ObservableObject{
     }
     
     // On appear
-    func startFetching(start: Date, end: Date, parking: ParkingStruct, cost: Double){
+    func startFetching(start: Date, end: Date, parking: ParkingModel, cost: Double){
         self.myStartDate = start
         self.myEndDate = end
         self.parking = parking

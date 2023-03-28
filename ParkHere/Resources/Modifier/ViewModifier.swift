@@ -24,6 +24,11 @@ extension View {
     func tabBarItem(tab: TabBarItem, selection: Binding<TabBarItem>) -> some View {
         modifier(TabBarItemViewModifier(tab: tab, selection: selection))
     }
+    
+    //4
+    func shadowBorderBackground() -> some View {
+        modifier(ShadowBorderBackgroundModifier())
+    }
 }
 
 // MARK: #1
@@ -67,7 +72,6 @@ struct CustomBackgroundModifier: ViewModifier {
     }
 }
 
-
 // MARK: #3
 struct TabBarItemViewModifier: ViewModifier {
     let tab: TabBarItem
@@ -79,3 +83,15 @@ struct TabBarItemViewModifier: ViewModifier {
     }
 }
 
+// MARK: #4
+struct ShadowBorderBackgroundModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .padding()
+            .frame(maxWidth: .infinity)
+            .fontWeight(.semibold)
+            .background(.white)
+            .cornerRadius(20)
+            .shadow(radius: 1)
+    }
+}

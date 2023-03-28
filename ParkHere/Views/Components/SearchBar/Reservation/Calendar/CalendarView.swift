@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CalendarView: View {
     
-    let parking: ParkingStruct
+    let parking: ParkingModel
     @Environment(\.dismiss) private var dismiss
     @StateObject var controller = CalendarViewModel()
     

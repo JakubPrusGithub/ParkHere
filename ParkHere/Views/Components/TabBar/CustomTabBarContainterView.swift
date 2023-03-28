@@ -31,6 +31,6 @@ struct CustomTabBarContainterView<Content: View> : View {
 }
 struct CustomTabBarContainterView_Previews: PreviewProvider {
     static var previews: some View {
-        CustomTabBarContainterView(selection: .constant(.map)) { MainMapView() }
+        CustomTabBarContainterView(selection: .constant(.map)) { MapView() }
     }
 }

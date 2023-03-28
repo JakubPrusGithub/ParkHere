@@ -71,7 +71,7 @@ class CalendarViewModel: ObservableObject {
     }
     
     func createReservationVM() -> ReservationSpotViewModel{
-        return ReservationSpotViewModel(myStartDate: startDate, myEndDate: endDate, parking: .sampleParking, cost: Double(calcCost(perHour: 10)) ?? 0)
+        return ReservationSpotViewModel(myStartDate: startDate, myEndDate: endDate, parking: ParkingModel.sampleParking, cost: Double(calcCost(perHour: 10)) ?? 0)
     }
     
     func calcCost(perHour: Double) -> String {

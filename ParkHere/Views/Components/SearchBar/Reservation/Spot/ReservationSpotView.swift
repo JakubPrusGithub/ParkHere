@@ -13,7 +13,7 @@ struct ReservationSpotView: View {
     @StateObject var controller = ReservationSpotViewModel()
     let myStartDate: Date
     let myEndDate: Date
-    let parking: ParkingStruct
+    let parking: ParkingModel
     let cost: Double
     
     
@@ -35,7 +35,7 @@ struct ReservationSpotView: View {
                 })
                 .pickerStyle(.segmented)
                 Picker("Please select your parking number", selection: $controller.selectedNumber){
-                    ForEach(controller.quantity, id: \.self){
+                    ForEach(controller.quantity, id: \.self) {
                         Text($0.description)
                     }
                 }
@@ -68,6 +68,6 @@ struct ReservationSpotView: View {
 
 struct ReservationSpotView_Previews: PreviewProvider {
     static var previews: some View {
-        ReservationSpotView(myStartDate: Date(), myEndDate: Date(), parking: .sampleParking, cost: 0.0)
+        ReservationSpotView(myStartDate: Date(), myEndDate: Date(), parking: .sampleParking, cost: 9.99)
     }
 }
