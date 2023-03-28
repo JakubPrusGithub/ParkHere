@@ -47,7 +47,7 @@
 		E8D3E13829C3119600029D7A /* MainMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D3E13729C3119600029D7A /* MainMapView.swift */; };
 		E8D3E13A29C31BBF00029D7A /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D3E13929C31BBF00029D7A /* Image.swift */; };
 		E8D3E13E29C333DB00029D7A /* ParkingResultSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D3E13D29C333DB00029D7A /* ParkingResultSearchView.swift */; };
-		E8D3E14229C33B6A00029D7A /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D3E14129C33B6A00029D7A /* TabBarView.swift */; };
+		E8D3E14229C33B6A00029D7A /* TabBarView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D3E14129C33B6A00029D7A /* TabBarView2.swift */; };
 		E8E479FB29D2C417009512AC /* ViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E479FA29D2C417009512AC /* ViewModifier.swift */; };
 		E8E479FD29D2C42E009512AC /* GeometryEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E479FC29D2C42E009512AC /* GeometryEffect.swift */; };
 		E8E47A0029D2C46A009512AC /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E479FF29D2C46A009512AC /* CustomTextField.swift */; };
@@ -62,6 +62,11 @@
 		E8E47A1C29D2C7CD009512AC /* CarBrandsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E47A1B29D2C7CD009512AC /* CarBrandsView.swift */; };
 		E8E47A1E29D2C7F5009512AC /* CloseButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E47A1D29D2C7F5009512AC /* CloseButtonView.swift */; };
 		E8E47A2129D2E003009512AC /* SignInGoogleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E47A2029D2E003009512AC /* SignInGoogleHelper.swift */; };
+		E8E47A2629D302F0009512AC /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E47A2529D302F0009512AC /* AppView.swift */; };
+		E8E47A2829D30351009512AC /* CustomTabBarContainterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E47A2729D30351009512AC /* CustomTabBarContainterView.swift */; };
+		E8E47A2B29D303B9009512AC /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E47A2A29D303B9009512AC /* CustomTabBarView.swift */; };
+		E8E47A2D29D30453009512AC /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E47A2C29D30453009512AC /* TabBarItem.swift */; };
+		E8E47A3029D30A35009512AC /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E47A2F29D30A35009512AC /* HistoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,7 +103,7 @@
 		E8D3E13729C3119600029D7A /* MainMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapView.swift; sourceTree = "<group>"; };
 		E8D3E13929C31BBF00029D7A /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		E8D3E13D29C333DB00029D7A /* ParkingResultSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingResultSearchView.swift; sourceTree = "<group>"; };
-		E8D3E14129C33B6A00029D7A /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		E8D3E14129C33B6A00029D7A /* TabBarView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView2.swift; sourceTree = "<group>"; };
 		E8E479FA29D2C417009512AC /* ViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifier.swift; sourceTree = "<group>"; };
 		E8E479FC29D2C42E009512AC /* GeometryEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryEffect.swift; sourceTree = "<group>"; };
 		E8E479FF29D2C46A009512AC /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -113,6 +118,11 @@
 		E8E47A1B29D2C7CD009512AC /* CarBrandsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarBrandsView.swift; sourceTree = "<group>"; };
 		E8E47A1D29D2C7F5009512AC /* CloseButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButtonView.swift; sourceTree = "<group>"; };
 		E8E47A2029D2E003009512AC /* SignInGoogleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInGoogleHelper.swift; sourceTree = "<group>"; };
+		E8E47A2529D302F0009512AC /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		E8E47A2729D30351009512AC /* CustomTabBarContainterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarContainterView.swift; sourceTree = "<group>"; };
+		E8E47A2A29D303B9009512AC /* CustomTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
+		E8E47A2C29D30453009512AC /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		E8E47A2F29D30A35009512AC /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +191,7 @@
 			children = (
 				E8A12D4F29C459740090F8D8 /* Ticket */,
 				D3C6031129C25A3E0071286E /* Main */,
+				E8E47A2E29D30A2A009512AC /* History */,
 				E8A12D5029C4597C0090F8D8 /* Profile */,
 			);
 			path = Core;
@@ -359,7 +370,7 @@
 		E8D3E14029C33B6000029D7A /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				E8D3E14129C33B6A00029D7A /* TabBarView.swift */,
+				E8D3E14129C33B6A00029D7A /* TabBarView2.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -489,8 +500,20 @@
 		E8E47A2429D30276009512AC /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				E8E47A2529D302F0009512AC /* AppView.swift */,
+				E8E47A2729D30351009512AC /* CustomTabBarContainterView.swift */,
+				E8E47A2A29D303B9009512AC /* CustomTabBarView.swift */,
+				E8E47A2C29D30453009512AC /* TabBarItem.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		E8E47A2E29D30A2A009512AC /* History */ = {
+			isa = PBXGroup;
+			children = (
+				E8E47A2F29D30A35009512AC /* HistoryView.swift */,
+			);
+			path = History;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -583,6 +606,7 @@
 				E8E47A0429D2C497009512AC /* CustonNavLink.swift in Sources */,
 				D371299A29C77F5A0049C9F6 /* ParkingDetailsView.swift in Sources */,
 				E82B8C5F29C1D27B00E83911 /* AuthManager.swift in Sources */,
+				E8E47A2629D302F0009512AC /* AppView.swift in Sources */,
 				07539A5729BCF45E00BF02BB /* LaunchView.swift in Sources */,
 				E8E47A1E29D2C7F5009512AC /* CloseButtonView.swift in Sources */,
 				D37129A129CA515C0049C9F6 /* CalendarViewModel.swift in Sources */,
@@ -597,23 +621,27 @@
 				E8E47A0229D2C481009512AC /* CustomSecureField.swift in Sources */,
 				07539A5229BCECDC00BF02BB /* LogoView.swift in Sources */,
 				E8A12D5429C45A020090F8D8 /* ProfilView.swift in Sources */,
+				E8E47A2D29D30453009512AC /* TabBarItem.swift in Sources */,
 				E82B8C6129C1D2FF00E83911 /* LoginView.swift in Sources */,
 				D3EB5CA929D0D9160041A2E0 /* ReservationSpotViewModel.swift in Sources */,
 				E8D3E13829C3119600029D7A /* MainMapView.swift in Sources */,
 				D3EB5CAE29D0F6D00041A2E0 /* SummaryView.swift in Sources */,
 				D3EB5CA629CE2D520041A2E0 /* AddTestTicketView.swift in Sources */,
+				E8E47A3029D30A35009512AC /* HistoryView.swift in Sources */,
 				E8E47A0B29D2C651009512AC /* LaunchViewModel.swift in Sources */,
 				E8D3E13E29C333DB00029D7A /* ParkingResultSearchView.swift in Sources */,
 				E8E479FD29D2C42E009512AC /* GeometryEffect.swift in Sources */,
 				D371299F29C9FA1B0049C9F6 /* SubstractingDates.swift in Sources */,
 				E8E47A0629D2C5CA009512AC /* DIManager.swift in Sources */,
+				E8E47A2B29D303B9009512AC /* CustomTabBarView.swift in Sources */,
 				07539A4629BCD94400BF02BB /* HomeView.swift in Sources */,
-				E8D3E14229C33B6A00029D7A /* TabBarView.swift in Sources */,
+				E8D3E14229C33B6A00029D7A /* TabBarView2.swift in Sources */,
 				E8D3E13A29C31BBF00029D7A /* Image.swift in Sources */,
 				E8E47A0029D2C46A009512AC /* CustomTextField.swift in Sources */,
 				E8A12D5229C459FA0090F8D8 /* TicketView.swift in Sources */,
 				E8E479FB29D2C417009512AC /* ViewModifier.swift in Sources */,
 				D371299D29C9EE840049C9F6 /* CalendarView.swift in Sources */,
+				E8E47A2829D30351009512AC /* CustomTabBarContainterView.swift in Sources */,
 				D3EB5CAB29D0D9420041A2E0 /* ParkingTicket.swift in Sources */,
 				D371299329C5147F0049C9F6 /* ParkingFirestoreManager.swift in Sources */,
 				07539A4B29BCDBAA00BF02BB /* ButtonStyle.swift in Sources */,

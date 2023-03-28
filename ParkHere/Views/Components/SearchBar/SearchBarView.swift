@@ -51,6 +51,6 @@ struct SearchBarView_Previews: PreviewProvider {
     @State static var isSearching = false
     static var previews: some View {
         //SearchBarView(searchTerm: $searchTerm, isSearching: $isSearching)
-        MainMapView(selectedTab: .constant(.map))
+        MainMapView()
     }
 }

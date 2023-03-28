@@ -21,8 +21,6 @@ struct MainMapView: View {
     @State private var showParkingPreview = false
     @State private var currentParking = ParkingStruct.sampleParking
     
-    @Binding var selectedTab: Tab
-    
     var body: some View {
         NavigationStack {
             ZStack(alignment: .top) {
@@ -93,7 +91,6 @@ struct MainMapView: View {
                 } // VStack
                 .padding()
                 
-                TabBarView(selectedTab: $selectedTab)
             } // ZStack
             
         } // NavigationStack
@@ -102,7 +99,7 @@ struct MainMapView: View {
 
 struct MainMapView_Previews: PreviewProvider {
     static var previews: some View {
-        MainMapView(selectedTab: .constant(.map))
+        MainMapView()
     }
 }
 

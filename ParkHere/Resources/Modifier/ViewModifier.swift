@@ -10,16 +10,23 @@ import SwiftUI
 
 
 extension View {
+    // #1
     func fieldBackground() -> some View {
         modifier(FieldViewModifier())
     }
     
+    // #2
     func customBackground(type: CustomBackgroundModifier.ColorType) -> some View {
         modifier(CustomBackgroundModifier(type: type))
     }
+    
+    // #3
+    func tabBarItem(tab: TabBarItem, selection: Binding<TabBarItem>) -> some View {
+        modifier(TabBarItemViewModifier(tab: tab, selection: selection))
+    }
 }
 
-
+// MARK: #1
 struct FieldViewModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
@@ -35,7 +42,7 @@ struct FieldViewModifier: ViewModifier {
     }
 }
 
-
+// MARK: #2
 struct CustomBackgroundModifier: ViewModifier {
     enum ColorType { case light, dark }
     var type: ColorType
@@ -59,3 +66,16 @@ struct CustomBackgroundModifier: ViewModifier {
         
     }
 }
+
+
+// MARK: #3
+struct TabBarItemViewModifier: ViewModifier {
+    let tab: TabBarItem
+    @Binding var selection: TabBarItem
+    func body(content: Content) -> some View {
+        content
+            .opacity(selection == tab ? 1.0 : 0)
+            .preference(key: TabBarItemsPreferenceKey.self, value: [tab])
+    }
+}
+
