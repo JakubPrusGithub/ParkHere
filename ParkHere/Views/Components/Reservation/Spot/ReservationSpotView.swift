@@ -48,6 +48,7 @@ struct ReservationSpotView: View {
                     NavigationLink("Continue"){
                         SummaryView(summaryTicket: controller.createTicket())
                     }
+                    //.disabled(controller.selectedNumber == 0)
                     .buttonStyle(.sign)
                     .padding(.vertical)
                     Button("Cancel"){

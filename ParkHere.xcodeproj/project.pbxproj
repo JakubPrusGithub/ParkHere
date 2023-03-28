@@ -28,6 +28,7 @@
 		D328275629BB5E6400B1677A /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D328275529BB5E6400B1677A /* FirebaseDatabaseSwift */; };
 		D339B6B929D22A7D00B69FDD /* TicketGenerationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D339B6B829D22A7D00B69FDD /* TicketGenerationView.swift */; };
 		D339B6BB29D2317E00B69FDD /* QRgenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D339B6BA29D2317E00B69FDD /* QRgenerator.swift */; };
+		D339B6BD29D330CD00B69FDD /* NewTicketSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = D339B6BC29D330CD00B69FDD /* NewTicketSender.swift */; };
 		D371298F29C28C850049C9F6 /* ParkingStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371298E29C28C850049C9F6 /* ParkingStruct.swift */; };
 		D371299329C5147F0049C9F6 /* ParkingFirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371299229C5147F0049C9F6 /* ParkingFirestoreManager.swift */; };
 		D371299629C6784E0049C9F6 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371299529C6784E0049C9F6 /* SearchBarView.swift */; };
@@ -70,6 +71,7 @@
 		D328274529BB5AB000B1677A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D339B6B829D22A7D00B69FDD /* TicketGenerationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketGenerationView.swift; sourceTree = "<group>"; };
 		D339B6BA29D2317E00B69FDD /* QRgenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRgenerator.swift; sourceTree = "<group>"; };
+		D339B6BC29D330CD00B69FDD /* NewTicketSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTicketSender.swift; sourceTree = "<group>"; };
 		D371298E29C28C850049C9F6 /* ParkingStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingStruct.swift; sourceTree = "<group>"; };
 		D371299229C5147F0049C9F6 /* ParkingFirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingFirestoreManager.swift; sourceTree = "<group>"; };
 		D371299529C6784E0049C9F6 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 				D371299229C5147F0049C9F6 /* ParkingFirestoreManager.swift */,
 				D3EB5CA029CDAA610041A2E0 /* TicketDownloader.swift */,
 				D339B6BA29D2317E00B69FDD /* QRgenerator.swift */,
+				D339B6BC29D330CD00B69FDD /* NewTicketSender.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				E8A12D5429C45A020090F8D8 /* ProfilView.swift in Sources */,
 				E82B8C6129C1D2FF00E83911 /* LoginView.swift in Sources */,
 				D3EB5CA929D0D9160041A2E0 /* ReservationSpotViewModel.swift in Sources */,
+				D339B6BD29D330CD00B69FDD /* NewTicketSender.swift in Sources */,
 				E8D3E13829C3119600029D7A /* MainMapView.swift in Sources */,
 				D3EB5CAE29D0F6D00041A2E0 /* SummaryView.swift in Sources */,
 				D3EB5CA629CE2D520041A2E0 /* AddTestTicketView.swift in Sources */,

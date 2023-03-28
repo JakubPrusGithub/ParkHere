@@ -63,13 +63,13 @@ class ReservationSpotViewModel: ObservableObject{
                     let ticket = try result.data(as: ParkingTicket.self)
                     self.allTickets.append(ticket)
                     self.checkIfColliding(ticket: ticket)
-                    self.checkReservations(letter: self.selectedLevel)
                 }
                 catch{
                     print("Failed to decode: \(error.localizedDescription)")
                 }
             }
         }
+        self.checkReservations(letter: self.selectedLevel)
     }
     
     func createTicket() -> ParkingTicket {
@@ -86,6 +86,7 @@ class ReservationSpotViewModel: ObservableObject{
         for number in thisLevelNumbers {
             quantity = quantity.filter{$0 != number}
         }
+        self.selectedNumber = quantity[0]
     }
     
     // Checks if ticket is colliding with user's reservation

@@ -11,6 +11,7 @@ struct TicketGenerationView: View {
     
     @Environment(\.dismiss) private var dismiss
     @StateObject var qrcode = QRgenerator()
+    @StateObject var sender = NewTicketSender()
     var ticket: ParkingTicket
     
     var body: some View {
@@ -19,7 +20,7 @@ struct TicketGenerationView: View {
                 
                 // MARK: QR Code
                 VStack{
-                    Text("That's your ticket:")
+                    Text("Here is your ticket:")
                         .font(.title)
                         .foregroundColor(.customGrey)
                         .padding(.bottom, -5)
@@ -57,6 +58,12 @@ struct TicketGenerationView: View {
             }
             .padding()
             .navigationTitle("Thank you!")
+            .onAppear{
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    sender.sendNewTicket(ticket: ticket, documentID: qrcode.hashedTicketString)
+                    print("juz")
+                }
+            }
         }
     }
 }
