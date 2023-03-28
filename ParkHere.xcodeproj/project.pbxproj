@@ -29,6 +29,7 @@
 		D339B6B929D22A7D00B69FDD /* TicketGenerationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D339B6B829D22A7D00B69FDD /* TicketGenerationView.swift */; };
 		D339B6BB29D2317E00B69FDD /* QRgenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D339B6BA29D2317E00B69FDD /* QRgenerator.swift */; };
 		D339B6BD29D330CD00B69FDD /* NewTicketSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = D339B6BC29D330CD00B69FDD /* NewTicketSender.swift */; };
+		D339B6BF29D3815C00B69FDD /* TicketListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = D339B6BE29D3815C00B69FDD /* TicketListener.swift */; };
 		D371298F29C28C850049C9F6 /* ParkingStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371298E29C28C850049C9F6 /* ParkingStruct.swift */; };
 		D371299329C5147F0049C9F6 /* ParkingFirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371299229C5147F0049C9F6 /* ParkingFirestoreManager.swift */; };
 		D371299629C6784E0049C9F6 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371299529C6784E0049C9F6 /* SearchBarView.swift */; };
@@ -72,6 +73,7 @@
 		D339B6B829D22A7D00B69FDD /* TicketGenerationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketGenerationView.swift; sourceTree = "<group>"; };
 		D339B6BA29D2317E00B69FDD /* QRgenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRgenerator.swift; sourceTree = "<group>"; };
 		D339B6BC29D330CD00B69FDD /* NewTicketSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTicketSender.swift; sourceTree = "<group>"; };
+		D339B6BE29D3815C00B69FDD /* TicketListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketListener.swift; sourceTree = "<group>"; };
 		D371298E29C28C850049C9F6 /* ParkingStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingStruct.swift; sourceTree = "<group>"; };
 		D371299229C5147F0049C9F6 /* ParkingFirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingFirestoreManager.swift; sourceTree = "<group>"; };
 		D371299529C6784E0049C9F6 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 				D3EB5CA029CDAA610041A2E0 /* TicketDownloader.swift */,
 				D339B6BA29D2317E00B69FDD /* QRgenerator.swift */,
 				D339B6BC29D330CD00B69FDD /* NewTicketSender.swift */,
+				D339B6BE29D3815C00B69FDD /* TicketListener.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 				D339B6BD29D330CD00B69FDD /* NewTicketSender.swift in Sources */,
 				E8D3E13829C3119600029D7A /* MainMapView.swift in Sources */,
 				D3EB5CAE29D0F6D00041A2E0 /* SummaryView.swift in Sources */,
+				D339B6BF29D3815C00B69FDD /* TicketListener.swift in Sources */,
 				D3EB5CA629CE2D520041A2E0 /* AddTestTicketView.swift in Sources */,
 				E8D3E13E29C333DB00029D7A /* ParkingResultSearchView.swift in Sources */,
 				D371299F29C9FA1B0049C9F6 /* SubstractingDates.swift in Sources */,
@@ -610,7 +614,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ParkHere/Preview Content\"";
-				DEVELOPMENT_TEAM = 8S5QQT5ZUQ;
+				DEVELOPMENT_TEAM = 2637HTLV24;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ParkHere/Info.plist;
@@ -618,12 +622,13 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = JakubPrus.ParkHere;
+				PRODUCT_BUNDLE_IDENTIFIER = JakubPrus.ParkHereApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -639,7 +644,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ParkHere/Preview Content\"";
-				DEVELOPMENT_TEAM = 8S5QQT5ZUQ;
+				DEVELOPMENT_TEAM = 2637HTLV24;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ParkHere/Info.plist;
@@ -647,12 +652,13 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = JakubPrus.ParkHere;
+				PRODUCT_BUNDLE_IDENTIFIER = JakubPrus.ParkHereApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

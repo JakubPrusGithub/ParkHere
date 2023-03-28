@@ -15,7 +15,7 @@ class NewTicketSender: ObservableObject {
     
     func sendNewTicket(ticket: ParkingTicket, documentID: String){
         do {
-            try db.collection("ticket").document(documentID).setData(from: ticket)
+            try db.collection("ticket").document(UUID().uuidString).setData(from: ticket)
         } catch let error {
             print("Error encoding person: \(error)")
         }

@@ -30,6 +30,9 @@ class ReservationSpotViewModel: ObservableObject{
     @Published var selectedLevel = "A"
     @Published var selectedNumber = 0
     
+    // Summary view data
+    @Published var freeSpot = true
+    
     init(reservedTickets: [ParkingTicket] = [ParkingTicket](), allTickets: [ParkingTicket] = [ParkingTicket](), myStartDate: Date = Date(), myEndDate: Date = Date(), parking: ParkingStruct = .sampleParking, cost: Double = 0.0) {
         self.reservedTickets = reservedTickets
         self.allTickets = allTickets
@@ -63,6 +66,7 @@ class ReservationSpotViewModel: ObservableObject{
                     let ticket = try result.data(as: ParkingTicket.self)
                     self.allTickets.append(ticket)
                     self.checkIfColliding(ticket: ticket)
+                    self.checkReservations(letter: self.selectedLevel)
                 }
                 catch{
                     print("Failed to decode: \(error.localizedDescription)")
@@ -105,6 +109,26 @@ class ReservationSpotViewModel: ObservableObject{
         }
         else if ticket.startDate > myStartDate, ticket.endDate < myEndDate {
             reservedTickets.append(ticket)
+        }
+    }
+    
+    func checkSummary(ticket: ParkingTicket){
+        if ticket.spotNumber == String("\(selectedLevel)" + "\(selectedNumber)"){
+            if ticket.endDate <= myEndDate, ticket.endDate >= myStartDate {
+                freeSpot = false
+            }
+            else if ticket.startDate <= myEndDate, ticket.startDate >= myStartDate{
+                freeSpot = false
+            }
+            else if ticket.startDate == myStartDate, ticket.endDate == myEndDate {
+                freeSpot = false
+            }
+            else if ticket.startDate < myStartDate, ticket.endDate > myEndDate {
+                freeSpot = false
+            }
+            else if ticket.startDate > myStartDate, ticket.endDate < myEndDate {
+                freeSpot = false
+            }
         }
     }
     
