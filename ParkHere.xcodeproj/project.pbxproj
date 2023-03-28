@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		072BCA8D29D35B80003B6959 /* ParkingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072BCA8C29D35B80003B6959 /* ParkingModel.swift */; };
 		07539A3E29BCD2CD00BF02BB /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07539A3D29BCD2CD00BF02BB /* Color.swift */; };
 		07539A4B29BCDBAA00BF02BB /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07539A4A29BCDBAA00BF02BB /* ButtonStyle.swift */; };
 		07539A4F29BCEBF000BF02BB /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07539A4E29BCEBF000BF02BB /* RegisterView.swift */; };
@@ -43,6 +42,9 @@
 		E82B8C6629C1D41300E83911 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E82B8C6529C1D41300E83911 /* GoogleSignInSwift */; };
 		E8A12D5229C459FA0090F8D8 /* TicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A12D5129C459FA0090F8D8 /* TicketView.swift */; };
 		E8A12D5429C45A020090F8D8 /* ProfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A12D5329C45A020090F8D8 /* ProfilView.swift */; };
+		E8ABE1BD29D37C24003098FF /* ParkingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ABE1BC29D37C24003098FF /* ParkingModel.swift */; };
+		E8ABE1C029D3848E003098FF /* CalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ABE1BF29D3848E003098FF /* CalViewModel.swift */; };
+		E8ABE1C429D384A7003098FF /* CalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ABE1C329D384A7003098FF /* CalView.swift */; };
 		E8D3E13829C3119600029D7A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D3E13729C3119600029D7A /* MapView.swift */; };
 		E8D3E13A29C31BBF00029D7A /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D3E13929C31BBF00029D7A /* Image.swift */; };
 		E8D3E13E29C333DB00029D7A /* ParkingResultSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D3E13D29C333DB00029D7A /* ParkingResultSearchView.swift */; };
@@ -68,7 +70,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		072BCA8C29D35B80003B6959 /* ParkingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ParkingModel.swift; path = ../../../../../Firebase/FirebaseSwift/FirebaseSwift/Utilities/ParkingModel.swift; sourceTree = "<group>"; };
 		07539A3D29BCD2CD00BF02BB /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		07539A4A29BCDBAA00BF02BB /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		07539A4E29BCEBF000BF02BB /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
@@ -97,6 +98,9 @@
 		E82B8C6729C1D44A00E83911 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		E8A12D5129C459FA0090F8D8 /* TicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketView.swift; sourceTree = "<group>"; };
 		E8A12D5329C45A020090F8D8 /* ProfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilView.swift; sourceTree = "<group>"; };
+		E8ABE1BC29D37C24003098FF /* ParkingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingModel.swift; sourceTree = "<group>"; };
+		E8ABE1BF29D3848E003098FF /* CalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalViewModel.swift; sourceTree = "<group>"; };
+		E8ABE1C329D384A7003098FF /* CalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalView.swift; sourceTree = "<group>"; };
 		E8D3E13729C3119600029D7A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		E8D3E13929C31BBF00029D7A /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		E8D3E13D29C333DB00029D7A /* ParkingResultSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingResultSearchView.swift; sourceTree = "<group>"; };
@@ -259,6 +263,7 @@
 				07539A3B29BCD2BA00BF02BB /* Resources */,
 				E82B8C5C29C1D15F00E83911 /* Sources */,
 				07539A3429BCB08F00BF02BB /* Views */,
+				E8ABE1BE29D3847D003098FF /* Prototype */,
 				D328273229B6149200B1677A /* Assets.xcassets */,
 				E82B8C6729C1D44A00E83911 /* Info.plist */,
 				D328274529BB5AB000B1677A /* GoogleService-Info.plist */,
@@ -372,6 +377,15 @@
 				E8A12D5329C45A020090F8D8 /* ProfilView.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		E8ABE1BE29D3847D003098FF /* Prototype */ = {
+			isa = PBXGroup;
+			children = (
+				E8ABE1BF29D3848E003098FF /* CalViewModel.swift */,
+				E8ABE1C329D384A7003098FF /* CalView.swift */,
+			);
+			path = Prototype;
 			sourceTree = "<group>";
 		};
 		E8D3E13F29C33B4900029D7A /* Parking */ = {
@@ -493,8 +507,8 @@
 		E8E47A2329D2E03E009512AC /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				072BCA8C29D35B80003B6959 /* ParkingModel.swift */,
 				D3EB5CAA29D0D9420041A2E0 /* TicketModel.swift */,
+				E8ABE1BC29D37C24003098FF /* ParkingModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -614,7 +628,6 @@
 				D37129A129CA515C0049C9F6 /* CalendarViewModel.swift in Sources */,
 				E8E47A1C29D2C7CD009512AC /* CarBrandsView.swift in Sources */,
 				D3EB5CA429CDAA9A0041A2E0 /* ReservationSpotView.swift in Sources */,
-				072BCA8D29D35B80003B6959 /* ParkingModel.swift in Sources */,
 				07539A4F29BCEBF000BF02BB /* RegisterView.swift in Sources */,
 				E8E47A2129D2E003009512AC /* SignInGoogleHelper.swift in Sources */,
 				E8E47A1329D2C702009512AC /* AuthButtonView.swift in Sources */,
@@ -624,9 +637,11 @@
 				07539A5229BCECDC00BF02BB /* LogoView.swift in Sources */,
 				E8A12D5429C45A020090F8D8 /* ProfilView.swift in Sources */,
 				E8E47A2D29D30453009512AC /* TabBarItem.swift in Sources */,
+				E8ABE1C429D384A7003098FF /* CalView.swift in Sources */,
 				E82B8C6129C1D2FF00E83911 /* LoginView.swift in Sources */,
 				D3EB5CA929D0D9160041A2E0 /* ReservationSpotViewModel.swift in Sources */,
 				E8D3E13829C3119600029D7A /* MapView.swift in Sources */,
+				E8ABE1BD29D37C24003098FF /* ParkingModel.swift in Sources */,
 				D3EB5CAE29D0F6D00041A2E0 /* SummaryView.swift in Sources */,
 				D3EB5CA629CE2D520041A2E0 /* AddTestTicketView.swift in Sources */,
 				E8E47A3029D30A35009512AC /* HistoryView.swift in Sources */,
@@ -650,6 +665,7 @@
 				07539A3E29BCD2CD00BF02BB /* Color.swift in Sources */,
 				E8E47A1029D2C69E009512AC /* LoginViewModel.swift in Sources */,
 				D328272F29B6149000B1677A /* ParkHereApp.swift in Sources */,
+				E8ABE1C029D3848E003098FF /* CalViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

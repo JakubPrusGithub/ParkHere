@@ -9,8 +9,10 @@ import Foundation
 
 @MainActor
 class CalendarViewModel: ObservableObject {
+    
     @Published var startDate = Date().addingTimeInterval(900)
     @Published var endDate = Date().addingTimeInterval(900)
+    
     let upToFiveDays = Date().addingTimeInterval(15*24*60*60)
     let today = Date.now
     var quarters = 0
@@ -78,3 +80,8 @@ class CalendarViewModel: ObservableObject {
         return String(format: "%.2f", Double(quarters)*(perHour/4))
     }
 }
+
+
+
+
+

@@ -50,6 +50,8 @@ struct CalendarView: View {
                     Text("Cost per hour: $\(String(format: "%.2f", parking.cost))")
                     Text("Your estimated cost is: $\(controller.calcCost(perHour: parking.cost))")
                         .bold()
+                    
+                    Text("\(controller.startDate)")
                 }
                 
                 Spacer()
@@ -66,6 +68,7 @@ struct CalendarView: View {
                     .disabled(controller.calcTime() == "None")
                     .buttonStyle(.sign)
                     .padding(.vertical)
+                    
                     Button("Cancel"){
                         dismiss()
                     }

@@ -24,11 +24,14 @@ struct ParkHereApp: App {
 
     var body: some Scene {
         WindowGroup {
-            if Auth.auth().currentUser.self == nil {
-                LoginView()
-            } else {
-                AppView()
-            }
+            
+//            if Auth.auth().currentUser.self == nil {
+//                LoginView()
+//            } else {
+//                AppView()
+//            }
+            
+            CalView()
         }
     }
 }
