@@ -14,7 +14,7 @@ struct HomeView: View {
             Text("Sing out")
                 .fontWeight(.semibold)
                 .onTapGesture {
-                    Task { await auth.singOut() }
+//                    Task { await auth.singOut() }
                 }
         }
     }

@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+
 extension Image {
     func flatIconImage() -> some View {
         self
