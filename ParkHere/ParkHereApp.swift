@@ -30,6 +30,7 @@ struct ParkHereApp: App {
             MainMapView(selectedTab: $selectedTab)
             //AddTestTicketView()
             //CalendarView(parking: .sampleParking)
+            //TicketGenerationView(ticket: .sampleTicket)
             //ReservationSpotView(controller: ReservationSpotViewModel(myStartDate: Date(), myEndDate: Date(), parking: .sampleParking, cost: 10))
 //            if auth.user == nil {
 //                LoginView()

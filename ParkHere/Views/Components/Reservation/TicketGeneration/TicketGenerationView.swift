@@ -19,30 +19,37 @@ struct TicketGenerationView: View {
                 
                 // MARK: QR Code
                 VStack{
-                    Image(uiImage: qrcode.generateQRCode(from: ticket))
+                    Text("That's your ticket:")
+                        .font(.title)
+                        .foregroundColor(.customGrey)
+                        .padding(.bottom, -5)
+                    Image(uiImage: qrcode.generateQRCode(ticket: ticket))
                         .resizable()
                         .interpolation(.none)
                         .scaledToFit()
-                        .frame(width: 250, height: 250)
-                    Text(qrcode.hashTicket(ticket: ticket))
-                        .font(.title3)
+                        .frame(width: 300, height: 300)
+                    Text(qrcode.hashedTicketString)
                         .foregroundColor(.customGrey)
-                        .bold()
+                        .font(.caption2)
+                        .frame(height: 70)
                 }
-                .padding(.top, 30)
                 
-                // MARK: info
-                Text("Your ticket is available on your profile under the 'Tickets' tab.\n\nScan your ticket by QR code or enter the code below it.")
-                    .padding(.top, 30)
-                    .foregroundColor(.customGrey)
-                    .font(.title3)
+                // MARK: Info
+                HStack{
+                    Image(systemName: "info.circle")
+                        .font(.title3)
+                    Text("Your ticket is available on your profile under the 'Tickets' tab.")
+                        .font(.title3)
+                }
+                .padding(.top, 50)
+                .foregroundColor(.gray)
                 
                 Spacer()
                 
                 // MARK: Dismiss
                 VStack{
                     NavigationLink("OK"){
-                        //generating qr code and ticket
+                        //back to ticket view
                     }
                     .buttonStyle(.sign)
                     .padding(.vertical)
