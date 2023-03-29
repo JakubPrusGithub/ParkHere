@@ -34,7 +34,12 @@ struct SearchBarView: View {
             //Image("filter")
               //  .flatIconImage()
         }
-        .shadowBorderBackground()
+        .padding()
+        .frame(maxWidth: .infinity)
+        .fontWeight(.semibold)
+        .background(.white)
+        .cornerRadius(20)
+        .shadow(radius: 1)
         .onChange(of: isSearching) { _ in
             isFocused = isSearching
         }
@@ -46,6 +51,6 @@ struct SearchBarView_Previews: PreviewProvider {
     @State static var isSearching = false
     static var previews: some View {
         //SearchBarView(searchTerm: $searchTerm, isSearching: $isSearching)
-        MapView()
+        MainMapView(selectedTab: .constant(.map))
     }
 }

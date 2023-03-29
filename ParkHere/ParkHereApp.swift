@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseCore
 import Firebase
 
 class AppDelegate: NSObject, UIApplicationDelegate {
@@ -19,19 +20,34 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 @main
 struct ParkHereApp: App {
-//    @Inject var authManager: AuthManager
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-
+    
+    @StateObject private var auth = AuthManager()
+    @State private var selectedTab: Tab = .map
+    
     var body: some Scene {
         WindowGroup {
-            
-//            if Auth.auth().currentUser.self == nil {
+            MainMapView(selectedTab: $selectedTab)
+            //AddTestTicketView()
+            //CalendarView(parking: .sampleParking)
+            //TicketGenerationView(ticket: .sampleTicket)
+            //ReservationSpotView(controller: ReservationSpotViewModel(myStartDate: Date(), myEndDate: Date(), parking: .sampleParking, cost: 10))
+//            if auth.user == nil {
 //                LoginView()
+//                    .environmentObject(auth)
 //            } else {
-//                AppView()
+//                switch selectedTab {
+//                case .ticket:
+//                    TicketView(selectedTab: $selectedTab)
+//                        .environmentObject(auth)
+//                case .map:
+//                    MainMapView(selectedTab: $selectedTab)
+//                        .environmentObject(auth)
+//                case .profil:
+//                    ProfilView(selectedTab: $selectedTab)
+//                        .environmentObject(auth)
+//                }
 //            }
-            
-            CalView(parking: .sampleParking)
         }
     }
 }

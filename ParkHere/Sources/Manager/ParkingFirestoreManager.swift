@@ -13,7 +13,7 @@ import FirebaseCore
 class ParkingFirestoreManager: ObservableObject {
     
     let db = Firestore.firestore()
-    @Published var firestoreParkings = [ParkingModel]()
+    @Published var firestoreParkings = [ParkingStruct]()
     
     init(){
         let collection = db.collection("parking")
@@ -22,7 +22,7 @@ class ParkingFirestoreManager: ObservableObject {
             
             for result in results.documents{
                 do {
-                    let parking = try result.data(as: ParkingModel.self)
+                    let parking = try result.data(as: ParkingStruct.self)
                     self.firestoreParkings.append(parking)
                 }
                 catch{
