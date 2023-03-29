@@ -30,6 +30,9 @@ class ReservationSpotViewModel: ObservableObject{
     @Published var selectedLevel = "A"
     @Published var selectedNumber = 0
     
+    // Summary view data
+    var occupied = false
+    
     init(reservedTickets: [ParkingTicket] = [ParkingTicket](), allTickets: [ParkingTicket] = [ParkingTicket](), myStartDate: Date = Date(), myEndDate: Date = Date(), parking: ParkingStruct = .sampleParking, cost: Double = 0.0) {
         self.reservedTickets = reservedTickets
         self.allTickets = allTickets
@@ -70,6 +73,7 @@ class ReservationSpotViewModel: ObservableObject{
                 }
             }
         }
+        self.checkReservations(letter: self.selectedLevel)
     }
     
     func createTicket() -> ParkingTicket {
@@ -86,6 +90,7 @@ class ReservationSpotViewModel: ObservableObject{
         for number in thisLevelNumbers {
             quantity = quantity.filter{$0 != number}
         }
+        self.selectedNumber = quantity[0]
     }
     
     // Checks if ticket is colliding with user's reservation
@@ -105,6 +110,32 @@ class ReservationSpotViewModel: ObservableObject{
         else if ticket.startDate > myStartDate, ticket.endDate < myEndDate {
             reservedTickets.append(ticket)
         }
+    }
+    
+    func checkSummary(ticket: ParkingTicket) -> Bool{
+        if ticket.spotNumber == String("\(selectedLevel)" + "\(selectedNumber)"){
+            if ticket.endDate <= myEndDate, ticket.endDate >= myStartDate {
+                occupied = true
+                return true
+            }
+            else if ticket.startDate <= myEndDate, ticket.startDate >= myStartDate{
+                occupied = true
+                return true
+            }
+            else if ticket.startDate == myStartDate, ticket.endDate == myEndDate {
+                occupied = true
+                return true
+            }
+            else if ticket.startDate < myStartDate, ticket.endDate > myEndDate {
+                occupied = true
+                return true
+            }
+            else if ticket.startDate > myStartDate, ticket.endDate < myEndDate {
+                occupied = true
+                return true
+            }
+        }
+        return false
     }
     
     // Presents all levels

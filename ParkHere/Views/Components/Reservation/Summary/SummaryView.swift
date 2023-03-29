@@ -11,6 +11,9 @@ struct SummaryView: View {
     
     @Environment(\.dismiss) private var dismiss
     let summaryTicket: ParkingTicket
+    @ObservedObject var resVM: ReservationSpotViewModel
+    @StateObject var ticketListener = TicketListener()
+    @State var occupied = false
     
     var body: some View {
         NavigationStack {
@@ -83,10 +86,16 @@ struct SummaryView: View {
                 // MARK: Checkout
                 VStack{
                     NavigationLink("Checkout"){
-                        //generating qr code and ticket
+                        TicketGenerationView(ticket: summaryTicket)
                     }
                     .buttonStyle(.sign)
                     .padding(.vertical)
+                    .disabled(resVM.occupied)
+                    .alert("We are sorry, but this place has just been reserved", isPresented: $occupied) {
+                        Button("OK", role: .cancel) {
+                            dismiss()
+                        }
+                    }
                     Button("Cancel"){
                         dismiss()
                     }
@@ -96,12 +105,15 @@ struct SummaryView: View {
             }
             .navigationTitle("Summary")
             .padding()
+            .onChange(of: ticketListener.newTicket) { _ in
+                occupied = resVM.checkSummary(ticket: ticketListener.newTicket)
+            }
         }
     }
 }
 
 struct SummaryView_Previews: PreviewProvider {
     static var previews: some View {
-        SummaryView(summaryTicket: .sampleTicket)
+        SummaryView(summaryTicket: .sampleTicket, resVM: ReservationSpotViewModel(reservedTickets: [ParkingTicket.sampleTicket], allTickets: [ParkingTicket.sampleTicket], myStartDate: Date.now, myEndDate: Date.now, parking: .sampleParking, cost: 0.0))
     }
 }
