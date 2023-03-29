@@ -31,7 +31,7 @@ class ReservationSpotViewModel: ObservableObject{
     @Published var selectedNumber = 0
     
     // Summary view data
-    @Published var freeSpot = true
+    var occupied = false
     
     init(reservedTickets: [ParkingTicket] = [ParkingTicket](), allTickets: [ParkingTicket] = [ParkingTicket](), myStartDate: Date = Date(), myEndDate: Date = Date(), parking: ParkingStruct = .sampleParking, cost: Double = 0.0) {
         self.reservedTickets = reservedTickets
@@ -112,24 +112,30 @@ class ReservationSpotViewModel: ObservableObject{
         }
     }
     
-    func checkSummary(ticket: ParkingTicket){
+    func checkSummary(ticket: ParkingTicket) -> Bool{
         if ticket.spotNumber == String("\(selectedLevel)" + "\(selectedNumber)"){
             if ticket.endDate <= myEndDate, ticket.endDate >= myStartDate {
-                freeSpot = false
+                occupied = true
+                return true
             }
             else if ticket.startDate <= myEndDate, ticket.startDate >= myStartDate{
-                freeSpot = false
+                occupied = true
+                return true
             }
             else if ticket.startDate == myStartDate, ticket.endDate == myEndDate {
-                freeSpot = false
+                occupied = true
+                return true
             }
             else if ticket.startDate < myStartDate, ticket.endDate > myEndDate {
-                freeSpot = false
+                occupied = true
+                return true
             }
             else if ticket.startDate > myStartDate, ticket.endDate < myEndDate {
-                freeSpot = false
+                occupied = true
+                return true
             }
         }
+        return false
     }
     
     // Presents all levels

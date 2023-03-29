@@ -13,6 +13,7 @@ struct SummaryView: View {
     let summaryTicket: ParkingTicket
     @ObservedObject var resVM: ReservationSpotViewModel
     @StateObject var ticketListener = TicketListener()
+    @State var occupied = false
     
     var body: some View {
         NavigationStack {
@@ -89,7 +90,12 @@ struct SummaryView: View {
                     }
                     .buttonStyle(.sign)
                     .padding(.vertical)
-                    .disabled(!resVM.freeSpot)
+                    .disabled(resVM.occupied)
+                    .alert("We are sorry, but this place has just been reserved", isPresented: $occupied) {
+                        Button("OK", role: .cancel) {
+                            dismiss()
+                        }
+                    }
                     Button("Cancel"){
                         dismiss()
                     }
@@ -100,7 +106,7 @@ struct SummaryView: View {
             .navigationTitle("Summary")
             .padding()
             .onChange(of: ticketListener.newTicket) { _ in
-                resVM.checkSummary(ticket: ticketListener.newTicket)
+                occupied = resVM.checkSummary(ticket: ticketListener.newTicket)
             }
         }
     }
