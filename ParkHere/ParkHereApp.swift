@@ -31,7 +31,7 @@ struct ParkHereApp: App {
 //                AppView()
 //            }
             
-            CalView()
+            CalView(parking: .sampleParking)
         }
     }
 }

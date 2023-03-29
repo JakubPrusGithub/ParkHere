@@ -25,6 +25,7 @@ class CalendarViewModel: ObservableObject {
         return validTime ? "Costs are charged for each quarter hour started" : "Please select the beginning and end of your reservation"
     }
     
+    
     func calcTime() -> String {
         if startDate == endDate || startDate > endDate {
             return "None"

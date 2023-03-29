@@ -9,22 +9,37 @@ import SwiftUI
 
 struct CalView: View {
     @StateObject private var vm = CalViewModel()
+    let parking: ParkingModel
     
     var body: some View {
-        VStack {
-            DatePicker("Start date:", selection: $vm.startDate, in: Date().roundedToNearestQuarter()...Date().upToFiveDays())
+        NavigationStack{
+            VStack(alignment: .leading, spacing: 25){
+                
+                // MARK: Time interval
+                timeInterval
+                
+                Divider()
+                
+                // MARK: Cost
+                cost
+                
+                Spacer()
+                
+                // MARK: Continue
+                button
+                
+            }
+            .padding()
+            .navigationTitle("Reservation date")
+            .foregroundColor(.customGrey)
+            .applyClose()
             
-            DatePicker("End date:", selection: $vm.endDate, in:
-                        vm.startDate.minParkingTime()...vm.startDate.upToFiveDays())
-            
-            Spacer()
-            
-            Text("\(vm.startDate)")
-            Text("\(vm.endDate)")
         }
         .onAppear { UIDatePicker.appearance().minuteInterval = 15 }
         .onChange(of: vm.startDate) { newValue in
-            if isTimeDifferenceLessThan30Minutes(date1: vm.startDate, date2: vm.endDate) {
+            if Date().isTimeDifferenceLessThan(intervalInMinutes: 30,
+                                               date1: vm.startDate,
+                                               date2: vm.endDate) {
                 vm.endDate = newValue.minParkingTime()
             }
         }
@@ -33,17 +48,60 @@ struct CalView: View {
 
 struct CalView_Previews: PreviewProvider {
     static var previews: some View {
-        CalView()
+        CalView(parking: .sampleParking)
     }
 }
 
 
 extension CalView {
-    func isTimeDifferenceLessThan30Minutes(date1: Date, date2: Date) -> Bool {
-        let calendar = Calendar.current
-        let components = calendar.dateComponents([.minute], from: date1, to: date2)
-        guard let minutes = components.minute else { return false }
-        return abs(minutes) < 30
+    
+    private var timeInterval: some View {
+        Group {
+            Text("Time interval")
+                .font(.title2.weight(.semibold))
+                .foregroundColor(.gray)
+            
+            DatePicker("Start date:",
+                       selection: $vm.startDate,
+                       in:Date().roundedToNearestQuarter()...Date().upToFiveDays())
+            
+            DatePicker("End date:",
+                       selection: $vm.endDate,
+                       in:vm.startDate...vm.startDate.upToFiveDays())
+            
+            HStack {
+                Image(systemName: "info.square.fill")
+                
+                Text("Costs are charged for each quarter hour started")
+                    .font(.footnote)
+                    .fontWeight(.semibold)
+                    .foregroundColor(.gray)
+            }
+        }
+    }
+    
+    private var cost: some View {
+        Group {
+            Text("Cost")
+                .font(.title2.weight(.semibold))
+                .foregroundColor(.gray)
+            
+            Text("Selected time: \(vm.selectedTimeInnterval())")
+            Text("Cost per hour: $\(String(format: "%.2f", parking.cost))")
+            Text("Your estimated cost is: $\(vm.calcCost(perHour: parking.cost).1)")
+                .bold()
+            
+        }
+    }
+    
+    private var button: some View {
+        CustomNavLink(destination:ReservationSpotView(myStartDate: vm.startDate,
+                                                      myEndDate: vm.endDate,
+                                                      parking: parking,
+                                                      cost: vm.calcCost(perHour: parking.cost).0),
+                      title: "Continue",
+                      type: .dark)
     }
 }
+
 

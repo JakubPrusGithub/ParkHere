@@ -26,6 +26,7 @@ struct CalendarView: View {
                         .foregroundColor(.gray)
                     DatePicker("Start date:", selection: $controller.startDate, in:controller.today...controller.upToFiveDays)
                     DatePicker("End date:", selection: $controller.endDate, in:controller.startDate...controller.upToFiveDays)
+                    
                         .onAppear {
                             UIDatePicker.appearance().minuteInterval = 15
                         }
@@ -51,7 +52,7 @@ struct CalendarView: View {
                     Text("Your estimated cost is: $\(controller.calcCost(perHour: parking.cost))")
                         .bold()
                     
-                    Text("\(controller.startDate)")
+                   
                 }
                 
                 Spacer()

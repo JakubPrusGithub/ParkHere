@@ -29,6 +29,11 @@ extension View {
     func shadowBorderBackground() -> some View {
         modifier(ShadowBorderBackgroundModifier())
     }
+    
+    //5
+    func applyClose() -> some View {
+        self.modifier(CloseModifier())
+    }
 }
 
 // MARK: #1
@@ -95,3 +100,26 @@ struct ShadowBorderBackgroundModifier: ViewModifier {
             .shadow(radius: 1)
     }
 }
+
+// MARK: #5
+struct CloseModifier: ViewModifier {
+    @Environment(\.dismiss) var dismiss
+    
+    func body(content: Content) -> some View {
+        content
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button { dismiss() }
+                    label: {
+                        Image(systemName: "xmark")
+                            .font(.title3.weight(.semibold))
+                            .foregroundColor(.customGrey)
+                    }
+                        
+                        
+                }
+            }
+    }
+}
+
+
