@@ -24,6 +24,16 @@ extension View {
     func tabBarItem(tab: TabBarItem, selection: Binding<TabBarItem>) -> some View {
         modifier(TabBarItemViewModifier(tab: tab, selection: selection))
     }
+    
+    //4
+    func shadowBorderBackground() -> some View {
+        modifier(ShadowBorderBackgroundModifier())
+    }
+    
+    //5
+    func applyClose() -> some View {
+        self.modifier(CloseModifier())
+    }
 }
 
 // MARK: #1
@@ -67,7 +77,6 @@ struct CustomBackgroundModifier: ViewModifier {
     }
 }
 
-
 // MARK: #3
 struct TabBarItemViewModifier: ViewModifier {
     let tab: TabBarItem
@@ -78,4 +87,39 @@ struct TabBarItemViewModifier: ViewModifier {
             .preference(key: TabBarItemsPreferenceKey.self, value: [tab])
     }
 }
+
+// MARK: #4
+struct ShadowBorderBackgroundModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .padding()
+            .frame(maxWidth: .infinity)
+            .fontWeight(.semibold)
+            .background(.white)
+            .cornerRadius(20)
+            .shadow(radius: 1)
+    }
+}
+
+// MARK: #5
+struct CloseModifier: ViewModifier {
+    @Environment(\.dismiss) var dismiss
+    
+    func body(content: Content) -> some View {
+        content
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button { dismiss() }
+                    label: {
+                        Image(systemName: "xmark")
+                            .font(.title3.weight(.semibold))
+                            .foregroundColor(.customGrey)
+                    }
+                        
+                        
+                }
+            }
+    }
+}
+
 

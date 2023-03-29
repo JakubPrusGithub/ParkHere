@@ -9,8 +9,10 @@ import Foundation
 
 @MainActor
 class CalendarViewModel: ObservableObject {
+    
     @Published var startDate = Date().addingTimeInterval(900)
     @Published var endDate = Date().addingTimeInterval(900)
+    
     let upToFiveDays = Date().addingTimeInterval(15*24*60*60)
     let today = Date.now
     var quarters = 0
@@ -22,6 +24,7 @@ class CalendarViewModel: ObservableObject {
         }
         return validTime ? "Costs are charged for each quarter hour started" : "Please select the beginning and end of your reservation"
     }
+    
     
     func calcTime() -> String {
         if startDate == endDate || startDate > endDate {
@@ -71,10 +74,15 @@ class CalendarViewModel: ObservableObject {
     }
     
     func createReservationVM() -> ReservationSpotViewModel{
-        return ReservationSpotViewModel(myStartDate: startDate, myEndDate: endDate, parking: .sampleParking, cost: Double(calcCost(perHour: 10)) ?? 0)
+        return ReservationSpotViewModel(myStartDate: startDate, myEndDate: endDate, parking: ParkingModel.sampleParking, cost: Double(calcCost(perHour: 10)) ?? 0)
     }
     
     func calcCost(perHour: Double) -> String {
         return String(format: "%.2f", Double(quarters)*(perHour/4))
     }
 }
+
+
+
+
+

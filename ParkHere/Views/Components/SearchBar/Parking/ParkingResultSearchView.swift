@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct ParkingResultSearchView: View {
-    let parking: ParkingStruct
+    let parking: ParkingModel
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack {
             HStack {
                 Image(systemName: "parkingsign.circle.fill")
                     .font(.title2)
@@ -19,28 +19,29 @@ struct ParkingResultSearchView: View {
                     .padding(.horizontal)
                 
                 VStack(alignment: .leading) {
-                    Text(parking.name)
+                    Text(parking.name + "")
                         .font(.callout)
                         .fontWeight(.semibold)
                     
-                    HStack {
-                        Text(parking.address)
-                    }
-                    .font(.footnote)
-                    .foregroundColor(.secondary)
+                    Text(parking.address + "")
+                        .font(.footnote)
+                        .foregroundColor(.secondary)
                 }
                 .lineLimit(1)
-                Spacer()
+                .frame(maxWidth: .infinity, alignment: .leading)
+                
                 Image(systemName: "greaterthan")
                     .padding(.horizontal, 25)
+                
             }
             Divider()
         }
+        
     }
 }
 
 struct ParkingSearchView_Previews: PreviewProvider {
     static var previews: some View {
-        ParkingResultSearchView(parking: ParkingStruct.sampleParking)
+        ParkingResultSearchView(parking: ParkingModel.sampleParking)
     }
 }

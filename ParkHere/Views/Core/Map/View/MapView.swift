@@ -8,7 +8,7 @@
 import SwiftUI
 import MapKit
 
-struct MainMapView: View {
+struct MapView: View {
     @State private var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 52.23,longitude: 21.0),span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
     
     @StateObject var allParkings = ParkingFirestoreManager()
@@ -19,7 +19,7 @@ struct MainMapView: View {
     
     // Parking
     @State private var showParkingPreview = false
-    @State private var currentParking = ParkingStruct.sampleParking
+    @State private var currentParking = ParkingModel.sampleParking
     
     var body: some View {
         NavigationStack {
@@ -97,13 +97,13 @@ struct MainMapView: View {
     }
 }
 
-struct MainMapView_Previews: PreviewProvider {
+struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        MainMapView()
+        MapView()
     }
 }
 
-extension MainMapView {
+extension MapView {
     
     // MARK: View components
     var searchView: some View {
@@ -136,7 +136,7 @@ extension MainMapView {
     }
     
     // MARK: Search results
-    var searchResults: [ParkingStruct] {
+    var searchResults: [ParkingModel] {
         if searchTerm.isEmpty{
             return allParkings.firestoreParkings
         }

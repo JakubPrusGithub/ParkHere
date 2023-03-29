@@ -16,7 +16,7 @@ struct AppView: View {
             TicketView()
                 .tabBarItem(tab: .ticket, selection: $selection)
             
-            MainMapView()
+            MapView()
                 .tabBarItem(tab: .map, selection: $selection)
             
             HistoryView()

@@ -10,11 +10,10 @@ import SwiftUI
 struct ReservationSpotView: View {
     
     @Environment(\.dismiss) private var dismiss
-    @StateObject var reservationVM = ReservationSpotViewModel()
-    @StateObject var ticketListener = TicketListener()
+    @StateObject var controller = ReservationSpotViewModel()
     let myStartDate: Date
     let myEndDate: Date
-    let parking: ParkingStruct
+    let parking: ParkingModel
     let cost: Double
     
     
@@ -26,17 +25,17 @@ struct ReservationSpotView: View {
                     .font(.title2)
                     .foregroundColor(.gray)
                 // MARK: Picker
-                Picker("Please select your parking level", selection: $reservationVM.selectedLevel){
-                    ForEach(reservationVM.levels, id: \.self){
+                Picker("Please select your parking level", selection: $controller.selectedLevel){
+                    ForEach(controller.levels, id: \.self){
                         Text($0)
                     }
                 }
-                .onChange(of: reservationVM.selectedLevel, perform: { newLetter in
-                    reservationVM.checkReservations(letter: newLetter)
+                .onChange(of: controller.selectedLevel, perform: { newLetter in
+                    controller.checkReservations(letter: newLetter)
                 })
                 .pickerStyle(.segmented)
-                Picker("Please select your parking number", selection: $reservationVM.selectedNumber){
-                    ForEach(reservationVM.quantity, id: \.self){
+                Picker("Please select your parking number", selection: $controller.selectedNumber){
+                    ForEach(controller.quantity, id: \.self) {
                         Text($0.description)
                     }
                 }
@@ -47,11 +46,10 @@ struct ReservationSpotView: View {
                 // MARK: Continue
                 VStack{
                     NavigationLink("Continue"){
-                        SummaryView(summaryTicket: reservationVM.createTicket(), resVM: reservationVM)
+                        SummaryView(summaryTicket: controller.createTicket())
                     }
                     .buttonStyle(.sign)
                     .padding(.vertical)
-                    //.disabled(!ticketListener.emptySpot)
                     Button("Cancel"){
                         dismiss()
                     }
@@ -62,10 +60,7 @@ struct ReservationSpotView: View {
             .padding()
             .navigationTitle("Parking spot")
             .onAppear{
-                reservationVM.startFetching(start: myStartDate, end: myEndDate, parking: parking, cost: cost)
-            }
-            .onChange(of: ticketListener.newTicket) { _ in
-                reservationVM.fetchTickets()
+                controller.startFetching(start: myStartDate, end: myEndDate, parking: parking, cost: cost)
             }
         }
     }
@@ -73,6 +68,6 @@ struct ReservationSpotView: View {
 
 struct ReservationSpotView_Previews: PreviewProvider {
     static var previews: some View {
-        ReservationSpotView(myStartDate: Date(), myEndDate: Date(), parking: .sampleParking, cost: 0.0)
+        ReservationSpotView(myStartDate: Date(), myEndDate: Date(), parking: .sampleParking, cost: 9.99)
     }
 }
