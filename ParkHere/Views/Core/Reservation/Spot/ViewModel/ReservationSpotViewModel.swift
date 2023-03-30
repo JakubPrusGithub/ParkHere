@@ -67,6 +67,7 @@ class ReservationSpotViewModel: ObservableObject{
                     self.allTickets.append(ticket)
                     self.checkIfColliding(ticket: ticket)
                     self.checkReservations(letter: self.selectedLevel)
+                    self.checkIfOutdated(ticket: ticket)
                 }
                 catch{
                     print("Failed to decode: \(error.localizedDescription)")
@@ -136,6 +137,18 @@ class ReservationSpotViewModel: ObservableObject{
             }
         }
         return false
+    }
+    
+    func checkIfOutdated(ticket: ParkingTicket){
+        guard Date.now > ticket.endDate else { return }
+        let ticketRef = db.collection("ticket").document(ticket.id!)
+        ticketRef.delete() { error in
+            if let error = error {
+                print("Error while deleting outdated ticket: \(error)")
+            } else {
+                print("Deletion completed")
+            }
+        }
     }
     
     // Presents all levels

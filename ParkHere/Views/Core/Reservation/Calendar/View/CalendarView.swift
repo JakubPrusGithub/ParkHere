@@ -32,7 +32,7 @@ struct CalendarView: View {
             .padding()
             .navigationTitle("Reservation date")
             .foregroundColor(.customGrey)
-            .applyClose()
+            //.applyClose()
             
         }
         .onAppear { UIDatePicker.appearance().minuteInterval = 15 }

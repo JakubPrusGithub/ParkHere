@@ -96,11 +96,6 @@ struct SummaryView: View {
                             dismiss()
                         }
                     }
-                    Button("Cancel"){
-                        dismiss()
-                    }
-                    .foregroundColor(.gray)
-                    .padding(.top, -10)
                 }
             }
             .navigationTitle("Summary")
