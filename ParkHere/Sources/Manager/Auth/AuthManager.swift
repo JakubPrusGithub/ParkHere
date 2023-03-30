@@ -25,14 +25,14 @@ struct AuthDataResultModel {
 
 
 class AuthManager: ObservableObject {
-    @Published var login: Bool = false
-    
+    @Published var logIn: Bool = false
     let auth = Auth.auth()
-       
+    
     func getAuthenticatedUser() throws -> AuthDataResultModel {
         guard let user = auth.currentUser else { throw URLError(.fileDoesNotExist) }
         return AuthDataResultModel(user: user)
     }
+    
 }
 
 
@@ -42,10 +42,19 @@ extension AuthManager {
     @MainActor @discardableResult
     func loginAnonymously() async throws -> AuthDataResultModel {
         let authDataResult = try await auth.signInAnonymously()
-        self.login = true
         return AuthDataResultModel(user: authDataResult.user)
     }
     
+}
+
+// MARK: SING OUT
+extension AuthManager {
+    func singOut() throws {
+        print(logIn.description)
+        try auth.signOut()
+        self.logIn = false
+        print(logIn.description)
+    }
 }
 
 
@@ -85,7 +94,6 @@ extension AuthManager {
     @MainActor
     func signIn(credential: AuthCredential) async throws -> AuthDataResultModel{
         let authDataResult = try await Auth.auth().signIn(with: credential)
-        self.login = true
         return AuthDataResultModel(user: authDataResult.user)
     }
 }
@@ -93,11 +101,5 @@ extension AuthManager {
 
 
 
-// MARK: SING OUT
-extension AuthManager {
-    func singOut() throws {
-        try auth.signOut()
-        self.login = false
-    }
-}
+
 

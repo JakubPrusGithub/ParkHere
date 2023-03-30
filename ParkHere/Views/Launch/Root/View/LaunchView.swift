@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LaunchView: View {
+    @EnvironmentObject var auth: AuthManager
     @StateObject private var vm = LaunchViewVM()
     init() { _ = Dependencies() }
     
@@ -80,7 +81,7 @@ extension LaunchView {
                 Task {
                     do {
                         try await vm.singAnonymously()
-                        print("Success")
+                        auth.logIn = true 
                     } catch {
                         print(error.localizedDescription)
                     }

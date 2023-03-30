@@ -21,17 +21,10 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct ParkHereApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
-    @StateObject private var authManager = AuthManager()
-    
     var body: some Scene {
         WindowGroup {
-            if authManager.login {
-                AppView()
-            } else {
-                LaunchView()
-            }
+            ContentView()
         }
-        
     }
 }
 

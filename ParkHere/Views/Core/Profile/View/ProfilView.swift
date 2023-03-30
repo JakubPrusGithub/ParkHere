@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ProfilView: View {
+    @EnvironmentObject var auth: AuthManager
     @StateObject private var vm = ProfilViewModel()
     init() { _ = Dependencies() }
     
@@ -18,6 +19,7 @@ struct ProfilView: View {
             Button("LogOut") {
                 do {
                     try vm.singOut()
+                    auth.logIn = false 
                 } catch {
                     print(error.localizedDescription)
                 }

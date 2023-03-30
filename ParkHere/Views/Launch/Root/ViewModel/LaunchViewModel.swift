@@ -14,5 +14,6 @@ class LaunchViewVM: ObservableObject {
     //MARK: Function
     func singAnonymously() async throws {
         try await authManager.loginAnonymously()
+        authManager.logIn = true
     }
 }

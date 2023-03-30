@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TicketView: View {
+    
     var body: some View {
         ZStack {
             Text("Ticket View")

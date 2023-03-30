@@ -72,6 +72,7 @@
 		E877BD0E29D566FA00659302 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E877BD0D29D566FA00659302 /* RegisterViewModel.swift */; };
 		E877BD1029D5670F00659302 /* CarBrandsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E877BD0F29D5670F00659302 /* CarBrandsView.swift */; };
 		E877BD1529D56A0A00659302 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E877BD1429D56A0A00659302 /* GoogleService-Info.plist */; };
+		E877BD1729D57D9A00659302 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E877BD1629D57D9A00659302 /* ContentView.swift */; };
 		E8A12D5229C459FA0090F8D8 /* TicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A12D5129C459FA0090F8D8 /* TicketView.swift */; };
 		E8A12D5429C45A020090F8D8 /* ProfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A12D5329C45A020090F8D8 /* ProfilView.swift */; };
 		E8D3E13829C3119600029D7A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D3E13729C3119600029D7A /* MapView.swift */; };
@@ -138,6 +139,7 @@
 		E877BD0D29D566FA00659302 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		E877BD0F29D5670F00659302 /* CarBrandsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarBrandsView.swift; sourceTree = "<group>"; };
 		E877BD1429D56A0A00659302 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E877BD1629D57D9A00659302 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E8A12D5129C459FA0090F8D8 /* TicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketView.swift; sourceTree = "<group>"; };
 		E8A12D5329C45A020090F8D8 /* ProfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilView.swift; sourceTree = "<group>"; };
 		E8D3E13729C3119600029D7A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				D328272E29B6149000B1677A /* ParkHereApp.swift */,
+				E877BD1629D57D9A00659302 /* ContentView.swift */,
 				07539A3B29BCD2BA00BF02BB /* Resources */,
 				E82B8C5C29C1D15F00E83911 /* Sources */,
 				07539A3429BCB08F00BF02BB /* Views */,
@@ -779,6 +782,7 @@
 				E877BCDE29D5642300659302 /* ClossButtonView.swift in Sources */,
 				E877BCCE29D5635800659302 /* SingInGoogleHelper.swift in Sources */,
 				07539A5729BCF45E00BF02BB /* LaunchView.swift in Sources */,
+				E877BD1729D57D9A00659302 /* ContentView.swift in Sources */,
 				D37129A129CA515C0049C9F6 /* CalendarViewModel.swift in Sources */,
 				E877BCFB29D565F500659302 /* HistoryViewModel.swift in Sources */,
 				E877BCC929D5631700659302 /* CustomSecureField.swift in Sources */,
