@@ -35,6 +35,7 @@
 		D371299D29C9EE840049C9F6 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371299C29C9EE840049C9F6 /* CalendarView.swift */; };
 		D371299F29C9FA1B0049C9F6 /* SubstractingDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371299E29C9FA1B0049C9F6 /* SubstractingDates.swift */; };
 		D37129A129CA515C0049C9F6 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37129A029CA515C0049C9F6 /* CalendarViewModel.swift */; };
+		D37DC53229D5F7190066B60B /* SpotSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37DC53129D5F7190066B60B /* SpotSelection.swift */; };
 		D3EB5CA129CDAA610041A2E0 /* TicketDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EB5CA029CDAA610041A2E0 /* TicketDownloader.swift */; };
 		D3EB5CA429CDAA9A0041A2E0 /* ReservationSpotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EB5CA329CDAA9A0041A2E0 /* ReservationSpotView.swift */; };
 		D3EB5CA629CE2D520041A2E0 /* AddTestTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EB5CA529CE2D520041A2E0 /* AddTestTicketView.swift */; };
@@ -103,6 +104,7 @@
 		D371299C29C9EE840049C9F6 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		D371299E29C9FA1B0049C9F6 /* SubstractingDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubstractingDates.swift; sourceTree = "<group>"; };
 		D37129A029CA515C0049C9F6 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		D37DC53129D5F7190066B60B /* SpotSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotSelection.swift; sourceTree = "<group>"; };
 		D3EB5CA029CDAA610041A2E0 /* TicketDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDownloader.swift; sourceTree = "<group>"; };
 		D3EB5CA329CDAA9A0041A2E0 /* ReservationSpotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationSpotView.swift; sourceTree = "<group>"; };
 		D3EB5CA529CE2D520041A2E0 /* AddTestTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTestTicketView.swift; sourceTree = "<group>"; };
@@ -511,6 +513,7 @@
 			isa = PBXGroup;
 			children = (
 				D3EB5CA329CDAA9A0041A2E0 /* ReservationSpotView.swift */,
+				D37DC53129D5F7190066B60B /* SpotSelection.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -773,6 +776,7 @@
 			files = (
 				D339B6B929D22A7D00B69FDD /* TicketGenerationView.swift in Sources */,
 				D371299629C6784E0049C9F6 /* SearchBarView.swift in Sources */,
+				D37DC53229D5F7190066B60B /* SpotSelection.swift in Sources */,
 				E877BCE929D5655E00659302 /* ProfilViewModel.swift in Sources */,
 				07539A5529BCEE0600BF02BB /* AuthButtonView.swift in Sources */,
 				D371299A29C77F5A0049C9F6 /* ParkingDetailsView.swift in Sources */,

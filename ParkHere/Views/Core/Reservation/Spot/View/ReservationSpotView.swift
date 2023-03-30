@@ -20,11 +20,11 @@ struct ReservationSpotView: View {
     
     var body: some View {
         NavigationStack {
-            VStack(alignment: .leading, spacing: 25){
-                Text("Please choose your spot")
-                    .padding(.vertical, 30)
+            VStack(spacing: 25){
+                Text("Please scroll and select your spot:")
                     .font(.title2)
                     .foregroundColor(.gray)
+                
                 // MARK: Picker
                 Picker("Please select your parking level", selection: $reservationVM.selectedLevel){
                     ForEach(reservationVM.levels, id: \.self){
@@ -35,14 +35,19 @@ struct ReservationSpotView: View {
                     reservationVM.checkReservations(letter: newLetter)
                 })
                 .pickerStyle(.segmented)
+                /*
                 Picker("Please select your parking number", selection: $reservationVM.selectedNumber){
                     ForEach(reservationVM.quantity, id: \.self){
                         Text($0.description)
                     }
                 }
                 .pickerStyle(.wheel)
+                 */
                 
-                Spacer()
+                // MARK: Spot selection
+                SpotSelection(allParkingSpots: parking.quantity, allFreeSpots: $reservationVM.quantity, selectedSpot: $reservationVM.selectedNumber)
+                    .frame(height: 450)
+                
                 
                 // MARK: Continue
                 VStack{
@@ -51,12 +56,6 @@ struct ReservationSpotView: View {
                     }
                     .buttonStyle(.sign)
                     .padding(.vertical)
-                    //.disabled(!ticketListener.emptySpot)
-                    Button("Cancel"){
-                        dismiss()
-                    }
-                    .foregroundColor(.gray)
-                    .padding(.top, -10)
                 }
             }
             .padding()
