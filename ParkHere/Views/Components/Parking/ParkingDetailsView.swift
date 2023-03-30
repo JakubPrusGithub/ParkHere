@@ -18,13 +18,15 @@ struct ParkingDetailsView: View {
     var body: some View {
         NavigationStack {
             ScrollView{
-                VStack(alignment: .leading){
+                
+                VStack(alignment: .leading) {
                     
                     // MARK: Location
                     Group{
                         Text("Location")
                             .font(.title2)
                             .foregroundColor(.gray)
+                        
                         HStack{
                             VStack(alignment: .leading, spacing: 20){
                                 HStack{
@@ -32,6 +34,7 @@ struct ParkingDetailsView: View {
                                         .font(.title2)
                                     Text(parking.address)
                                 }
+                                
                                 Text(parking.description)
                                     .font(.callout)
                                 
@@ -52,32 +55,39 @@ struct ParkingDetailsView: View {
                     }
                     Divider()
                     
+                    
                     // MARK: Parkin area
                     Group{
                         Text("Parking area")
                             .font(.title2)
                             .foregroundColor(.gray)
+                        
                         VStack(alignment: .leading, spacing: 10){
+                            
                             HStack{
                                 Image(systemName: "clock")
                                     .font(.title2)
                                 Text("Available 24 hours, 7 days a week")
                             }
+                            
                             HStack{
                                 Image(systemName: "square.stack.3d.up.fill")
                                     .font(.title2)
                                 Text("General levels: " + allParkingLevels(parking.level))
                             }
+                            
                             HStack{
                                 Image(systemName: "number")
                                     .font(.title2)
                                 Text("Spots per level: " + parking.quantity.description)
                             }
+                            
                             HStack{
                                 Image(systemName: parking.guarded ? "checkmark.shield.fill" : "xmark.shield.fill")
                                     .font(.title2)
                                 Text(parking.guarded ? "Guarded" : "Not guarded")
                             }
+                            
                         }
                         .padding(.vertical, 5)
                     }
@@ -89,13 +99,13 @@ struct ParkingDetailsView: View {
                         Text("Cost")
                             .font(.title2)
                             .foregroundColor(.gray)
-                        VStack(alignment: .leading, spacing: 10){
-                            HStack{
-                                Image(systemName: "dollarsign.circle.fill")
-                                    .font(.title2)
-                                Text("$\(String(format: "%.2f", parking.cost)) per hour")
-                            }
+                        
+                        HStack{
+                            Image(systemName: "dollarsign.circle.fill")
+                                .font(.title2)
+                            Text("$\(String(format: "%.2f", parking.cost)) per hour")
                         }
+                        
                         .padding(.vertical, 5)
                     }
                     
@@ -103,11 +113,12 @@ struct ParkingDetailsView: View {
                     
                     // MARK: Buttons
                     VStack{
-                        NavigationLink("Reserve your parking spot"){
+                        NavigationLink("Reserve your parking spot") {
                             CalendarView(parking: parking)
                         }
                         .buttonStyle(.sign)
                         .padding()
+                        
                         Button("Cancel"){
                             dismiss()
                         }

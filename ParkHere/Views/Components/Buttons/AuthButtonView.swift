@@ -2,20 +2,20 @@
 //  AuthButtonView.swift
 //  ParkHere
 //
-//  Created by Michał Jabłoński on 11/03/2023.
+//  Created by jabko on 28/03/2023.
 //
 
 import SwiftUI
 
 struct AuthButtonView: View {
-    @EnvironmentObject var auth: AuthManager
+    @EnvironmentObject var vm: LoginViewVM
     
     enum ButtonType { case facebook, google, apple }
     var type: ButtonType
     
     private var button: (image: String, action: () -> Void) {
         switch type {
-        case .google: return ("google", { Task { await auth.loginWithGoogle () } } )
+        case .google: return ("google", { Task { try await vm.singInGoogle() } } )
         case .facebook: return ("facebook", { } )
         case .apple: return ("apple", { } )
         }
@@ -42,8 +42,8 @@ struct AuthButtonView: View {
     }
 }
 
-struct AuthButtonView_Previews: PreviewProvider {
-    static var previews: some View {
-        AuthButtonView(type: .apple)
-    }
-}
+//struct AuthButtonView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AuthButtonView(type: .apple)
+//    }
+//}

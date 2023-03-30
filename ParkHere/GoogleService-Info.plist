@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>564377473127-u4776d7lbvnjfcni5kef9kk9bo72iil6.apps.googleusercontent.com</string>
+	<string>564377473127-9qa8e8j15vcdm55h06k79fjp23lkdg74.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.564377473127-u4776d7lbvnjfcni5kef9kk9bo72iil6</string>
+	<string>com.googleusercontent.apps.564377473127-9qa8e8j15vcdm55h06k79fjp23lkdg74</string>
 	<key>API_KEY</key>
 	<string>AIzaSyCN72xCLt925LYx9mf9J-Yoq-FlXFZM0T8</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>JakubPrus.ParkHere</string>
+	<string>JakubPrus.ParkHereApp</string>
 	<key>PROJECT_ID</key>
 	<string>parkhere-swiftui</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:564377473127:ios:15d4a32b1f2d1a1d1c84c2</string>
+	<string>1:564377473127:ios:a30e757291c626ff1c84c2</string>
 </dict>
 </plist>
