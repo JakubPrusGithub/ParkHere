@@ -34,6 +34,11 @@ extension View {
     func applyClose() -> some View {
         self.modifier(CloseModifier())
     }
+    
+    //6
+    func reservationTitle() -> some View {
+        modifier(ReservationTitleModifier())
+    }
 }
 
 // MARK: #1
@@ -122,4 +127,11 @@ struct CloseModifier: ViewModifier {
     }
 }
 
-
+// MARK #6
+struct ReservationTitleModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+        .font(.title2.weight(.semibold))
+        .foregroundColor(.gray)
+    }
+}

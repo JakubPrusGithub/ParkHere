@@ -11,14 +11,12 @@ import SwiftUI
 enum TabBarItem: Hashable {
     case ticket
     case map
-    case history
     case profile
     
     var iconName: String {
         switch self {
         case .ticket: return "ticket"
         case .map: return "map"
-        case .history: return "history"
         case .profile: return "profil"
         }
     }
@@ -28,7 +26,6 @@ enum TabBarItem: Hashable {
         switch self {
         case .ticket: return "Ticket"
         case .map: return "Map"
-        case .history: return "History"
         case .profile: return "Profil"
         }
     }

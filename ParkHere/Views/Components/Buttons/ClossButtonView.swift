@@ -12,10 +12,12 @@ struct CloseButtonView: View {
     
     let image: String
     let alignment: Alignment
+    let width: CGFloat
 
-    internal init(image: String = "chevron.left", alignment: Alignment = .leading) {
+    internal init(image: String = "chevron.left", alignment: Alignment = .leading, width: CGFloat = 20) {
         self.image = image
         self.alignment = alignment
+        self.width = width
     }
     
   
@@ -26,7 +28,7 @@ struct CloseButtonView: View {
             Image(systemName: image)
                 .foregroundColor(.customGrey)
                 .font(.title3.weight(.semibold))
-                .frame(maxWidth: .infinity, alignment: alignment)
+                .frame(maxWidth: width, alignment: alignment)
         }
         
     }

@@ -7,17 +7,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D469AB68-233D-4993-BD44-0AF223D11705"
+            uuid = "B608EEC5-22BB-44FC-8659-CE964772B6D7"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ParkHere/Sources/Manager/AuthManager.swift"
+            filePath = "ParkHere/ParkingPrototype/ReservationSpotView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "AuthManager"
-            landmarkType = "21">
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "ReservationSpotView"
+            landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
