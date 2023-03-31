@@ -88,10 +88,17 @@ extension SpotSelection {
     
     private func parkingSpots(slot: Int) -> some View {
         ZStack{
-            Image(vm.quantity.contains(slot) ? "freeSpotRight" : "takenSpotRight")
-                .resizable()
-                .scaledToFit()
-                
+            if slot.isMultiple(of: 2){
+                Image(vm.quantity.contains(slot) ? "freeSpotRight" : "takenSpotRight")
+                    .resizable()
+                    .scaledToFit()
+            }
+            else{
+                Image(vm.quantity.contains(slot) ? "freeSpotLeft" : "takenSpotLeft")
+                    .resizable()
+                    .scaledToFit()
+            }
+            
             Text(slot.description)
                 .bold()
                 .font(.title2)

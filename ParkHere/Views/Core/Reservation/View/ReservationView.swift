@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ReservationView: View {
     @StateObject private var vm = ReservationViewModel()
-    @State private var currentScreen: Int = 4
+    @State private var currentScreen: Int = 1
     let parking: ParkingStruct
     
     init(parking: ParkingStruct) {

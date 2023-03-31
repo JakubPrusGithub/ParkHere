@@ -29,11 +29,15 @@ struct ReservationSpotView: View {
                 }
             }
             .pickerStyle(.segmented)
+            .onChange(of: vm.selectedLevel) { newLetter in
+                vm.checkReservations(letter: newLetter)
+            }
             
             SpotSelection()
             
         }
         .onAppear {
+            vm.checkReservations(letter: "A")
             vm.checkTicket()
             vm.levels = vm.allParkingLevels(parking.level)
             print(vm.allTicket.description)
