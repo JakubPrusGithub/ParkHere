@@ -12,6 +12,7 @@ struct TicketFullView: View {
     @Environment(\.dismiss) private var dismiss
     let ticket: ParkingTicket
     @StateObject var qrcode = QRgenerator()
+    @StateObject var deletionManager = TicketDeletion()
     @State var cancel = false
     let future: Bool
     
@@ -56,7 +57,7 @@ struct TicketFullView: View {
             .alert("Are you sure you want to delete the reservation?", isPresented: $cancel) {
                 Button("Delete", role: .destructive) {
                     dismiss()
-                    //delete
+                    deletionManager.deleteTicket(ticket: ticket)
                 }
                 Button("Cancel", role: .cancel) { }
             }

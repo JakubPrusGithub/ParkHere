@@ -13,6 +13,7 @@ struct ProfilView: View {
     init() { _ = Dependencies() }
     
     @State private var showPaymentMethods = false
+    @State private var showAbout = false
     
     var body: some View {
         NavigationStack {
@@ -49,20 +50,32 @@ struct ProfilView: View {
                             }
                         }
                         .confirmationDialog("Select a payment method", isPresented: $showPaymentMethods, titleVisibility: .visible) {
-                                        Button("Apple Pay") { }
-                                        Button("Credit Card") { }
-                                        Button("Blik") { }
-                                    }
+                            Button("Apple Pay") { }
+                            Button("Credit Card") { }
+                            Button("Blik") { }
+                        }
                         Divider()
                         
                         // MARK: About
                         Button(){
-                            //
+                            showAbout = true
                         }label:{
                             HStack{
                                 Image(systemName: "info.circle")
                                 Text("About")
                             }
+                        }
+                        .sheet(isPresented: $showAbout) {
+                            VStack{
+                                Text("ParkHere")
+                                    .font(.title)
+                                    .padding(.bottom)
+                                Text("ParkHere is an app for reserving parking spots.\n\nWe made it for 'Zaprogramuj Życie' competition. \n\nAuthors: Jakub Prus & Michał Jabłoński. \n\nWe hope you enjoy using our app!")
+                                Spacer()
+                            }
+                            .foregroundColor(.customGrey)
+                            .padding(20)
+                            .presentationDetents([.medium])
                         }
                         Divider()
                         

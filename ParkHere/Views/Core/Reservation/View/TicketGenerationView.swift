@@ -52,6 +52,7 @@ struct TicketGenerationView: View {
             Task{
                 await vm.addNewTicket(ticket: ticket)
             }
+            // TODO: new ticket to ticketTab
         }
     }
 }

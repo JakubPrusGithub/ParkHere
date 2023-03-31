@@ -23,9 +23,9 @@ struct ParkHereApp: App {
     
     var body: some Scene {
         WindowGroup {
-            //ContentView()
+            ContentView()
             //MapView()
-            TicketView()
+            //TicketView()
         }
     }
 }

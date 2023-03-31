@@ -24,7 +24,6 @@
 		D328275429BB5E5D00B1677A /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D328275329BB5E5D00B1677A /* FirebaseFirestoreSwift */; };
 		D328275629BB5E6400B1677A /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D328275529BB5E6400B1677A /* FirebaseDatabaseSwift */; };
 		D339B6BB29D2317E00B69FDD /* QRgenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D339B6BA29D2317E00B69FDD /* QRgenerator.swift */; };
-		D339B6BD29D330CD00B69FDD /* NewTicketSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = D339B6BC29D330CD00B69FDD /* NewTicketSender.swift */; };
 		D339B6BF29D3815C00B69FDD /* TicketListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = D339B6BE29D3815C00B69FDD /* TicketListener.swift */; };
 		D371298F29C28C850049C9F6 /* ParkingStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371298E29C28C850049C9F6 /* ParkingStruct.swift */; };
 		D371299629C6784E0049C9F6 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371299529C6784E0049C9F6 /* SearchBarView.swift */; };
@@ -33,6 +32,7 @@
 		D37DC53429D725370066B60B /* TicketGenerationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37DC53329D725370066B60B /* TicketGenerationView.swift */; };
 		D37DC53829D778280066B60B /* TicketPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37DC53729D778280066B60B /* TicketPreview.swift */; };
 		D37DC53A29D77B790066B60B /* TicketFullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37DC53929D77B790066B60B /* TicketFullView.swift */; };
+		D37DC53C29D79C5A0066B60B /* TicketDeletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37DC53B29D79C5A0066B60B /* TicketDeletion.swift */; };
 		D3EB5CAB29D0D9420041A2E0 /* ParkingTicket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EB5CAA29D0D9420041A2E0 /* ParkingTicket.swift */; };
 		E82B8C5F29C1D27B00E83911 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B8C5E29C1D27B00E83911 /* AuthManager.swift */; };
 		E82B8C6129C1D2FF00E83911 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B8C6029C1D2FF00E83911 /* LoginView.swift */; };
@@ -90,7 +90,6 @@
 		D328273229B6149200B1677A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D328273529B6149200B1677A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D339B6BA29D2317E00B69FDD /* QRgenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRgenerator.swift; sourceTree = "<group>"; };
-		D339B6BC29D330CD00B69FDD /* NewTicketSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTicketSender.swift; sourceTree = "<group>"; };
 		D339B6BE29D3815C00B69FDD /* TicketListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketListener.swift; sourceTree = "<group>"; };
 		D371298E29C28C850049C9F6 /* ParkingStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingStruct.swift; sourceTree = "<group>"; };
 		D371299529C6784E0049C9F6 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
@@ -99,6 +98,7 @@
 		D37DC53329D725370066B60B /* TicketGenerationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketGenerationView.swift; sourceTree = "<group>"; };
 		D37DC53729D778280066B60B /* TicketPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketPreview.swift; sourceTree = "<group>"; };
 		D37DC53929D77B790066B60B /* TicketFullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketFullView.swift; sourceTree = "<group>"; };
+		D37DC53B29D79C5A0066B60B /* TicketDeletion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDeletion.swift; sourceTree = "<group>"; };
 		D3EB5CAA29D0D9420041A2E0 /* ParkingTicket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingTicket.swift; sourceTree = "<group>"; };
 		E82B8C5E29C1D27B00E83911 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		E82B8C6029C1D2FF00E83911 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -327,9 +327,6 @@
 				E877BCCF29D5636E00659302 /* DIManager.swift */,
 				E82B8C5E29C1D27B00E83911 /* AuthManager.swift */,
 				E8478E3229D72106001661F5 /* FirebaseManager.swift */,
-				D339B6BA29D2317E00B69FDD /* QRgenerator.swift */,
-				D339B6BC29D330CD00B69FDD /* NewTicketSender.swift */,
-				D339B6BE29D3815C00B69FDD /* TicketListener.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -337,7 +334,10 @@
 		E8478E2F29D7208C001661F5 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				D339B6BA29D2317E00B69FDD /* QRgenerator.swift */,
 				E8478E3029D72097001661F5 /* SignInGoogleHelper.swift */,
+				D339B6BE29D3815C00B69FDD /* TicketListener.swift */,
+				D37DC53B29D79C5A0066B60B /* TicketDeletion.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -693,7 +693,6 @@
 				E8478E4229D72289001661F5 /* CalendarView.swift in Sources */,
 				E8A12D5429C45A020090F8D8 /* ProfilView.swift in Sources */,
 				E82B8C6129C1D2FF00E83911 /* LoginView.swift in Sources */,
-				D339B6BD29D330CD00B69FDD /* NewTicketSender.swift in Sources */,
 				E8D3E13829C3119600029D7A /* MapView.swift in Sources */,
 				E877BCE429D5652D00659302 /* MapViewModel.swift in Sources */,
 				E877BCC329D562E200659302 /* ViewModifier.swift in Sources */,
@@ -718,6 +717,7 @@
 				D371299829C77F460049C9F6 /* ParkingDetailsPreview.swift in Sources */,
 				07539A3E29BCD2CD00BF02BB /* Color.swift in Sources */,
 				E8478E4629D722A6001661F5 /* SummarySpotView.swift in Sources */,
+				D37DC53C29D79C5A0066B60B /* TicketDeletion.swift in Sources */,
 				E877BD0A29D566BD00659302 /* ForgotPasswordView.swift in Sources */,
 				D37DC53429D725370066B60B /* TicketGenerationView.swift in Sources */,
 				D37DC53A29D77B790066B60B /* TicketFullView.swift in Sources */,

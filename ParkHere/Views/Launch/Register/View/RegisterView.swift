@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct RegisterView: View {
+    @EnvironmentObject var auth: AuthManager
     @StateObject private var vm = RegisterViewVM()
     init() { _ = Dependencies() }
     
     @State private var showMessege: Bool = false
     @State private var showBrands: Bool = false
-    @State private var currentScreen: Int = 2
+    @State private var currentScreen: Int = 1
     
     
     var lastScreen: Bool { currentScreen == 2 }

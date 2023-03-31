@@ -86,7 +86,10 @@ extension MapView {
                 latitude: parking.location.latitude,
                 longitude: parking.location.longitude)) {
                     
-                    Image(systemName: "parkingsign.circle.fill")
+                    Image("parkingIcon")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 35, height: 35)
                         .font(.title)
                         .foregroundColor(.blue)
                         .onTapGesture {
