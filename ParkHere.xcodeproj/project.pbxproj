@@ -30,6 +30,9 @@
 		D371299629C6784E0049C9F6 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371299529C6784E0049C9F6 /* SearchBarView.swift */; };
 		D371299829C77F460049C9F6 /* ParkingDetailsPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371299729C77F460049C9F6 /* ParkingDetailsPreview.swift */; };
 		D371299A29C77F5A0049C9F6 /* ParkingDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371299929C77F5A0049C9F6 /* ParkingDetailsView.swift */; };
+		D37DC53429D725370066B60B /* TicketGenerationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37DC53329D725370066B60B /* TicketGenerationView.swift */; };
+		D37DC53829D778280066B60B /* TicketPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37DC53729D778280066B60B /* TicketPreview.swift */; };
+		D37DC53A29D77B790066B60B /* TicketFullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37DC53929D77B790066B60B /* TicketFullView.swift */; };
 		D3EB5CAB29D0D9420041A2E0 /* ParkingTicket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EB5CAA29D0D9420041A2E0 /* ParkingTicket.swift */; };
 		E82B8C5F29C1D27B00E83911 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B8C5E29C1D27B00E83911 /* AuthManager.swift */; };
 		E82B8C6129C1D2FF00E83911 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B8C6029C1D2FF00E83911 /* LoginView.swift */; };
@@ -93,6 +96,9 @@
 		D371299529C6784E0049C9F6 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		D371299729C77F460049C9F6 /* ParkingDetailsPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingDetailsPreview.swift; sourceTree = "<group>"; };
 		D371299929C77F5A0049C9F6 /* ParkingDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingDetailsView.swift; sourceTree = "<group>"; };
+		D37DC53329D725370066B60B /* TicketGenerationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketGenerationView.swift; sourceTree = "<group>"; };
+		D37DC53729D778280066B60B /* TicketPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketPreview.swift; sourceTree = "<group>"; };
+		D37DC53929D77B790066B60B /* TicketFullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketFullView.swift; sourceTree = "<group>"; };
 		D3EB5CAA29D0D9420041A2E0 /* ParkingTicket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingTicket.swift; sourceTree = "<group>"; };
 		E82B8C5E29C1D27B00E83911 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		E82B8C6029C1D2FF00E83911 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -361,6 +367,7 @@
 				E8478E4129D72289001661F5 /* CalendarView.swift */,
 				E8478E4329D72299001661F5 /* ReservationSpotView.swift */,
 				E8478E4529D722A6001661F5 /* SummarySpotView.swift */,
+				D37DC53329D725370066B60B /* TicketGenerationView.swift */,
 				E8478E4729D722B1001661F5 /* ViewComponents */,
 			);
 			path = View;
@@ -425,6 +432,8 @@
 			isa = PBXGroup;
 			children = (
 				E8A12D5129C459FA0090F8D8 /* TicketView.swift */,
+				D37DC53729D778280066B60B /* TicketPreview.swift */,
+				D37DC53929D77B790066B60B /* TicketFullView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -680,6 +689,7 @@
 				D371298F29C28C850049C9F6 /* ParkingStruct.swift in Sources */,
 				E877BD0229D5665500659302 /* LaunchViewModel.swift in Sources */,
 				07539A5229BCECDC00BF02BB /* LogoView.swift in Sources */,
+				D37DC53829D778280066B60B /* TicketPreview.swift in Sources */,
 				E8478E4229D72289001661F5 /* CalendarView.swift in Sources */,
 				E8A12D5429C45A020090F8D8 /* ProfilView.swift in Sources */,
 				E82B8C6129C1D2FF00E83911 /* LoginView.swift in Sources */,
@@ -709,6 +719,8 @@
 				07539A3E29BCD2CD00BF02BB /* Color.swift in Sources */,
 				E8478E4629D722A6001661F5 /* SummarySpotView.swift in Sources */,
 				E877BD0A29D566BD00659302 /* ForgotPasswordView.swift in Sources */,
+				D37DC53429D725370066B60B /* TicketGenerationView.swift in Sources */,
+				D37DC53A29D77B790066B60B /* TicketFullView.swift in Sources */,
 				E8478E4429D72299001661F5 /* ReservationSpotView.swift in Sources */,
 				D328272F29B6149000B1677A /* ParkHereApp.swift in Sources */,
 				E877BCD029D5636E00659302 /* DIManager.swift in Sources */,

@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct ReservationView: View {
+    
+    @Environment(\.dismiss) private var dismiss
     @StateObject private var vm = ReservationViewModel()
-    @State private var currentScreen: Int = 1
+    @StateObject var listener = TicketListener()
+    @State private var currentScreen: Int = 4
     let parking: ParkingStruct
     
     init(parking: ParkingStruct) {
@@ -29,12 +32,15 @@ struct ReservationView: View {
                 case 1: ParkDetailsView(parking: parking)
                 case 2: CalendarView(parking: parking)
                 case 3: ReservationSpotView(parking: parking)
-                case 4: SummaryView(summaryTicket: .sampleTicket)
+                case 4: SummaryView(currentScreen: $currentScreen, parking: parking)
+                case 5: TicketGenerationView(ticket: vm.generateTicket())
                 default:
-                    Text("test")
+                    Text("Nothing")
                 }
             }
-            
+            .onAppear{
+                vm.parking = parking
+            }
             
             // MARK: Button
             navigationButton
@@ -43,6 +49,7 @@ struct ReservationView: View {
         .padding()
         .toolbar(.hidden, for: .navigationBar)
         .environmentObject(vm)
+        .environmentObject(listener)
     }
 }
 
@@ -63,8 +70,9 @@ extension ReservationView {
                 Image(systemName: "chevron.left")
                     .foregroundColor(.customGrey)
                     .font(.title3.weight(.semibold))
-                    .opacity(currentScreen == 1 ? 0 : 1)
+                    .opacity((currentScreen == 1 || currentScreen == 5 ) ? 0 : 1)
             }
+            .disabled(currentScreen == 1 || currentScreen == 5)
             
             
             Text(currentScreen == 4 ? "Summary" : "")
@@ -72,16 +80,24 @@ extension ReservationView {
                 .frame(maxWidth: .infinity, alignment: .center)
             
             CloseButtonView(image: "xmark", alignment: .trailing)
+                .opacity((currentScreen == 1 || currentScreen == 5 ) ? 0 : 1)
+                .disabled(currentScreen == 1 || currentScreen == 5)
         }
     }
     
     private var navigationButton: some View {
         Button {
-            currentScreen += 1
+            if currentScreen < 5 {
+                currentScreen += 1
+            }
+            else{
+                dismiss()
+            }
         } label: {
-            Text("Reserve your parking spot")
+            Text(currentScreen < 5 ? "Continue" : "OK")
+                .customBackground(type: .dark)
         }
-        .customBackground(type: .dark)
+        
     }
     
 }

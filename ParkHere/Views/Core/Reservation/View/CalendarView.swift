@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CalendarView: View {
     @EnvironmentObject var vm: ReservationViewModel
-    let parking: ParkingStruct
+    @State var parking: ParkingStruct
     
     init(parking: ParkingStruct) {
         self.parking = parking
@@ -32,13 +32,19 @@ struct CalendarView: View {
             Spacer()
              
         }
-        .onAppear { UIDatePicker.appearance().minuteInterval = 15 }
+        .onAppear {
+            self.parking = vm.parking
+            UIDatePicker.appearance().minuteInterval = 15
+        }
         .onChange(of: vm.startDate) { newValue in
             if Date().isTimeDifferenceLessThan(intervalInMinutes: 30,
                                                date1: vm.startDate,
                                                date2: vm.endDate) {
                 vm.endDate = newValue.minParkingTime()
             }
+        }
+        .onDisappear{
+            vm.calcFinalCost()
         }
     }
 }

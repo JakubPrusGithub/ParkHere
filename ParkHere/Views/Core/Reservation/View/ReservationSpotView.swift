@@ -9,7 +9,9 @@ import SwiftUI
 
 struct ReservationSpotView: View {
     @EnvironmentObject var vm: ReservationViewModel
-    let parking: ParkingStruct
+    @EnvironmentObject var listener: TicketListener
+    @State var parking: ParkingStruct
+    
     
     init(parking: ParkingStruct) {
         self.parking = parking
@@ -37,10 +39,15 @@ struct ReservationSpotView: View {
             
         }
         .onAppear {
-            vm.checkReservations(letter: "A")
+            self.parking = vm.parking
+            vm.checkReservations(letter: vm.selectedLevel)
             vm.checkTicket()
             vm.levels = vm.allParkingLevels(parking.level)
-            print(vm.allTicket.description)
+        }
+        .onChange(of: listener.newTicket) { newTicket in
+            vm.checkIfColliding(ticket: newTicket)
+            vm.checkTicket()
+            vm.checkReservations(letter: vm.selectedLevel)
         }
     }
 }
@@ -49,8 +56,6 @@ struct ReservationSpotView_Previews: PreviewProvider {
     static var previews: some View {
         ReservationView(parking: .sampleParking)
             .environmentObject(ReservationViewModel())
-        
-//        ReservationSpotView(parking: .sampleParking)
     }
 }
 

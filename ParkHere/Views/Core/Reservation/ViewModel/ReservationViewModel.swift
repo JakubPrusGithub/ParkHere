@@ -7,8 +7,6 @@
 
 import Foundation
 
-
-
 class ReservationViewModel: ObservableObject {
     @Inject var reseration: ReservationServiceProtocol
     
@@ -27,13 +25,19 @@ class ReservationViewModel: ObservableObject {
     @Published var levels: [String] = []
     @Published var quantity: [Int] = []
     
+    // --User Data
+    @Published var name = "Imie Nazwisko"
+    @Published var licenseNumber = "AB 12345"
+    
+    @Published var newTicket = ParkingTicket.sampleTicket
+    
     var occupied = false
     
     let calendar = Calendar.current
     
     init() {
+        //Task { await ticketListener() }
         Task { try await fetchTickets() }
-        print(allTicket)
     }
 }
 
@@ -71,8 +75,17 @@ extension ReservationViewModel {
         if let minutes = component.minute {
             quarters = Double(minutes/15)
         }
+        return (quarters, String(format: "%.2f", Double(quarters)*(perHour/4)))
+    }
+    
+    func calcFinalCost(){
+        let component = calendar.dateComponents([.minute], from: startDate, to: endDate)
+        var quarters: Double = 0
         
-       return (quarters, String(format: "%.2f", Double(quarters)*(perHour/4)))
+        if let minutes = component.minute {
+            quarters = Double(minutes/15)
+        }
+        self.cost = Double(String(format: "%.2f", Double(quarters)*(parking.cost/4))) ?? 0.0
     }
 }
 
@@ -85,12 +98,18 @@ extension ReservationViewModel {
         self.allTicket = try await reseration.fetchTickets()
     }
     
+    @MainActor
+    func addNewTicket(ticket: ParkingTicket) async {
+        await reseration.addNewTicket(ticket: ticket)
+    }
+    
+    @MainActor
     func checkTicket() {
         for ticket in allTicket {
             self.checkIfColliding(ticket: ticket)
             self.checkReservations(letter: self.selectedLevel)
+            reseration.checkIfOutdated(ticket: ticket)
         }
-        
     }
     
     // Checks if ticket is colliding with user's reservation
@@ -143,7 +162,30 @@ extension ReservationViewModel {
         }
     }
     
+    func checkSummary(ticket: ParkingTicket) -> Bool{
+        if ticket.spotNumber == String("\(selectedLevel)" + "\(selectedSpot)"){
+            if ticket.endDate <= endDate, ticket.endDate >= startDate {
+                return true
+            }
+            else if ticket.startDate <= endDate, ticket.startDate >= startDate{
+                return true
+            }
+            else if ticket.startDate == startDate, ticket.endDate == endDate {
+                return true
+            }
+            else if ticket.startDate < startDate, ticket.endDate > endDate {
+                return true
+            }
+            else if ticket.startDate > startDate, ticket.endDate < endDate {
+                return true
+            }
+        }
+        return false
+    }
     
+    func generateTicket() -> ParkingTicket {
+        return ParkingTicket(id: UUID().uuidString, name: self.name, licenseNumber: self.licenseNumber, parkingName: parking.name, address: parking.address, spotNumber: String(selectedLevel + selectedSpot.description), startDate: self.startDate, endDate: self.endDate, price: cost)
+    }
 }
 
 

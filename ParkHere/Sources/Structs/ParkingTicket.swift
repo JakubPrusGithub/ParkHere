@@ -19,5 +19,5 @@ struct ParkingTicket: Codable, Identifiable, Hashable {
     let endDate: Date
     let price: Double
     
-    static let sampleTicket = ParkingTicket(name: "Imie Nazwisko", licenseNumber: "AB 12345", parkingName: "Parking", address: "Official Street, Warsaw", spotNumber: "A1", startDate: Date(), endDate: Date().addingTimeInterval(3600), price: 10.0)
+    static let sampleTicket = ParkingTicket(id: "TUTAJ_JEST_UUID()", name: "Imie Nazwisko", licenseNumber: "AB 12345", parkingName: "Parking", address: "Official Street, Warsaw", spotNumber: "A1", startDate: Date(), endDate: Date().addingTimeInterval(3600), price: 10.0)
 }

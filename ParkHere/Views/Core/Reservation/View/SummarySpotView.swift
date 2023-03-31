@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct SummaryView: View {
-    let summaryTicket: ParkingTicket
+    @EnvironmentObject var vm: ReservationViewModel
+    @EnvironmentObject var listener: TicketListener
+    @State private var occupied = false
+    @Binding var currentScreen: Int
+    @State var parking: ParkingStruct
     
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
@@ -28,6 +32,18 @@ struct SummaryView: View {
             Spacer()
             
         }
+        .alert("We are sorry, but this place has just been reserved", isPresented: $occupied) {
+            Button("OK", role: .cancel) {
+                currentScreen -= 1
+            }
+        }
+        .onChange(of: listener.newTicket) { newTicket in
+            occupied = vm.checkSummary(ticket: newTicket)
+            vm.checkIfColliding(ticket: newTicket)
+            vm.checkReservations(letter: vm.selectedLevel)
+            vm.checkTicket()
+            vm.levels = vm.allParkingLevels(parking.level)
+        }
     }
 }
 
@@ -46,9 +62,9 @@ extension SummaryView {
             Text("Parking Details")
                 .reservationTitle()
                 .padding(.top)
-            Text(summaryTicket.parkingName)
+            Text(vm.parking.name)
                 .font(.title3.bold())
-            Text(summaryTicket.address)
+            Text(vm.parking.address)
                 .padding(.vertical, -10)
             
             Divider()
@@ -61,10 +77,10 @@ extension SummaryView {
             Text("Personal Details")
                 .reservationTitle()
                 .padding(.top)
-            Text(summaryTicket.name)
+            Text(vm.name)
                 .font(.title3)
                 .bold()
-            Text("License number: " + summaryTicket.licenseNumber)
+            Text("License number: " + vm.licenseNumber)
                 .padding(.vertical, -10)
             
             Divider()
@@ -77,10 +93,10 @@ extension SummaryView {
             Text("Reservation Details")
                 .reservationTitle()
                 .padding(.top)
-            Text("Spot: " + summaryTicket.spotNumber)
+            Text("Spot: " + vm.selectedLevel + vm.selectedSpot.description)
                 .font(.title3)
                 .bold()
-            Text(summaryTicket.startDate.formatted() + " - " + summaryTicket.endDate.formatted())
+            Text(vm.startDate.formatted() + " - " + vm.endDate.formatted())
                 .padding(.vertical, -10)
             
             Divider()
@@ -94,7 +110,7 @@ extension SummaryView {
                 Text("Total:")
                     .font(.title)
                 Spacer()
-                Text("$" + summaryTicket.price.description)
+                Text("$" + vm.cost.description)
                     .font(.title.bold())
             }
             .padding(.top)

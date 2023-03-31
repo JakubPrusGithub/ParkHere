@@ -11,7 +11,8 @@ import MapKit
 struct ParkDetailsView: View {
     @State var parkings = [ParkingStruct]()
     @State var mapRegion = MKCoordinateRegion()
-    let parking: ParkingStruct
+    @State var parking: ParkingStruct
+    @EnvironmentObject var vm: ReservationViewModel
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -32,6 +33,7 @@ struct ParkDetailsView: View {
             Spacer()
         }
         .onAppear{
+            self.parking = vm.parking
             self.parkings.append(parking)
             mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: parking.location.latitude, longitude: parking.location.longitude),span: MKCoordinateSpan(latitudeDelta: 0.008, longitudeDelta: 0.008))
         }

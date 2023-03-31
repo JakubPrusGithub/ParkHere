@@ -32,3 +32,31 @@ extension FirebaseManager {
     }
 }
 
+// MARK: New ticket
+extension FirebaseManager {
+    @MainActor
+    func sendNewTicket(ticket: ParkingTicket){
+        do {
+            try db.collection("ticket").document(ticket.id!).setData(from: ticket)
+        } catch let error {
+            print("Error while adding new ticket: \(error)")
+        }
+    }
+}
+
+// MARK: Check if outdated ticket
+extension FirebaseManager {
+    @MainActor
+    func checkIfOutdated(ticket: ParkingTicket){
+        guard Date.now > ticket.endDate else { return }
+        let ticketRef = db.collection("ticket").document(ticket.id!)
+        ticketRef.delete() { error in
+            if let error = error {
+                print("Error while deleting outdated ticket: \(error)")
+            }
+            else {
+                print("Deletion completed")
+            }
+        }
+    }
+}
