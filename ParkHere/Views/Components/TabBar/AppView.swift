@@ -19,9 +19,6 @@ struct AppView: View {
             MapView()
                 .tabBarItem(tab: .map, selection: $selection)
             
-            HistoryView()
-                .tabBarItem(tab: .history, selection: $selection)
-            
             ProfilView()
                 .tabBarItem(tab: .profile, selection: $selection)
         }

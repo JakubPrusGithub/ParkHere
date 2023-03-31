@@ -13,19 +13,19 @@ struct ProfilView: View {
     init() { _ = Dependencies() }
     
     var body: some View {
-        VStack {
-            Spacer() 
-            Text("Hello")
-            Button("LogOut") {
-                do {
-                    try vm.singOut()
-                    auth.logIn = false 
-                } catch {
-                    print(error.localizedDescription)
+        NavigationStack {
+            VStack {
+
+                Button("LogOut") {
+                    do {
+                        try vm.singOut()
+                        auth.logIn = false
+                    } catch {
+                        print(error.localizedDescription)
+                    }
                 }
+              
             }
-            
-            Spacer()
         }
     }
 }

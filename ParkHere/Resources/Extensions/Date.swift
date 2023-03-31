@@ -8,6 +8,10 @@
 import Foundation
 
 extension Date {
+    static func - (lhs: Date, rhs: Date) -> TimeInterval {
+        return lhs.timeIntervalSinceReferenceDate - rhs.timeIntervalSinceReferenceDate
+    }
+    
     func roundedToNearestQuarter() -> Date {
         let components = Calendar.current.dateComponents([.hour, .minute], from: self)
         let minute = components.minute ?? 0

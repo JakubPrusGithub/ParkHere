@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+
+class MapViewModel: ObservableObject {
+    @Inject var parkingData: ParkingServiceProtocol
+    @Published var parkings: [ParkingStruct] = []
+    
+    
+    @MainActor
+    func fetchParkings() async throws {
+        self.parkings = try await parkingData.fetchParkings()
+    }
+}

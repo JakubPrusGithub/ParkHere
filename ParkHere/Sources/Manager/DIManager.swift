@@ -11,6 +11,8 @@ import Foundation
 class Dependencies {
     init() {
         @Provider var authManager = AuthManager()
+        @Provider var parkingService = ParkingService() as ParkingServiceProtocol
+        @Provider var reservationService = ReservationService() as ReservationServiceProtocol
     }
 }
 

@@ -8,32 +8,29 @@
 import SwiftUI
 
 struct CalendarView: View {
-    @StateObject private var vm = CalendarViewModel()
+    @EnvironmentObject var vm: ReservationViewModel
     let parking: ParkingStruct
     
+    init(parking: ParkingStruct) {
+        self.parking = parking
+        _ = Dependencies()
+    }
+    
     var body: some View {
-        NavigationStack{
-            VStack(alignment: .leading, spacing: 25){
-                
-                // MARK: Time interval
-                timeInterval
-                
-                Divider()
-                
-                // MARK: Cost
-                cost
-                
-                Spacer()
-                
-                // MARK: Continue
-                button
-                
-            }
-            .padding()
-            .navigationTitle("Reservation date")
-            .foregroundColor(.customGrey)
-            //.applyClose()
+        VStack(alignment: .leading, spacing: 25){
+            // MARK: Header
+            headerCalendar
             
+            // MARK: Time interval
+            timeInterval
+            
+            Divider()
+            
+            // MARK: Cost
+            cost
+            
+            Spacer()
+             
         }
         .onAppear { UIDatePicker.appearance().minuteInterval = 15 }
         .onChange(of: vm.startDate) { newValue in
@@ -46,14 +43,24 @@ struct CalendarView: View {
     }
 }
 
+
 struct CalendarView_Previews: PreviewProvider {
     static var previews: some View {
         CalendarView(parking: .sampleParking)
+            .environmentObject(ReservationViewModel())
     }
 }
 
 
 extension CalendarView {
+    
+    private var headerCalendar: some View {
+        Text("Reservation date")
+            .font(.title2)
+            .fontWeight(.bold)
+            .frame(maxWidth: .infinity, alignment: .leading)
+        
+    }
     
     private var timeInterval: some View {
         Group {
@@ -93,15 +100,7 @@ extension CalendarView {
             
         }
     }
-    
-    private var button: some View {
-        CustomNavLink(destination:ReservationSpotView(myStartDate: vm.startDate,
-                                                      myEndDate: vm.endDate,
-                                                      parking: parking,
-                                                      cost: vm.calcCost(perHour: parking.cost).0),
-                      title: "Continue",
-                      type: .dark)
-    }
+
 }
 
 

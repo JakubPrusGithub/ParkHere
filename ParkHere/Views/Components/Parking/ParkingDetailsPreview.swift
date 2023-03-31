@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct ParkingDetailsPreview: View {
+    @State private var offset = CGSize.zero
+    
     let parking: ParkingStruct
     @Binding var isShowingPreview: Bool
-    @State private var offset = CGSize.zero
+    @Binding var showReservation: Bool
     
     var body: some View {
             HStack{
@@ -48,8 +50,8 @@ struct ParkingDetailsPreview: View {
 struct ParkingDetailsPreview_Previews: PreviewProvider {
     @State static var isShowingPreview = true
     static var previews: some View {
-//        ParkingDetailsPreview(parking: ParkingModel.sampleParking, isShowingPreview: $isShowingPreview)
-        MapView()
+        ParkingDetailsPreview(parking: ParkingStruct.sampleParking, isShowingPreview: $isShowingPreview, showReservation: .constant(false))
+//        MapView()
     }
 }
 
@@ -91,25 +93,15 @@ extension ParkingDetailsPreview {
             
             Spacer()
             
-            NavigationLink {
-                ParkingDetailsView(parking: parking)
+            Button {
+                self.showReservation = true
             } label: {
-                Image(systemName: "greaterthan")
+                Image(systemName: "chevron.right")
                     .font(.title3)
             }
           
         }
+        .padding(.vertical, 5)
     }
     
 }
-
-
-
-// TODO: Co z tym ?
-extension ParkingDetailsView {
-    func calculateLevels(_ level: String) -> String{
-        return ""
-    }
-}
-
-

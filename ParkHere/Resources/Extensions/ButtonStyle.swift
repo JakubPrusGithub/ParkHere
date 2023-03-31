@@ -26,4 +26,3 @@ extension ButtonStyle where Self == SignButtonStyle {
         return .init()
     }
 }
-

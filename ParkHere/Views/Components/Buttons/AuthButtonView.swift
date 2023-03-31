@@ -42,8 +42,3 @@ struct AuthButtonView: View {
     }
 }
 
-//struct AuthButtonView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AuthButtonView(type: .apple)
-//    }
-//}

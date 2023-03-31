@@ -16,13 +16,14 @@ struct CustomTabBarContainterView<Content: View> : View {
         self._selection = selection
         self.content = content() // () because this is functions that ↑ return content
     }
+    
     var body: some View {
         ZStack(alignment: .bottom) {
             content
-                .ignoresSafeArea()
+                .ignoresSafeArea(edges: .top)
             
             CustomTabBarView(tabs: tabs, selection: $selection, localSelection: selection )
-                .ignoresSafeArea(edges: .bottom)
+                
         }
         .onPreferenceChange(TabBarItemsPreferenceKey.self, perform: { value in
             self.tabs = value
