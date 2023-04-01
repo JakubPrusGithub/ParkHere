@@ -10,6 +10,11 @@ We hope you enjoy using our app!
 
 <br>
 
+<h2> Installation  💽</h2>
+Simply clone ParkHere repo and open it in an XCode. There you can build this project and test it! Make sure that all the necessary libraries (mainly Firebase) are ready. We suggest using our app on the latest models of iPhones. 
+
+<br><br>
+
 <h2> Used technology 🛠️</h2>
 <ul>
   <li>SwiftUI</li>
@@ -18,6 +23,7 @@ We hope you enjoy using our app!
   <li>MapKit</li>
   <li>JSON</li>
   <li>Dependency Injection</li>
+  <li>Concurrency</li>
   <li>MVVM</li>  
 </ul><br>
 
