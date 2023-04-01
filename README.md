@@ -2,9 +2,11 @@
  
 Welcome to our iOS mobile app for parking reservations!
 
-Our app makes it easy and fast to reserve parking spaces in locations all around Warsaw. All you need to do is select a place, time, and date for your reservation, and then make a payment. Users can also view their reservation history and cancel reservations if needed. Our app is user-friendly and provides quick access to the latest free parking spaces. This way, users can save time and avoid the stress of searching for a parking spot.
+Our app makes it easy and fast to reserve parking spaces in locations all around Warsaw. All you need to do is select a place, time, and date for your reservation, and then make a payment. 🤩
 
-We hope you enjoy using our app!
+Our app is user-friendly and provides quick access to the latest free parking spaces. This way, users can save time and avoid the stress of searching for a parking spot. 😎
+
+We hope you enjoy using our app! 
 
 <br>
 
@@ -14,7 +16,7 @@ We hope you enjoy using our app!
   <li>Firebase - Authentication</li>
   <li>Firebase - Firestore</li>
   <li>MapKit</li>
-  <li>CryptoKit</li>
+  <li>JSON</li>
   <li>Dependency Injection</li>
   <li>MVVM</li>  
 </ul><br>
@@ -28,11 +30,13 @@ Our app is based on the concept of simplifying the parking reservation process, 
 <h2> Features 🎯</h2>
 <ul>
   <li>User can log in, register or enter as a guest</li>
+  <li>Login with facebook, google or apple!</li>
   <li>Fetching all available parkings on a map</li>
   <li>Ease of selection date, time and spot</li>
   <li>QRcode generation for ticket</li>
-  <li>History and active tickets tab</li>
+  <li>History, future and active tickets in a single tab</li>
   <li>Possibilty to cancel reservation</li>
+  <li>Simple user profile</li>
   <li>Autocompletion user data for faster and easier booking</li>
 </ul><br>
 
@@ -47,8 +51,8 @@ Our app is based on the concept of simplifying the parking reservation process, 
   <li>Publishing app to the AppStore</li>
   <li>More cities supported</li>
   <li>QR Code sharing</li>
-  <li>Discounts for long term reservations</li>
-  <li>Reservation carnets</li>
+  <li>Dark mode</li>
+  <li>Route shown on how to get to the parking lot</li>
   <li>Support for other vehicles</li>
   <li>Website and android version</li>
 </ul><br>
