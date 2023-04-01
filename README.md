@@ -48,9 +48,33 @@ Our app is based on the concept of simplifying the parking reservation process, 
 
 <h2> Presentation 📲</h2>
 
-[put here some screenshots/videos]
+<p float="left">
+  <img src="https://user-images.githubusercontent.com/56788369/229270079-b54afa6c-14af-4a55-a038-ecc73d6ac59e.png" width=24% />
+  <img src="https://user-images.githubusercontent.com/56788369/229270083-89ba5de0-4fa6-461a-8473-40c06ef90153.png" width=24% /> 
+  <img src="https://user-images.githubusercontent.com/56788369/229270084-bdcdaf46-b490-4d9a-8e22-ec28017520f2.png" width=24% />
+  <img src="https://user-images.githubusercontent.com/56788369/229270085-af99add4-6eb5-447d-ac9d-91a43a427d53.png" width=24% />
+</p><br><br><br><br>
 
-<br>
+<p float="left">
+  <img src="https://user-images.githubusercontent.com/56788369/229270160-c1aba834-649b-456f-b965-ad77fe2c57a5.png" width=24% />
+  <img src="https://user-images.githubusercontent.com/56788369/229270163-289d179d-1d08-46a9-9bd0-3dca702d8ebd.png" width=24% /> 
+  <img src="https://user-images.githubusercontent.com/56788369/229270164-cac79935-4b47-4736-a036-3c97f0745986.png" width=24% />
+  <img src="https://user-images.githubusercontent.com/56788369/229270165-a255af41-136a-4bcf-8666-ac6fa9c7c69c.png" width=24% />
+</p><br><br><br><br>
+
+<p float="left">
+  <img src="https://user-images.githubusercontent.com/56788369/229270211-6fc4bc9a-1342-491d-a4c4-e61714170252.png" width=24% />
+  <img src="https://user-images.githubusercontent.com/56788369/229270212-c4b897ad-164c-420d-be5f-55355ef99010.png" width=24% /> 
+  <img src="https://user-images.githubusercontent.com/56788369/229270213-2af4f9b4-82bb-474e-83e4-e59960e09e86.png" width=24% />
+  <img src="https://user-images.githubusercontent.com/56788369/229270214-7ad0b83f-6126-4afc-b6a1-7ce342079d02.png" width=24% />
+</p><br><br><br><br>
+
+<p float="left">
+  <img src="https://user-images.githubusercontent.com/56788369/229270254-ddf9c46e-0ece-4872-8f63-e1a3ec31ead0.png" width=24% />
+  <img src="https://user-images.githubusercontent.com/56788369/229270255-cdb1fa5c-3608-4b20-bb9c-0e6ac10f3b45.png" width=24% /> 
+  <img src="https://user-images.githubusercontent.com/56788369/229270259-016499f4-7cff-4609-bff3-ab28154e2394.png" width=24% />
+  <img src="https://user-images.githubusercontent.com/56788369/229270260-b11d5031-0bb4-4037-bac9-cbe89af16699.png" width=24% />
+</p><br><br><br><br>
 
 <h2> Future plans 📋</h2>
 <ul>
