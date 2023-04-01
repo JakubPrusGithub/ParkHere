@@ -12,7 +12,7 @@ struct ReservationView: View {
     @Environment(\.dismiss) private var dismiss
     @StateObject private var vm = ReservationViewModel()
     @StateObject var listener = TicketListener()
-    @State private var currentScreen: Int = 4
+    @State private var currentScreen: Int = 1
     let parking: ParkingStruct
     
     init(parking: ParkingStruct) {

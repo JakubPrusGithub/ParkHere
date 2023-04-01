@@ -9,7 +9,12 @@ import Foundation
 
 class ReservationViewModel: ObservableObject {
     @Inject var reseration: ReservationServiceProtocol
+    @Inject var fm: FMServiceProtocol
     
+    // --User
+    @Published var user: UserModel = UserModel()
+    
+    // --Parking
     @Published var parking: ParkingStruct = .sampleParking
     @Published var reservedTickets: [ParkingTicket] = []
     var allTicket: [ParkingTicket] = []
@@ -25,11 +30,13 @@ class ReservationViewModel: ObservableObject {
     @Published var levels: [String] = []
     @Published var quantity: [Int] = []
     
-    // --User Data
-    @Published var name = "Imie Nazwisko"
-    @Published var licenseNumber = "AB 12345"
+//    // --User Data
+//    @Published var name = "Imie Nazwisko"
+//    @Published var licenseNumber = "AB 12345"
     
     @Published var newTicket = ParkingTicket.sampleTicket
+    
+    
     
     var occupied = false
     
@@ -38,6 +45,7 @@ class ReservationViewModel: ObservableObject {
     init() {
         //Task { await ticketListener() }
         Task { try await fetchTickets() }
+        user = fm.getUserInfo()
     }
 }
 
@@ -184,8 +192,6 @@ extension ReservationViewModel {
     }
     
     func generateTicket() -> ParkingTicket {
-        return ParkingTicket(id: UUID().uuidString, name: self.name, licenseNumber: self.licenseNumber, parkingName: parking.name, address: parking.address, spotNumber: String(selectedLevel + selectedSpot.description), startDate: self.startDate, endDate: self.endDate, price: cost)
+        return ParkingTicket(id: UUID().uuidString, name: self.user.name, licenseNumber: self.user.carNumber, parkingName: parking.name, address: parking.address, spotNumber: String(selectedLevel + selectedSpot.description), startDate: self.startDate, endDate: self.endDate, price: cost)
     }
 }
-
-
