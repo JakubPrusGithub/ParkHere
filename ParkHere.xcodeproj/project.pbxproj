@@ -33,7 +33,6 @@
 		D37DC53829D778280066B60B /* TicketPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37DC53729D778280066B60B /* TicketPreview.swift */; };
 		D37DC53A29D77B790066B60B /* TicketFullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37DC53929D77B790066B60B /* TicketFullView.swift */; };
 		D37DC53C29D79C5A0066B60B /* TicketDeletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37DC53B29D79C5A0066B60B /* TicketDeletion.swift */; };
-		D3EA257929D80A990063E2E9 /* FMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EA257829D80A980063E2E9 /* FMService.swift */; };
 		D3EA257C29D80B6D0063E2E9 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EA257B29D80B6D0063E2E9 /* Bundle.swift */; };
 		D3EB5CAB29D0D9420041A2E0 /* ParkingTicket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EB5CAA29D0D9420041A2E0 /* ParkingTicket.swift */; };
 		E82B8C5F29C1D27B00E83911 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82B8C5E29C1D27B00E83911 /* AuthManager.swift */; };
@@ -101,7 +100,6 @@
 		D37DC53729D778280066B60B /* TicketPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketPreview.swift; sourceTree = "<group>"; };
 		D37DC53929D77B790066B60B /* TicketFullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketFullView.swift; sourceTree = "<group>"; };
 		D37DC53B29D79C5A0066B60B /* TicketDeletion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDeletion.swift; sourceTree = "<group>"; };
-		D3EA257829D80A980063E2E9 /* FMService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMService.swift; sourceTree = "<group>"; };
 		D3EA257B29D80B6D0063E2E9 /* Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		D3EB5CAA29D0D9420041A2E0 /* ParkingTicket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingTicket.swift; sourceTree = "<group>"; };
 		E82B8C5E29C1D27B00E83911 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
@@ -416,7 +414,6 @@
 		E877BCD129D5639500659302 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				D3EA257829D80A980063E2E9 /* FMService.swift */,
 				E8478E3429D7213D001661F5 /* ParkingService.swift */,
 				E8478E3629D72149001661F5 /* ReservationService.swift */,
 			);
@@ -716,7 +713,6 @@
 				E8478E3729D72149001661F5 /* ReservationService.swift in Sources */,
 				E8D3E13E29C333DB00029D7A /* ParkingResultSearchView.swift in Sources */,
 				E877BCC529D562F400659302 /* GeometryEffect.swift in Sources */,
-				D3EA257929D80A990063E2E9 /* FMService.swift in Sources */,
 				E8478E3129D72097001661F5 /* SignInGoogleHelper.swift in Sources */,
 				E877BCDC29D5640500659302 /* TabBarItem.swift in Sources */,
 				E877BCC729D5630900659302 /* CustomTextField.swift in Sources */,

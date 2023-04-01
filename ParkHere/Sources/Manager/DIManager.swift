@@ -13,7 +13,6 @@ class Dependencies {
         @Provider var authManager = AuthManager()
         @Provider var parkingService = ParkingService() as ParkingServiceProtocol
         @Provider var reservationService = ReservationService() as ReservationServiceProtocol
-        @Provider var fmSerice = FMService() as FMServiceProtocol
     }
 }
 

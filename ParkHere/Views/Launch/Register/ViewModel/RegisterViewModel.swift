@@ -9,7 +9,6 @@ import Foundation
 
 class RegisterViewVM: ObservableObject {
     @Inject var authManager: AuthManager
-    @Inject var fm: FMServiceProtocol
     
     @Published var name: String = ""
     @Published var surname: String = ""
@@ -32,16 +31,6 @@ class RegisterViewVM: ObservableObject {
         } catch {
             serverResponse = error.localizedDescription
         }
-    }
-    
-    func saveToFM() {
-        let user = UserModel(name: name,
-                             surname: surname,
-                             email: email,
-                             brand: brand.rawValue,
-                             carNumber: carNumber)
-        
-        fm.saveUserInfo(user: user)
     }
     
 }

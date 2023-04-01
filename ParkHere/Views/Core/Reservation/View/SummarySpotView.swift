@@ -77,10 +77,10 @@ extension SummaryView {
             Text("Personal Details")
                 .reservationTitle()
                 .padding(.top)
-            Text(vm.user.name)
+            Text(vm.name)
                 .font(.title3)
                 .bold()
-            Text("License number: " + vm.user.carNumber)
+            Text("License number: " + vm.licenseNumber)
                 .padding(.vertical, -10)
             
             Divider()
