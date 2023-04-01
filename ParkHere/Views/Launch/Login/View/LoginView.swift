@@ -9,8 +9,8 @@ import SwiftUI
 
 struct LoginView: View {
     @StateObject private var vm = LoginViewVM()
-    init() { _ = Dependencies() }
-    
+    //init() { _ = Dependencies() }
+    @EnvironmentObject var auth: AuthManager
     @State private var showForgotPassword: Bool = false
     @State private var errorMessage: String = ""
     @State private var attempts: Int = 0
@@ -108,6 +108,7 @@ extension LoginView {
                 Task {
                     do {
                         try await vm.signIn()
+                        auth.logIn = true
                         
                     } catch {
                         errorMessage = error.localizedDescription
