@@ -86,3 +86,12 @@ Our app is based on the concept of simplifying the parking reservation process, 
   <li>Support for other vehicles</li>
   <li>Website and android version</li>
 </ul><br>
+
+<h2> Competition 🔥</h2>
+
+This app was created for a competition from the discrod server "Zaprogramuj Życie" - March 2023 edition - which we won 🤩
+
+<br>
+
+![image](https://user-images.githubusercontent.com/56788369/229376104-880febe6-408c-48bd-b7fd-3bc64cc0a784.png)
+
