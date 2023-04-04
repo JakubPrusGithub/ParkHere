@@ -21,7 +21,7 @@ Simply clone ParkHere repo and open it in an XCode. There you can build this pro
   <li>Firebase - Authentication</li>
   <li>Firebase - Firestore</li>
   <li>MapKit</li>
-  <li>JSON</li>
+  <li>Core Image</li>
   <li>Dependency Injection</li>
   <li>Concurrency</li>
   <li>MVVM</li>  
