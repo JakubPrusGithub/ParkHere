@@ -91,6 +91,8 @@ Our app is based on the concept of simplifying the parking reservation process, 
 
 This app was created for a competition from the discrod server "Zaprogramuj Życie" - March 2023 edition - which we won 🤩
 
+The link to the summary video is here: https://www.youtube.com/watch?v=NxZka6Yapp4&ab_channel=Zaprogramuj%C5%BBycie
+
 <br>
 
 ![image](https://user-images.githubusercontent.com/56788369/229376104-880febe6-408c-48bd-b7fd-3bc64cc0a784.png)
